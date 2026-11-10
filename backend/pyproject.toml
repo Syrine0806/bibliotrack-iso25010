@@ -1,0 +1,68 @@
+[project]
+name = "biblio-backend"
+version = "1.0.0"
+description = "BiblioTrack - API de gestion de médiathèque (projet qualité ISO/IEC 25010)"
+requires-python = ">=3.12"
+dependencies = [
+    "fastapi>=0.115.6",
+    "uvicorn[standard]>=0.34.0",
+    "sqlalchemy>=2.0.36",
+    "pydantic[email]>=2.10.4",
+    "pydantic-settings>=2.7.1",
+    "psycopg[binary]>=3.2.3",
+    "pyjwt>=2.10.1",
+    "bcrypt>=4.2.1",
+    "httpx>=0.28.1",
+    "python-multipart>=0.0.20",
+]
+
+[dependency-groups]
+dev = [
+    "pytest>=8.3.4",
+    "pytest-cov>=6.0.0",
+    "ruff>=0.8.4",
+    "radon>=6.0.1",
+    "bandit[toml]>=1.8.0",
+    "pip-audit>=2.7.3",
+    "locust>=2.32.5",
+    "respx>=0.22.0",
+]
+
+[tool.uv]
+package = false
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra --strict-markers"
+markers = [
+    "req(*ids): exigence(s) couverte(s) par le test (traçabilité)",
+    "postgres: test nécessitant une base PostgreSQL réelle",
+]
+filterwarnings = ["ignore::DeprecationWarning", "ignore:Using `httpx`:Warning"]
+
+[tool.coverage.run]
+source = ["app"]
+branch = true
+omit = ["app/seed.py"]
+
+[tool.coverage.report]
+show_missing = true
+skip_covered = false
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "B", "UP", "C90", "S", "SIM", "N"]
+ignore = ["B008"]  # Depends() dans les signatures FastAPI (idiome du framework)
+
+[tool.ruff.lint.mccabe]
+max-complexity = 8
+
+[tool.ruff.lint.per-file-ignores]
+"tests/**" = ["S101", "S105", "S106", "S107", "S311", "N802"]
+"app/seed.py" = ["S311"]
+
+[tool.bandit]
+exclude_dirs = ["tests", ".venv"]
