@@ -1,0 +1,31 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+.pytest_cache/
+.ruff_cache/
+.coverage
+coverage.xml
+htmlcov/
+*.db
+
+# Node
+node_modules/
+frontend/dist/
+frontend/test-results/
+frontend/playwright-report/
+frontend/blob-report/
+.vite/
+
+# Env / IDE
+.env
+.idea/
+.vscode/
+.DS_Store
+backend/*.db
+tests/api/node_modules/
+frontend/e2e.db
+frontend/test-results-docker/
+
+# Documentation (non versionnée)
+docs/
