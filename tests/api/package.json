@@ -1,0 +1,11 @@
+{
+  "name": "bibliotrack-api-tests",
+  "private": true,
+  "scripts": {
+    "test": "newman run bibliotrack.postman_collection.json -e local.postman_environment.json --reporters cli,junit,htmlextra --reporter-junit-export ../../reports/api/junit-newman.xml --reporter-htmlextra-export ../../reports/api/newman-report.html"
+  },
+  "devDependencies": {
+    "newman": "^6.2.3",
+    "newman-reporter-htmlextra": "^1.23.1"
+  }
+}

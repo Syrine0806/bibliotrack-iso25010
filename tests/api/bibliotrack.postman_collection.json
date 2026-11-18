@@ -1,0 +1,1619 @@
+{
+  "info": {
+    "name": "BiblioTrack API — tests de contrat",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "1. Authentification",
+      "item": [
+        {
+          "name": "[EQ-FIA-03] Sonde de santé",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/health",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "health"
+              ],
+              "query": []
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('statut HTTP 200', () => pm.response.to.have.status(200));",
+                  "pm.test('base OK', () => pm.expect(pm.response.json()).to.eql({status: 'ok', database: 'ok'}));",
+                  "pm.test('[EQ-SEC-09] en-têtes de sécurité présents', () => {",
+                  "  pm.expect(pm.response.headers.get('X-Content-Type-Options')).to.eql('nosniff');",
+                  "  pm.expect(pm.response.headers.get('X-Frame-Options')).to.eql('DENY');",
+                  "  pm.expect(pm.response.headers.get('Content-Security-Policy')).to.include(\"frame-ancestors 'none'\");",
+                  "});",
+                  "pm.test('[EQ-PERF-01] temps de réponse < 500 ms', () => pm.expect(pm.response.responseTime).to.be.below(500));"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "[EF-01][EQ-SEC-04] Connexion refusée (mauvais mot de passe)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/auth/login",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "auth",
+                "login"
+              ],
+              "query": []
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\"email\": \"{{staffEmail}}\", \"password\": \"Mauvais0000\"}"
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('statut HTTP 401', () => pm.response.to.have.status(401));",
+                  "pm.test('message générique', () => pm.expect(pm.response.json().detail).to.eql('Identifiants invalides ou compte verrouillé.'));",
+                  "pm.test('[EQ-SEC-09] en-têtes de sécurité présents', () => {",
+                  "  pm.expect(pm.response.headers.get('X-Content-Type-Options')).to.eql('nosniff');",
+                  "  pm.expect(pm.response.headers.get('X-Frame-Options')).to.eql('DENY');",
+                  "  pm.expect(pm.response.headers.get('Content-Security-Policy')).to.include(\"frame-ancestors 'none'\");",
+                  "});",
+                  "pm.test('[EQ-PERF-01] temps de réponse < 500 ms', () => pm.expect(pm.response.responseTime).to.be.below(500));"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "[EF-01] Connexion bibliothécaire",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/auth/login",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "auth",
+                "login"
+              ],
+              "query": []
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\"email\": \"{{staffEmail}}\", \"password\": \"{{staffPassword}}\"}"
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('statut HTTP 200', () => pm.response.to.have.status(200));",
+                  "const b = pm.response.json();",
+                  "pm.test('contrat Token', () => { pm.expect(b).to.have.all.keys('access_token','token_type','role','full_name'); pm.expect(b.token_type).to.eql('bearer'); pm.expect(b.role).to.eql('BIBLIOTHECAIRE'); });",
+                  "pm.test('JWT à 3 segments', () => pm.expect(b.access_token.split('.')).to.have.length(3));",
+                  "pm.collectionVariables.set('staffToken', b.access_token);",
+                  "pm.test('[EQ-SEC-09] en-têtes de sécurité présents', () => {",
+                  "  pm.expect(pm.response.headers.get('X-Content-Type-Options')).to.eql('nosniff');",
+                  "  pm.expect(pm.response.headers.get('X-Frame-Options')).to.eql('DENY');",
+                  "  pm.expect(pm.response.headers.get('Content-Security-Policy')).to.include(\"frame-ancestors 'none'\");",
+                  "});",
+                  "pm.test('[EQ-PERF-01] temps de réponse < 500 ms', () => pm.expect(pm.response.responseTime).to.be.below(500));"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "[EF-01] Connexion administrateur",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/auth/login",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "auth",
+                "login"
+              ],
+              "query": []
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\"email\": \"{{adminEmail}}\", \"password\": \"{{adminPassword}}\"}"
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('statut HTTP 200', () => pm.response.to.have.status(200));",
+                  "pm.collectionVariables.set('adminToken', pm.response.json().access_token);",
+                  "pm.test('[EQ-SEC-09] en-têtes de sécurité présents', () => {",
+                  "  pm.expect(pm.response.headers.get('X-Content-Type-Options')).to.eql('nosniff');",
+                  "  pm.expect(pm.response.headers.get('X-Frame-Options')).to.eql('DENY');",
+                  "  pm.expect(pm.response.headers.get('Content-Security-Policy')).to.include(\"frame-ancestors 'none'\");",
+                  "});",
+                  "pm.test('[EQ-PERF-01] temps de réponse < 500 ms', () => pm.expect(pm.response.responseTime).to.be.below(500));"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "[EF-01][EF-02] Inscription adhérent (rôle forcé)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/auth/register",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "auth",
+                "register"
+              ],
+              "query": []
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\"email\": \"newman.{{suffix}}@bibliotrack.example\", \"full_name\": \"Newman {{suffix}}\", \"password\": \"Newman1234\", \"role\": \"ADMIN\"}"
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('statut HTTP 201', () => pm.response.to.have.status(201));",
+                  "const u = pm.response.json();",
+                  "pm.test('rôle ADHERENT imposé', () => pm.expect(u.role).to.eql('ADHERENT'));",
+                  "pm.test('aucun secret exposé', () => pm.expect(u).to.not.have.any.keys('password','hashed_password'));",
+                  "pm.collectionVariables.set('memberId', u.id);",
+                  "pm.test('[EQ-SEC-09] en-têtes de sécurité présents', () => {",
+                  "  pm.expect(pm.response.headers.get('X-Content-Type-Options')).to.eql('nosniff');",
+                  "  pm.expect(pm.response.headers.get('X-Frame-Options')).to.eql('DENY');",
+                  "  pm.expect(pm.response.headers.get('Content-Security-Policy')).to.include(\"frame-ancestors 'none'\");",
+                  "});",
+                  "pm.test('[EQ-PERF-01] temps de réponse < 500 ms', () => pm.expect(pm.response.responseTime).to.be.below(500));"
+                ]
+              }
+            },
+            {
+              "listen": "prerequest",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "const core = '979' + String(Date.now()).slice(-9);",
+                  "let s = 0; for (let i = 0; i < 12; i++) s += Number(core[i]) * (i % 2 ? 3 : 1);",
+                  "pm.collectionVariables.set('isbn', core + ((10 - s % 10) % 10));",
+                  "pm.collectionVariables.set('suffix', Date.now().toString(36).toUpperCase());"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "[EF-01] Connexion adhérent",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/auth/login",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "auth",
+                "login"
+              ],
+              "query": []
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\"email\": \"newman.{{suffix}}@bibliotrack.example\", \"password\": \"Newman1234\"}"
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('statut HTTP 200', () => pm.response.to.have.status(200));",
+                  "pm.collectionVariables.set('memberToken', pm.response.json().access_token);",
+                  "pm.test('[EQ-SEC-09] en-têtes de sécurité présents', () => {",
+                  "  pm.expect(pm.response.headers.get('X-Content-Type-Options')).to.eql('nosniff');",
+                  "  pm.expect(pm.response.headers.get('X-Frame-Options')).to.eql('DENY');",
+                  "  pm.expect(pm.response.headers.get('Content-Security-Policy')).to.include(\"frame-ancestors 'none'\");",
+                  "});",
+                  "pm.test('[EQ-PERF-01] temps de réponse < 500 ms', () => pm.expect(pm.response.responseTime).to.be.below(500));"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "[EF-01] Profil courant",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{memberToken}}"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/auth/me",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "auth",
+                "me"
+              ],
+              "query": []
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('statut HTTP 200', () => pm.response.to.have.status(200));",
+                  "pm.test('contrat User', () => pm.expect(pm.response.json()).to.include.all.keys('id','email','full_name','role','is_active','created_at'));",
+                  "pm.test('[EQ-SEC-09] en-têtes de sécurité présents', () => {",
+                  "  pm.expect(pm.response.headers.get('X-Content-Type-Options')).to.eql('nosniff');",
+                  "  pm.expect(pm.response.headers.get('X-Frame-Options')).to.eql('DENY');",
+                  "  pm.expect(pm.response.headers.get('Content-Security-Policy')).to.include(\"frame-ancestors 'none'\");",
+                  "});",
+                  "pm.test('[EQ-PERF-01] temps de réponse < 500 ms', () => pm.expect(pm.response.responseTime).to.be.below(500));"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "[EQ-SEC-02] Accès sans jeton",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/auth/me",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "auth",
+                "me"
+              ],
+              "query": []
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('statut HTTP 401', () => pm.response.to.have.status(401));",
+                  "pm.test('en-tête WWW-Authenticate', () => pm.expect(pm.response.headers.get('WWW-Authenticate')).to.eql('Bearer'));",
+                  "pm.test('[EQ-SEC-09] en-têtes de sécurité présents', () => {",
+                  "  pm.expect(pm.response.headers.get('X-Content-Type-Options')).to.eql('nosniff');",
+                  "  pm.expect(pm.response.headers.get('X-Frame-Options')).to.eql('DENY');",
+                  "  pm.expect(pm.response.headers.get('Content-Security-Policy')).to.include(\"frame-ancestors 'none'\");",
+                  "});",
+                  "pm.test('[EQ-PERF-01] temps de réponse < 500 ms', () => pm.expect(pm.response.responseTime).to.be.below(500));"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "2. Catalogue",
+      "item": [
+        {
+          "name": "[EF-12] Recherche paginée",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{memberToken}}"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/books?q=ombre&size=5&page=1",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "books"
+              ],
+              "query": [
+                {
+                  "key": "q",
+                  "value": "ombre"
+                },
+                {
+                  "key": "size",
+                  "value": "5"
+                },
+                {
+                  "key": "page",
+                  "value": "1"
+                }
+              ]
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('statut HTTP 200', () => pm.response.to.have.status(200));",
+                  "const p = pm.response.json();",
+                  "pm.test('contrat Page<Book>', () => { pm.expect(p).to.have.all.keys('items','total','page','size'); pm.expect(p.items.length).to.be.at.most(5); });",
+                  "pm.test('contrat Book', () => pm.expect(p.items[0]).to.include.all.keys('id','isbn','title','category','authors','total_copies','available_copies'));",
+                  "pm.test('ISBN-13 canonique', () => pm.expect(p.items[0].isbn).to.match(/^97[89]\\d{10}$/));",
+                  "pm.test('[EQ-SEC-09] en-têtes de sécurité présents', () => {",
+                  "  pm.expect(pm.response.headers.get('X-Content-Type-Options')).to.eql('nosniff');",
+                  "  pm.expect(pm.response.headers.get('X-Frame-Options')).to.eql('DENY');",
+                  "  pm.expect(pm.response.headers.get('Content-Security-Policy')).to.include(\"frame-ancestors 'none'\");",
+                  "});",
+                  "pm.test('[EQ-PERF-01] temps de réponse < 500 ms', () => pm.expect(pm.response.responseTime).to.be.below(500));"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "[EF-12] Paramètre de pagination invalide",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{memberToken}}"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/books?size=1000",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "books"
+              ],
+              "query": [
+                {
+                  "key": "size",
+                  "value": "1000"
+                }
+              ]
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('statut HTTP 422', () => pm.response.to.have.status(422));",
+                  "pm.test('[EQ-SEC-09] en-têtes de sécurité présents', () => {",
+                  "  pm.expect(pm.response.headers.get('X-Content-Type-Options')).to.eql('nosniff');",
+                  "  pm.expect(pm.response.headers.get('X-Frame-Options')).to.eql('DENY');",
+                  "  pm.expect(pm.response.headers.get('Content-Security-Policy')).to.include(\"frame-ancestors 'none'\");",
+                  "});",
+                  "pm.test('[EQ-PERF-01] temps de réponse < 500 ms', () => pm.expect(pm.response.responseTime).to.be.below(500));"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "[EF-03] Liste des catégories",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{memberToken}}"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/categories",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "categories"
+              ],
+              "query": []
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('statut HTTP 200', () => pm.response.to.have.status(200));",
+                  "pm.test('tableau non vide', () => pm.expect(pm.response.json()).to.be.an('array').that.is.not.empty);",
+                  "pm.collectionVariables.set('categoryId', pm.response.json()[0].id);",
+                  "pm.test('[EQ-SEC-09] en-têtes de sécurité présents', () => {",
+                  "  pm.expect(pm.response.headers.get('X-Content-Type-Options')).to.eql('nosniff');",
+                  "  pm.expect(pm.response.headers.get('X-Frame-Options')).to.eql('DENY');",
+                  "  pm.expect(pm.response.headers.get('Content-Security-Policy')).to.include(\"frame-ancestors 'none'\");",
+                  "});",
+                  "pm.test('[EQ-PERF-01] temps de réponse < 500 ms', () => pm.expect(pm.response.responseTime).to.be.below(500));"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "[EF-04] Création d'un auteur",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{staffToken}}"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/authors",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "authors"
+              ],
+              "query": []
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\"full_name\": \"Auteur Newman {{suffix}}\", \"nationality\": \"Française\"}"
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('statut HTTP 201', () => pm.response.to.have.status(201));",
+                  "pm.collectionVariables.set('authorId', pm.response.json().id);",
+                  "pm.test('[EQ-SEC-09] en-têtes de sécurité présents', () => {",
+                  "  pm.expect(pm.response.headers.get('X-Content-Type-Options')).to.eql('nosniff');",
+                  "  pm.expect(pm.response.headers.get('X-Frame-Options')).to.eql('DENY');",
+                  "  pm.expect(pm.response.headers.get('Content-Security-Policy')).to.include(\"frame-ancestors 'none'\");",
+                  "});",
+                  "pm.test('[EQ-PERF-01] temps de réponse < 500 ms', () => pm.expect(pm.response.responseTime).to.be.below(500));"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "[EF-05][RG-01] ISBN invalide refusé",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{staffToken}}"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/books",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "books"
+              ],
+              "query": []
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\"isbn\": \"9782070368229\", \"title\": \"X\", \"category_id\": \"{{categoryId}}\", \"author_ids\": [\"{{authorId}}\"]}"
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('statut HTTP 422', () => pm.response.to.have.status(422));",
+                  "pm.test('[EQ-SEC-09] en-têtes de sécurité présents', () => {",
+                  "  pm.expect(pm.response.headers.get('X-Content-Type-Options')).to.eql('nosniff');",
+                  "  pm.expect(pm.response.headers.get('X-Frame-Options')).to.eql('DENY');",
+                  "  pm.expect(pm.response.headers.get('Content-Security-Policy')).to.include(\"frame-ancestors 'none'\");",
+                  "});",
+                  "pm.test('[EQ-PERF-01] temps de réponse < 500 ms', () => pm.expect(pm.response.responseTime).to.be.below(500));"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "[EF-05] Création d'un ouvrage",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{staffToken}}"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/books",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "books"
+              ],
+              "query": []
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\"isbn\": \"{{isbn}}\", \"title\": \"Ouvrage Newman {{suffix}}\", \"category_id\": \"{{categoryId}}\", \"author_ids\": [\"{{authorId}}\"], \"publication_year\": 2025}"
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('statut HTTP 201', () => pm.response.to.have.status(201));",
+                  "const b = pm.response.json();",
+                  "pm.test('relations 1-N et N-N renvoyées', () => { pm.expect(b.category.id).to.eql(Number(pm.collectionVariables.get('categoryId'))); pm.expect(b.authors).to.have.length(1); });",
+                  "pm.collectionVariables.set('bookId', b.id);",
+                  "pm.test('[EQ-SEC-09] en-têtes de sécurité présents', () => {",
+                  "  pm.expect(pm.response.headers.get('X-Content-Type-Options')).to.eql('nosniff');",
+                  "  pm.expect(pm.response.headers.get('X-Frame-Options')).to.eql('DENY');",
+                  "  pm.expect(pm.response.headers.get('Content-Security-Policy')).to.include(\"frame-ancestors 'none'\");",
+                  "});",
+                  "pm.test('[EQ-PERF-01] temps de réponse < 500 ms', () => pm.expect(pm.response.responseTime).to.be.below(500));"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "[EF-05][RG-01] ISBN en double refusé",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{staffToken}}"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/books",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "books"
+              ],
+              "query": []
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\"isbn\": \"{{isbn}}\", \"title\": \"Doublon\", \"category_id\": \"{{categoryId}}\", \"author_ids\": [\"{{authorId}}\"]}"
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('statut HTTP 409', () => pm.response.to.have.status(409));",
+                  "pm.test('code règle RG-01', () => pm.expect(pm.response.json().code).to.eql('RG-01'));",
+                  "pm.test('[EQ-SEC-09] en-têtes de sécurité présents', () => {",
+                  "  pm.expect(pm.response.headers.get('X-Content-Type-Options')).to.eql('nosniff');",
+                  "  pm.expect(pm.response.headers.get('X-Frame-Options')).to.eql('DENY');",
+                  "  pm.expect(pm.response.headers.get('Content-Security-Policy')).to.include(\"frame-ancestors 'none'\");",
+                  "});",
+                  "pm.test('[EQ-PERF-01] temps de réponse < 500 ms', () => pm.expect(pm.response.responseTime).to.be.below(500));"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "[EF-02][EQ-SEC-03] Adhérent : création d'ouvrage interdite",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{memberToken}}"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/books",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "books"
+              ],
+              "query": []
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\"isbn\": \"{{isbn}}\", \"title\": \"X\", \"category_id\": \"{{categoryId}}\", \"author_ids\": [\"{{authorId}}\"]}"
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('statut HTTP 403', () => pm.response.to.have.status(403));",
+                  "pm.test('[EQ-SEC-09] en-têtes de sécurité présents', () => {",
+                  "  pm.expect(pm.response.headers.get('X-Content-Type-Options')).to.eql('nosniff');",
+                  "  pm.expect(pm.response.headers.get('X-Frame-Options')).to.eql('DENY');",
+                  "  pm.expect(pm.response.headers.get('Content-Security-Policy')).to.include(\"frame-ancestors 'none'\");",
+                  "});",
+                  "pm.test('[EQ-PERF-01] temps de réponse < 500 ms', () => pm.expect(pm.response.responseTime).to.be.below(500));"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "[EF-06] Ajout d'un exemplaire",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{staffToken}}"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/books/{{bookId}}/copies",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "books",
+                "{{bookId}}",
+                "copies"
+              ],
+              "query": []
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\"barcode\": \"NWM-{{suffix}}\", \"shelf_location\": \"R01-E1\"}"
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('statut HTTP 201', () => pm.response.to.have.status(201));",
+                  "pm.test('statut initial DISPONIBLE', () => pm.expect(pm.response.json().status).to.eql('DISPONIBLE'));",
+                  "pm.test('[EQ-SEC-09] en-têtes de sécurité présents', () => {",
+                  "  pm.expect(pm.response.headers.get('X-Content-Type-Options')).to.eql('nosniff');",
+                  "  pm.expect(pm.response.headers.get('X-Frame-Options')).to.eql('DENY');",
+                  "  pm.expect(pm.response.headers.get('Content-Security-Policy')).to.include(\"frame-ancestors 'none'\");",
+                  "});",
+                  "pm.test('[EQ-PERF-01] temps de réponse < 500 ms', () => pm.expect(pm.response.responseTime).to.be.below(500));"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "3. Circulation",
+      "item": [
+        {
+          "name": "[EF-08][WF-01][RG-05] Emprunt",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{staffToken}}"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/loans",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "loans"
+              ],
+              "query": []
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\"user_id\": \"{{memberId}}\", \"barcode\": \"NWM-{{suffix}}\"}"
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('statut HTTP 201', () => pm.response.to.have.status(201));",
+                  "const l = pm.response.json();",
+                  "pm.test('statut EN_COURS', () => pm.expect(l.status).to.eql('EN_COURS'));",
+                  "pm.test('échéance = J+21', () => { const d = new Date(l.loaned_at.slice(0,10)); d.setUTCDate(d.getUTCDate()+21); pm.expect(l.due_date).to.eql(d.toISOString().slice(0,10)); });",
+                  "pm.collectionVariables.set('loanId', l.id);",
+                  "pm.test('[EQ-SEC-09] en-têtes de sécurité présents', () => {",
+                  "  pm.expect(pm.response.headers.get('X-Content-Type-Options')).to.eql('nosniff');",
+                  "  pm.expect(pm.response.headers.get('X-Frame-Options')).to.eql('DENY');",
+                  "  pm.expect(pm.response.headers.get('Content-Security-Policy')).to.include(\"frame-ancestors 'none'\");",
+                  "});",
+                  "pm.test('[EQ-PERF-01] temps de réponse < 500 ms', () => pm.expect(pm.response.responseTime).to.be.below(500));"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "[RG-04] Exemplaire déjà emprunté",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{staffToken}}"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/loans",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "loans"
+              ],
+              "query": []
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\"user_id\": \"{{memberId}}\", \"barcode\": \"NWM-{{suffix}}\"}"
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('statut HTTP 409', () => pm.response.to.have.status(409));",
+                  "pm.test('code règle RG-04', () => pm.expect(pm.response.json().code).to.eql('RG-04'));",
+                  "pm.test('[EQ-SEC-09] en-têtes de sécurité présents', () => {",
+                  "  pm.expect(pm.response.headers.get('X-Content-Type-Options')).to.eql('nosniff');",
+                  "  pm.expect(pm.response.headers.get('X-Frame-Options')).to.eql('DENY');",
+                  "  pm.expect(pm.response.headers.get('Content-Security-Policy')).to.include(\"frame-ancestors 'none'\");",
+                  "});",
+                  "pm.test('[EQ-PERF-01] temps de réponse < 500 ms', () => pm.expect(pm.response.responseTime).to.be.below(500));"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "[EQ-SEC-03] Adhérent : enregistrement d'emprunt interdit",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{memberToken}}"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/loans",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "loans"
+              ],
+              "query": []
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\"user_id\": \"{{memberId}}\", \"barcode\": \"NWM-{{suffix}}\"}"
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('statut HTTP 403', () => pm.response.to.have.status(403));",
+                  "pm.test('[EQ-SEC-09] en-têtes de sécurité présents', () => {",
+                  "  pm.expect(pm.response.headers.get('X-Content-Type-Options')).to.eql('nosniff');",
+                  "  pm.expect(pm.response.headers.get('X-Frame-Options')).to.eql('DENY');",
+                  "  pm.expect(pm.response.headers.get('Content-Security-Policy')).to.include(\"frame-ancestors 'none'\");",
+                  "});",
+                  "pm.test('[EQ-PERF-01] temps de réponse < 500 ms', () => pm.expect(pm.response.responseTime).to.be.below(500));"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "[EF-08][RG-05] Prolongation par l'adhérent",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{memberToken}}"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/loans/{{loanId}}/renew",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "loans",
+                "{{loanId}}",
+                "renew"
+              ],
+              "query": []
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('statut HTTP 200', () => pm.response.to.have.status(200));",
+                  "pm.test('1 prolongation', () => pm.expect(pm.response.json().renewals_count).to.eql(1));",
+                  "pm.test('[EQ-SEC-09] en-têtes de sécurité présents', () => {",
+                  "  pm.expect(pm.response.headers.get('X-Content-Type-Options')).to.eql('nosniff');",
+                  "  pm.expect(pm.response.headers.get('X-Frame-Options')).to.eql('DENY');",
+                  "  pm.expect(pm.response.headers.get('Content-Security-Policy')).to.include(\"frame-ancestors 'none'\");",
+                  "});",
+                  "pm.test('[EQ-PERF-01] temps de réponse < 500 ms', () => pm.expect(pm.response.responseTime).to.be.below(500));"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "[RG-05] Seconde prolongation refusée",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{memberToken}}"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/loans/{{loanId}}/renew",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "loans",
+                "{{loanId}}",
+                "renew"
+              ],
+              "query": []
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('statut HTTP 409', () => pm.response.to.have.status(409));",
+                  "pm.test('code règle RG-05', () => pm.expect(pm.response.json().code).to.eql('RG-05'));",
+                  "pm.test('[EQ-SEC-09] en-têtes de sécurité présents', () => {",
+                  "  pm.expect(pm.response.headers.get('X-Content-Type-Options')).to.eql('nosniff');",
+                  "  pm.expect(pm.response.headers.get('X-Frame-Options')).to.eql('DENY');",
+                  "  pm.expect(pm.response.headers.get('Content-Security-Policy')).to.include(\"frame-ancestors 'none'\");",
+                  "});",
+                  "pm.test('[EQ-PERF-01] temps de réponse < 500 ms', () => pm.expect(pm.response.responseTime).to.be.below(500));"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "[EQ-SEC-10] Adhérent : seuls ses emprunts sont visibles",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{memberToken}}"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/loans?user_id=1",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "loans"
+              ],
+              "query": [
+                {
+                  "key": "user_id",
+                  "value": "1"
+                }
+              ]
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('statut HTTP 200', () => pm.response.to.have.status(200));",
+                  "pm.test('aucune fuite', () => pm.response.json().items.forEach(l => pm.expect(l.user.id).to.eql(Number(pm.collectionVariables.get('memberId')))));",
+                  "pm.test('[EQ-SEC-09] en-têtes de sécurité présents', () => {",
+                  "  pm.expect(pm.response.headers.get('X-Content-Type-Options')).to.eql('nosniff');",
+                  "  pm.expect(pm.response.headers.get('X-Frame-Options')).to.eql('DENY');",
+                  "  pm.expect(pm.response.headers.get('Content-Security-Policy')).to.include(\"frame-ancestors 'none'\");",
+                  "});",
+                  "pm.test('[EQ-PERF-01] temps de réponse < 500 ms', () => pm.expect(pm.response.responseTime).to.be.below(500));"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "[EF-08][WF-01][RG-06] Retour à l'heure",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{staffToken}}"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/loans/{{loanId}}/return",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "loans",
+                "{{loanId}}",
+                "return"
+              ],
+              "query": []
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('statut HTTP 200', () => pm.response.to.have.status(200));",
+                  "const r = pm.response.json();",
+                  "pm.test('contrat ReturnResult', () => pm.expect(r).to.have.all.keys('loan','penalty_amount','days_late','reserved_for_user_id'));",
+                  "pm.test('pas de pénalité', () => pm.expect(r.penalty_amount).to.eql('0.00'));",
+                  "pm.test('statut RENDU', () => pm.expect(r.loan.status).to.eql('RENDU'));",
+                  "pm.test('[EQ-SEC-09] en-têtes de sécurité présents', () => {",
+                  "  pm.expect(pm.response.headers.get('X-Content-Type-Options')).to.eql('nosniff');",
+                  "  pm.expect(pm.response.headers.get('X-Frame-Options')).to.eql('DENY');",
+                  "  pm.expect(pm.response.headers.get('Content-Security-Policy')).to.include(\"frame-ancestors 'none'\");",
+                  "});",
+                  "pm.test('[EQ-PERF-01] temps de réponse < 500 ms', () => pm.expect(pm.response.responseTime).to.be.below(500));"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "[WF-01][EQ-FIA-05] Double retour refusé",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{staffToken}}"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/loans/{{loanId}}/return",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "loans",
+                "{{loanId}}",
+                "return"
+              ],
+              "query": []
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('statut HTTP 409', () => pm.response.to.have.status(409));",
+                  "pm.test('code règle WF-TRANSITION', () => pm.expect(pm.response.json().code).to.eql('WF-TRANSITION'));",
+                  "pm.test('[EQ-SEC-09] en-têtes de sécurité présents', () => {",
+                  "  pm.expect(pm.response.headers.get('X-Content-Type-Options')).to.eql('nosniff');",
+                  "  pm.expect(pm.response.headers.get('X-Frame-Options')).to.eql('DENY');",
+                  "  pm.expect(pm.response.headers.get('Content-Security-Policy')).to.include(\"frame-ancestors 'none'\");",
+                  "});",
+                  "pm.test('[EQ-PERF-01] temps de réponse < 500 ms', () => pm.expect(pm.response.responseTime).to.be.below(500));"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "[EF-10][WF-03] Pénalité manuelle",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{staffToken}}"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/penalties",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "penalties"
+              ],
+              "query": []
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\"user_id\": \"{{memberId}}\", \"amount\": \"2.50\", \"reason\": \"Livre annoté (Newman)\"}"
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('statut HTTP 201', () => pm.response.to.have.status(201));",
+                  "pm.collectionVariables.set('penaltyId', pm.response.json().id);",
+                  "pm.test('[EQ-SEC-09] en-têtes de sécurité présents', () => {",
+                  "  pm.expect(pm.response.headers.get('X-Content-Type-Options')).to.eql('nosniff');",
+                  "  pm.expect(pm.response.headers.get('X-Frame-Options')).to.eql('DENY');",
+                  "  pm.expect(pm.response.headers.get('Content-Security-Policy')).to.include(\"frame-ancestors 'none'\");",
+                  "});",
+                  "pm.test('[EQ-PERF-01] temps de réponse < 500 ms', () => pm.expect(pm.response.responseTime).to.be.below(500));"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "[EF-10][WF-03] Encaissement",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{staffToken}}"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/penalties/{{penaltyId}}/pay",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "penalties",
+                "{{penaltyId}}",
+                "pay"
+              ],
+              "query": []
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('statut HTTP 200', () => pm.response.to.have.status(200));",
+                  "pm.test('PAYEE', () => pm.expect(pm.response.json().status).to.eql('PAYEE'));",
+                  "pm.test('[EQ-SEC-09] en-têtes de sécurité présents', () => {",
+                  "  pm.expect(pm.response.headers.get('X-Content-Type-Options')).to.eql('nosniff');",
+                  "  pm.expect(pm.response.headers.get('X-Frame-Options')).to.eql('DENY');",
+                  "  pm.expect(pm.response.headers.get('Content-Security-Policy')).to.include(\"frame-ancestors 'none'\");",
+                  "});",
+                  "pm.test('[EQ-PERF-01] temps de réponse < 500 ms', () => pm.expect(pm.response.responseTime).to.be.below(500));"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "4. Pilotage",
+      "item": [
+        {
+          "name": "[EF-11] Tableau de bord",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{staffToken}}"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/dashboard",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "dashboard"
+              ],
+              "query": []
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('statut HTTP 200', () => pm.response.to.have.status(200));",
+                  "pm.test('contrat Dashboard', () => pm.expect(pm.response.json()).to.include.all.keys('total_books','active_loans','overdue_loans','loans_by_month','top_books','loans_by_category','unpaid_penalties_total'));",
+                  "pm.test('[EQ-SEC-09] en-têtes de sécurité présents', () => {",
+                  "  pm.expect(pm.response.headers.get('X-Content-Type-Options')).to.eql('nosniff');",
+                  "  pm.expect(pm.response.headers.get('X-Frame-Options')).to.eql('DENY');",
+                  "  pm.expect(pm.response.headers.get('Content-Security-Policy')).to.include(\"frame-ancestors 'none'\");",
+                  "});",
+                  "pm.test('[EQ-PERF-01] temps de réponse < 500 ms', () => pm.expect(pm.response.responseTime).to.be.below(500));"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "[EF-02][EQ-SEC-03] Adhérent : tableau de bord interdit",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{memberToken}}"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/dashboard",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "dashboard"
+              ],
+              "query": []
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('statut HTTP 403', () => pm.response.to.have.status(403));",
+                  "pm.test('[EQ-SEC-09] en-têtes de sécurité présents', () => {",
+                  "  pm.expect(pm.response.headers.get('X-Content-Type-Options')).to.eql('nosniff');",
+                  "  pm.expect(pm.response.headers.get('X-Frame-Options')).to.eql('DENY');",
+                  "  pm.expect(pm.response.headers.get('Content-Security-Policy')).to.include(\"frame-ancestors 'none'\");",
+                  "});",
+                  "pm.test('[EQ-PERF-01] temps de réponse < 500 ms', () => pm.expect(pm.response.responseTime).to.be.below(500));"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "[EF-13] Journal d'audit filtré",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{adminToken}}"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/audit?action=LOAN_RETURNED&size=5",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "audit"
+              ],
+              "query": [
+                {
+                  "key": "action",
+                  "value": "LOAN_RETURNED"
+                },
+                {
+                  "key": "size",
+                  "value": "5"
+                }
+              ]
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('statut HTTP 200', () => pm.response.to.have.status(200));",
+                  "const p = pm.response.json();",
+                  "pm.test('au moins une entrée', () => pm.expect(p.total).to.be.above(0));",
+                  "pm.test('qui/quoi/quand', () => pm.expect(p.items[0]).to.include.all.keys('timestamp','user_email','action','entity_type','entity_id','ip_address'));",
+                  "pm.test('[EQ-SEC-09] en-têtes de sécurité présents', () => {",
+                  "  pm.expect(pm.response.headers.get('X-Content-Type-Options')).to.eql('nosniff');",
+                  "  pm.expect(pm.response.headers.get('X-Frame-Options')).to.eql('DENY');",
+                  "  pm.expect(pm.response.headers.get('Content-Security-Policy')).to.include(\"frame-ancestors 'none'\");",
+                  "});",
+                  "pm.test('[EQ-PERF-01] temps de réponse < 500 ms', () => pm.expect(pm.response.responseTime).to.be.below(500));"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "[EF-02][EQ-SEC-03] Bibliothécaire : audit interdit",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{staffToken}}"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/audit",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "audit"
+              ],
+              "query": []
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('statut HTTP 403', () => pm.response.to.have.status(403));",
+                  "pm.test('[EQ-SEC-09] en-têtes de sécurité présents', () => {",
+                  "  pm.expect(pm.response.headers.get('X-Content-Type-Options')).to.eql('nosniff');",
+                  "  pm.expect(pm.response.headers.get('X-Frame-Options')).to.eql('DENY');",
+                  "  pm.expect(pm.response.headers.get('Content-Security-Policy')).to.include(\"frame-ancestors 'none'\");",
+                  "});",
+                  "pm.test('[EQ-PERF-01] temps de réponse < 500 ms', () => pm.expect(pm.response.responseTime).to.be.below(500));"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "[EQ-COMP-02] Contrat OpenAPI publié",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/api/openapi.json",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "openapi.json"
+              ],
+              "query": []
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('statut HTTP 200', () => pm.response.to.have.status(200));",
+                  "pm.test('OpenAPI 3.x', () => pm.expect(pm.response.json().openapi).to.match(/^3\\./));",
+                  "pm.test('[EQ-SEC-09] en-têtes de sécurité présents', () => {",
+                  "  pm.expect(pm.response.headers.get('X-Content-Type-Options')).to.eql('nosniff');",
+                  "  pm.expect(pm.response.headers.get('X-Frame-Options')).to.eql('DENY');",
+                  "  pm.expect(pm.response.headers.get('Content-Security-Policy')).to.include(\"frame-ancestors 'none'\");",
+                  "});",
+                  "pm.test('[EQ-PERF-01] temps de réponse < 500 ms', () => pm.expect(pm.response.responseTime).to.be.below(500));"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "variable": [
+    {
+      "key": "staffToken",
+      "value": ""
+    },
+    {
+      "key": "adminToken",
+      "value": ""
+    },
+    {
+      "key": "memberToken",
+      "value": ""
+    },
+    {
+      "key": "memberId",
+      "value": ""
+    },
+    {
+      "key": "categoryId",
+      "value": ""
+    },
+    {
+      "key": "authorId",
+      "value": ""
+    },
+    {
+      "key": "bookId",
+      "value": ""
+    },
+    {
+      "key": "loanId",
+      "value": ""
+    },
+    {
+      "key": "penaltyId",
+      "value": ""
+    },
+    {
+      "key": "isbn",
+      "value": ""
+    },
+    {
+      "key": "suffix",
+      "value": ""
+    }
+  ]
+}
