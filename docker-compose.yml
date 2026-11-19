@@ -1,0 +1,45 @@
+# Installation reproductible : `docker compose up -d --build` puis http://localhost:8080
+name: bibliotrack
+
+services:
+  db:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_DB: biblio
+      POSTGRES_USER: biblio
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-biblio_dev_password}
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U biblio -d biblio"]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+    restart: unless-stopped
+
+  backend:
+    build: ./backend
+    environment:
+      BIBLIO_ENVIRONMENT: production
+      BIBLIO_DATABASE_URL: postgresql+psycopg://biblio:${POSTGRES_PASSWORD:-biblio_dev_password}@db:5432/biblio
+      BIBLIO_JWT_SECRET: ${JWT_SECRET:-dev-only-secret-change-me-0123456789abcdef}
+      BIBLIO_SEED_ON_STARTUP: ${SEED_DEMO_DATA:-true}
+      BIBLIO_CORS_ORIGINS: '["http://localhost:${FRONTEND_PORT:-8080}"]'
+    depends_on:
+      db:
+        condition: service_healthy
+    ports:
+      - "${BACKEND_PORT:-8000}:8000"
+    restart: unless-stopped
+
+  frontend:
+    build: ./frontend
+    depends_on:
+      backend:
+        condition: service_healthy
+    ports:
+      - "${FRONTEND_PORT:-8080}:8080"
+    restart: unless-stopped
+
+volumes:
+  pgdata:
