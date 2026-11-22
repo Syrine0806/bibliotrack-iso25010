@@ -1,0 +1,41 @@
+Run started:2026-11-24 19:18:37.058517+00:00
+
+Test results:
+>> Issue: [B311:blacklist] Standard pseudo-random generators are not suitable for security/cryptographic purposes.
+   Severity: Low   Confidence: High
+   CWE: CWE-330 (https://cwe.mitre.org/data/definitions/330.html)
+   More Info: https://bandit.readthedocs.io/en/1.9.4/blacklists/blacklist_calls.html#b311-random
+   Location: app/seed.py:262:10
+261	        return False
+262	    rng = random.Random(25010)  # noqa: S311 - données de démo, pas de cryptographie
+263	    member_ids = _users(db, rng, members)
+
+--------------------------------------------------
+>> Issue: [B105:hardcoded_password_string] Possible hardcoded password: '***'
+   Severity: Low   Confidence: Medium
+   CWE: CWE-259 (https://cwe.mitre.org/data/definitions/259.html)
+   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b105_hardcoded_password_string.html
+   Location: app/services/users.py:132:16
+131	        user.hashed_password = hash_password(changes.pop("password"))
+132	        changes["password"] = "***"  # noqa: S105 - masquage dans le journal d audit
+133	    for field in ("full_name", "role", "is_active"):
+
+--------------------------------------------------
+
+Code scanned:
+	Total lines of code: 2693
+	Total lines skipped (#nosec): 0
+	Total potential issues skipped due to specifically being disabled (e.g., #nosec BXXX): 0
+
+Run metrics:
+	Total issues (by severity):
+		Undefined: 0
+		Low: 2
+		Medium: 0
+		High: 0
+	Total issues (by confidence):
+		Undefined: 0
+		Low: 0
+		Medium: 1
+		High: 1
+Files skipped (0):
