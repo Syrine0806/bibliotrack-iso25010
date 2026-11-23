@@ -1,0 +1,218 @@
+<testsuites id="" name="" tests="90" failures="0" skipped="1" errors="0" time="51.216452999999994">
+<testsuite name="admin.spec.ts" timestamp="2026-11-24T20:25:07.962Z" hostname="chromium" tests="3" failures="0" skipped="0" time="4.71" errors="0">
+<testcase name="Pilotage et administration › [EF-11] tableau de bord : indicateurs agrégés et filtres" classname="admin.spec.ts" time="1.619">
+</testcase>
+<testcase name="Pilotage et administration › [EF-07][EF-02] l&apos;administrateur crée un bibliothécaire puis modifie son rôle" classname="admin.spec.ts" time="1.56">
+</testcase>
+<testcase name="Pilotage et administration › [EF-13] le journal d&apos;audit trace les actions sensibles et se filtre" classname="admin.spec.ts" time="1.531">
+</testcase>
+</testsuite>
+<testsuite name="auth.spec.ts" timestamp="2026-11-24T20:25:07.962Z" hostname="chromium" tests="7" failures="0" skipped="0" time="10.605" errors="0">
+<testcase name="Authentification et rôles › [EF-01][EF-02] l&apos;administrateur accède à toutes les rubriques" classname="auth.spec.ts" time="1.47">
+</testcase>
+<testcase name="Authentification et rôles › [EF-01][EF-02] le bibliothécaire n&apos;a pas accès au journal d&apos;audit" classname="auth.spec.ts" time="1.129">
+</testcase>
+<testcase name="Authentification et rôles › [EF-01][EF-02][EQ-SEC-03] l&apos;adhérent arrive sur le catalogue avec un menu restreint" classname="auth.spec.ts" time="1.157">
+</testcase>
+<testcase name="Authentification et rôles › [EF-01][EQ-SEC-04] un mauvais mot de passe affiche un message générique" classname="auth.spec.ts" time="1.106">
+</testcase>
+<testcase name="Authentification et rôles › [EF-01][RG-10] le compte est verrouillé après 5 échecs" classname="auth.spec.ts" time="2.235">
+</testcase>
+<testcase name="Authentification et rôles › [EF-01][EQ-USA-01] inscription d&apos;un adhérent puis connexion" classname="auth.spec.ts" time="2.879">
+</testcase>
+<testcase name="Authentification et rôles › [EF-01] la déconnexion protège les pages" classname="auth.spec.ts" time="0.629">
+</testcase>
+</testsuite>
+<testsuite name="catalog.spec.ts" timestamp="2026-11-24T20:25:07.962Z" hostname="chromium" tests="6" failures="0" skipped="0" time="8.49" errors="0">
+<testcase name="Catalogue › [EF-12] recherche plein texte, filtres et pagination sur ~5000 ouvrages" classname="catalog.spec.ts" time="0.814">
+</testcase>
+<testcase name="Catalogue › [EF-12] recherche sans résultat" classname="catalog.spec.ts" time="0.618">
+</testcase>
+<testcase name="Catalogue › [EF-05][EF-06][RG-01] le bibliothécaire crée un ouvrage puis ajoute un exemplaire" classname="catalog.spec.ts" time="0.831">
+</testcase>
+<testcase name="Catalogue › [EF-06][RG-12] un code-barres en double est refusé avec un message clair" classname="catalog.spec.ts" time="1.101">
+</testcase>
+<testcase name="Catalogue › [EF-06][RG-04] mise en réparation d&apos;un exemplaire" classname="catalog.spec.ts" time="1.124">
+</testcase>
+<testcase name="Catalogue › [EF-14][EQ-COMP-02] pré-remplissage par ISBN via le service tiers Open Library" classname="catalog.spec.ts" time="4.002">
+</testcase>
+</testsuite>
+<testsuite name="circulation.spec.ts" timestamp="2026-11-24T20:25:07.962Z" hostname="chromium" tests="4" failures="0" skipped="0" time="10.896" errors="0">
+<testcase name="Parcours de circulation › [EF-08][WF-01][RG-05] emprunt au comptoir, prolongation par l&apos;adhérent, retour" classname="circulation.spec.ts" time="2.611">
+</testcase>
+<testcase name="Parcours de circulation › [EF-08][RG-02] le quota de 5 emprunts est appliqué et expliqué" classname="circulation.spec.ts" time="3.495">
+</testcase>
+<testcase name="Parcours de circulation › [EF-09][WF-02][RG-07][RG-08] réservation d&apos;un ouvrage indisponible, file d&apos;attente et annulation" classname="circulation.spec.ts" time="1.78">
+</testcase>
+<testcase name="Parcours de circulation › [EF-10][WF-03][RG-03][RG-06] retard → pénalité → blocage → encaissement" classname="circulation.spec.ts" time="3.01">
+</testcase>
+</testsuite>
+<testsuite name="usability.spec.ts" timestamp="2026-11-24T20:25:07.962Z" hostname="chromium" tests="10" failures="0" skipped="0" time="12.875" errors="0">
+<testcase name="Facilité d&apos;utilisation et accessibilité › [EQ-USA-02] page de connexion accessible" classname="usability.spec.ts" time="1.007">
+</testcase>
+<testcase name="Facilité d&apos;utilisation et accessibilité › [EQ-USA-02] page catalogue accessible (WCAG 2.1 AA)" classname="usability.spec.ts" time="1.501">
+</testcase>
+<testcase name="Facilité d&apos;utilisation et accessibilité › [EQ-USA-02] page emprunts accessible (WCAG 2.1 AA)" classname="usability.spec.ts" time="1.575">
+</testcase>
+<testcase name="Facilité d&apos;utilisation et accessibilité › [EQ-USA-02] page tableau-de-bord accessible (WCAG 2.1 AA)" classname="usability.spec.ts" time="1.475">
+</testcase>
+<testcase name="Facilité d&apos;utilisation et accessibilité › [EQ-USA-02] page utilisateurs accessible (WCAG 2.1 AA)" classname="usability.spec.ts" time="1.629">
+</testcase>
+<testcase name="Facilité d&apos;utilisation et accessibilité › [EQ-USA-02] page audit accessible (WCAG 2.1 AA)" classname="usability.spec.ts" time="1.594">
+</testcase>
+<testcase name="Facilité d&apos;utilisation et accessibilité › [EQ-USA-02] page referentiels accessible (WCAG 2.1 AA)" classname="usability.spec.ts" time="1.715">
+</testcase>
+<testcase name="Facilité d&apos;utilisation et accessibilité › [EQ-USA-01] connexion et navigation entièrement au clavier" classname="usability.spec.ts" time="0.545">
+</testcase>
+<testcase name="Facilité d&apos;utilisation et accessibilité › [EQ-USA-01] messages d&apos;erreur compréhensibles et en français" classname="usability.spec.ts" time="0.725">
+</testcase>
+<testcase name="Facilité d&apos;utilisation et accessibilité › [EQ-USA-01][EQ-COMP-01] affichage responsive sur mobile" classname="usability.spec.ts" time="1.109">
+</testcase>
+</testsuite>
+<testsuite name="admin.spec.ts" timestamp="2026-11-24T20:25:07.962Z" hostname="firefox" tests="3" failures="0" skipped="0" time="9.472" errors="0">
+<testcase name="Pilotage et administration › [EF-11] tableau de bord : indicateurs agrégés et filtres" classname="admin.spec.ts" time="2.733">
+</testcase>
+<testcase name="Pilotage et administration › [EF-07][EF-02] l&apos;administrateur crée un bibliothécaire puis modifie son rôle" classname="admin.spec.ts" time="3.695">
+</testcase>
+<testcase name="Pilotage et administration › [EF-13] le journal d&apos;audit trace les actions sensibles et se filtre" classname="admin.spec.ts" time="3.044">
+</testcase>
+</testsuite>
+<testsuite name="auth.spec.ts" timestamp="2026-11-24T20:25:07.962Z" hostname="firefox" tests="7" failures="0" skipped="0" time="17.27" errors="0">
+<testcase name="Authentification et rôles › [EF-01][EF-02] l&apos;administrateur accède à toutes les rubriques" classname="auth.spec.ts" time="2.983">
+</testcase>
+<testcase name="Authentification et rôles › [EF-01][EF-02] le bibliothécaire n&apos;a pas accès au journal d&apos;audit" classname="auth.spec.ts" time="1.812">
+</testcase>
+<testcase name="Authentification et rôles › [EF-01][EF-02][EQ-SEC-03] l&apos;adhérent arrive sur le catalogue avec un menu restreint" classname="auth.spec.ts" time="1.237">
+</testcase>
+<testcase name="Authentification et rôles › [EF-01][EQ-SEC-04] un mauvais mot de passe affiche un message générique" classname="auth.spec.ts" time="1.5">
+</testcase>
+<testcase name="Authentification et rôles › [EF-01][RG-10] le compte est verrouillé après 5 échecs" classname="auth.spec.ts" time="3.951">
+</testcase>
+<testcase name="Authentification et rôles › [EF-01][EQ-USA-01] inscription d&apos;un adhérent puis connexion" classname="auth.spec.ts" time="4.532">
+</testcase>
+<testcase name="Authentification et rôles › [EF-01] la déconnexion protège les pages" classname="auth.spec.ts" time="1.255">
+</testcase>
+</testsuite>
+<testsuite name="catalog.spec.ts" timestamp="2026-11-24T20:25:07.962Z" hostname="firefox" tests="6" failures="0" skipped="0" time="13.767" errors="0">
+<testcase name="Catalogue › [EF-12] recherche plein texte, filtres et pagination sur ~5000 ouvrages" classname="catalog.spec.ts" time="1.294">
+</testcase>
+<testcase name="Catalogue › [EF-12] recherche sans résultat" classname="catalog.spec.ts" time="0.993">
+</testcase>
+<testcase name="Catalogue › [EF-05][EF-06][RG-01] le bibliothécaire crée un ouvrage puis ajoute un exemplaire" classname="catalog.spec.ts" time="2.633">
+</testcase>
+<testcase name="Catalogue › [EF-06][RG-12] un code-barres en double est refusé avec un message clair" classname="catalog.spec.ts" time="2.677">
+</testcase>
+<testcase name="Catalogue › [EF-06][RG-04] mise en réparation d&apos;un exemplaire" classname="catalog.spec.ts" time="1.874">
+</testcase>
+<testcase name="Catalogue › [EF-14][EQ-COMP-02] pré-remplissage par ISBN via le service tiers Open Library" classname="catalog.spec.ts" time="4.296">
+</testcase>
+</testsuite>
+<testsuite name="circulation.spec.ts" timestamp="2026-11-24T20:25:07.962Z" hostname="firefox" tests="4" failures="0" skipped="0" time="12.801" errors="0">
+<testcase name="Parcours de circulation › [EF-08][WF-01][RG-05] emprunt au comptoir, prolongation par l&apos;adhérent, retour" classname="circulation.spec.ts" time="3.331">
+</testcase>
+<testcase name="Parcours de circulation › [EF-08][RG-02] le quota de 5 emprunts est appliqué et expliqué" classname="circulation.spec.ts" time="3.646">
+</testcase>
+<testcase name="Parcours de circulation › [EF-09][WF-02][RG-07][RG-08] réservation d&apos;un ouvrage indisponible, file d&apos;attente et annulation" classname="circulation.spec.ts" time="2.278">
+</testcase>
+<testcase name="Parcours de circulation › [EF-10][WF-03][RG-03][RG-06] retard → pénalité → blocage → encaissement" classname="circulation.spec.ts" time="3.546">
+</testcase>
+</testsuite>
+<testsuite name="usability.spec.ts" timestamp="2026-11-24T20:25:07.962Z" hostname="firefox" tests="10" failures="0" skipped="0" time="19.852" errors="0">
+<testcase name="Facilité d&apos;utilisation et accessibilité › [EQ-USA-02] page de connexion accessible" classname="usability.spec.ts" time="1.427">
+</testcase>
+<testcase name="Facilité d&apos;utilisation et accessibilité › [EQ-USA-02] page catalogue accessible (WCAG 2.1 AA)" classname="usability.spec.ts" time="2.177">
+</testcase>
+<testcase name="Facilité d&apos;utilisation et accessibilité › [EQ-USA-02] page emprunts accessible (WCAG 2.1 AA)" classname="usability.spec.ts" time="2.327">
+</testcase>
+<testcase name="Facilité d&apos;utilisation et accessibilité › [EQ-USA-02] page tableau-de-bord accessible (WCAG 2.1 AA)" classname="usability.spec.ts" time="2.178">
+</testcase>
+<testcase name="Facilité d&apos;utilisation et accessibilité › [EQ-USA-02] page utilisateurs accessible (WCAG 2.1 AA)" classname="usability.spec.ts" time="2.966">
+</testcase>
+<testcase name="Facilité d&apos;utilisation et accessibilité › [EQ-USA-02] page audit accessible (WCAG 2.1 AA)" classname="usability.spec.ts" time="2.314">
+</testcase>
+<testcase name="Facilité d&apos;utilisation et accessibilité › [EQ-USA-02] page referentiels accessible (WCAG 2.1 AA)" classname="usability.spec.ts" time="2.49">
+</testcase>
+<testcase name="Facilité d&apos;utilisation et accessibilité › [EQ-USA-01] connexion et navigation entièrement au clavier" classname="usability.spec.ts" time="0.846">
+</testcase>
+<testcase name="Facilité d&apos;utilisation et accessibilité › [EQ-USA-01] messages d&apos;erreur compréhensibles et en français" classname="usability.spec.ts" time="2.182">
+</testcase>
+<testcase name="Facilité d&apos;utilisation et accessibilité › [EQ-USA-01][EQ-COMP-01] affichage responsive sur mobile" classname="usability.spec.ts" time="0.945">
+</testcase>
+</testsuite>
+<testsuite name="admin.spec.ts" timestamp="2026-11-24T20:25:07.962Z" hostname="webkit" tests="3" failures="0" skipped="0" time="8.422" errors="0">
+<testcase name="Pilotage et administration › [EF-11] tableau de bord : indicateurs agrégés et filtres" classname="admin.spec.ts" time="2.147">
+</testcase>
+<testcase name="Pilotage et administration › [EF-07][EF-02] l&apos;administrateur crée un bibliothécaire puis modifie son rôle" classname="admin.spec.ts" time="3.688">
+</testcase>
+<testcase name="Pilotage et administration › [EF-13] le journal d&apos;audit trace les actions sensibles et se filtre" classname="admin.spec.ts" time="2.587">
+</testcase>
+</testsuite>
+<testsuite name="auth.spec.ts" timestamp="2026-11-24T20:25:07.962Z" hostname="webkit" tests="7" failures="0" skipped="0" time="13.227" errors="0">
+<testcase name="Authentification et rôles › [EF-01][EF-02] l&apos;administrateur accède à toutes les rubriques" classname="auth.spec.ts" time="1.612">
+</testcase>
+<testcase name="Authentification et rôles › [EF-01][EF-02] le bibliothécaire n&apos;a pas accès au journal d&apos;audit" classname="auth.spec.ts" time="1.597">
+</testcase>
+<testcase name="Authentification et rôles › [EF-01][EF-02][EQ-SEC-03] l&apos;adhérent arrive sur le catalogue avec un menu restreint" classname="auth.spec.ts" time="1.093">
+</testcase>
+<testcase name="Authentification et rôles › [EF-01][EQ-SEC-04] un mauvais mot de passe affiche un message générique" classname="auth.spec.ts" time="0.924">
+</testcase>
+<testcase name="Authentification et rôles › [EF-01][RG-10] le compte est verrouillé après 5 échecs" classname="auth.spec.ts" time="3.18">
+</testcase>
+<testcase name="Authentification et rôles › [EF-01][EQ-USA-01] inscription d&apos;un adhérent puis connexion" classname="auth.spec.ts" time="3.814">
+</testcase>
+<testcase name="Authentification et rôles › [EF-01] la déconnexion protège les pages" classname="auth.spec.ts" time="1.007">
+</testcase>
+</testsuite>
+<testsuite name="catalog.spec.ts" timestamp="2026-11-24T20:25:07.962Z" hostname="webkit" tests="6" failures="0" skipped="0" time="9.82" errors="0">
+<testcase name="Catalogue › [EF-12] recherche plein texte, filtres et pagination sur ~5000 ouvrages" classname="catalog.spec.ts" time="1.262">
+</testcase>
+<testcase name="Catalogue › [EF-12] recherche sans résultat" classname="catalog.spec.ts" time="1.016">
+</testcase>
+<testcase name="Catalogue › [EF-05][EF-06][RG-01] le bibliothécaire crée un ouvrage puis ajoute un exemplaire" classname="catalog.spec.ts" time="1.478">
+</testcase>
+<testcase name="Catalogue › [EF-06][RG-12] un code-barres en double est refusé avec un message clair" classname="catalog.spec.ts" time="1.912">
+</testcase>
+<testcase name="Catalogue › [EF-06][RG-04] mise en réparation d&apos;un exemplaire" classname="catalog.spec.ts" time="1.799">
+</testcase>
+<testcase name="Catalogue › [EF-14][EQ-COMP-02] pré-remplissage par ISBN via le service tiers Open Library" classname="catalog.spec.ts" time="2.353">
+</testcase>
+</testsuite>
+<testsuite name="circulation.spec.ts" timestamp="2026-11-24T20:25:07.962Z" hostname="webkit" tests="4" failures="0" skipped="0" time="12.365" errors="0">
+<testcase name="Parcours de circulation › [EF-08][WF-01][RG-05] emprunt au comptoir, prolongation par l&apos;adhérent, retour" classname="circulation.spec.ts" time="3.023">
+</testcase>
+<testcase name="Parcours de circulation › [EF-08][RG-02] le quota de 5 emprunts est appliqué et expliqué" classname="circulation.spec.ts" time="3.469">
+</testcase>
+<testcase name="Parcours de circulation › [EF-09][WF-02][RG-07][RG-08] réservation d&apos;un ouvrage indisponible, file d&apos;attente et annulation" classname="circulation.spec.ts" time="2.454">
+</testcase>
+<testcase name="Parcours de circulation › [EF-10][WF-03][RG-03][RG-06] retard → pénalité → blocage → encaissement" classname="circulation.spec.ts" time="3.419">
+</testcase>
+</testsuite>
+<testsuite name="usability.spec.ts" timestamp="2026-11-24T20:25:07.962Z" hostname="webkit" tests="10" failures="0" skipped="1" time="20.106" errors="0">
+<testcase name="Facilité d&apos;utilisation et accessibilité › [EQ-USA-02] page de connexion accessible" classname="usability.spec.ts" time="1.393">
+</testcase>
+<testcase name="Facilité d&apos;utilisation et accessibilité › [EQ-USA-02] page catalogue accessible (WCAG 2.1 AA)" classname="usability.spec.ts" time="1.97">
+</testcase>
+<testcase name="Facilité d&apos;utilisation et accessibilité › [EQ-USA-02] page emprunts accessible (WCAG 2.1 AA)" classname="usability.spec.ts" time="2.597">
+</testcase>
+<testcase name="Facilité d&apos;utilisation et accessibilité › [EQ-USA-02] page tableau-de-bord accessible (WCAG 2.1 AA)" classname="usability.spec.ts" time="2.8">
+</testcase>
+<testcase name="Facilité d&apos;utilisation et accessibilité › [EQ-USA-02] page utilisateurs accessible (WCAG 2.1 AA)" classname="usability.spec.ts" time="2.841">
+</testcase>
+<testcase name="Facilité d&apos;utilisation et accessibilité › [EQ-USA-02] page audit accessible (WCAG 2.1 AA)" classname="usability.spec.ts" time="2.915">
+</testcase>
+<testcase name="Facilité d&apos;utilisation et accessibilité › [EQ-USA-02] page referentiels accessible (WCAG 2.1 AA)" classname="usability.spec.ts" time="2.714">
+</testcase>
+<testcase name="Facilité d&apos;utilisation et accessibilité › [EQ-USA-01] connexion et navigation entièrement au clavier" classname="usability.spec.ts">
+<properties>
+<property name="skip" value="WebKit/macOS ne tabule pas sur les liens par défaut (réglage OS)">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Facilité d&apos;utilisation et accessibilité › [EQ-USA-01] messages d&apos;erreur compréhensibles et en français" classname="usability.spec.ts" time="1.597">
+</testcase>
+<testcase name="Facilité d&apos;utilisation et accessibilité › [EQ-USA-01][EQ-COMP-01] affichage responsive sur mobile" classname="usability.spec.ts" time="0.982">
+</testcase>
+</testsuite>
+</testsuites>

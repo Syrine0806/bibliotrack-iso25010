@@ -1,0 +1,6 @@
+{
+  "page": "tableau-de-bord",
+  "url": "http://localhost:8080/dashboard",
+  "passes": 24,
+  "violations": []
+}

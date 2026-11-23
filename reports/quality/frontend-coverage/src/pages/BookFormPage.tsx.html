@@ -1,0 +1,517 @@
+
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Code coverage report for src/pages/BookFormPage.tsx</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../prettify.css" />
+    <link rel="stylesheet" href="../../base.css" />
+    <link rel="shortcut icon" type="image/x-icon" href="../../favicon.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+    
+<body>
+<div class='wrapper'>
+    <div class='pad1'>
+        <h1><a href="../../index.html">All files</a> / <a href="index.html">src/pages</a> BookFormPage.tsx</h1>
+        <div class='clearfix'>
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">0% </span>
+                <span class="quiet">Statements</span>
+                <span class='fraction'>0/48</span>
+            </div>
+        
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">0% </span>
+                <span class="quiet">Branches</span>
+                <span class='fraction'>0/46</span>
+            </div>
+        
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">0% </span>
+                <span class="quiet">Functions</span>
+                <span class='fraction'>0/23</span>
+            </div>
+        
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">0% </span>
+                <span class="quiet">Lines</span>
+                <span class='fraction'>0/40</span>
+            </div>
+        
+            
+        </div>
+        <p class="quiet">
+            Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
+        </p>
+        <template id="filterTemplate">
+            <div class="quiet">
+                Filter:
+                <input type="search" id="fileSearch">
+            </div>
+        </template>
+    </div>
+    <div class='status-line low'></div>
+    <pre><table class="coverage">
+<tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
+<a name='L2'></a><a href='#L2'>2</a>
+<a name='L3'></a><a href='#L3'>3</a>
+<a name='L4'></a><a href='#L4'>4</a>
+<a name='L5'></a><a href='#L5'>5</a>
+<a name='L6'></a><a href='#L6'>6</a>
+<a name='L7'></a><a href='#L7'>7</a>
+<a name='L8'></a><a href='#L8'>8</a>
+<a name='L9'></a><a href='#L9'>9</a>
+<a name='L10'></a><a href='#L10'>10</a>
+<a name='L11'></a><a href='#L11'>11</a>
+<a name='L12'></a><a href='#L12'>12</a>
+<a name='L13'></a><a href='#L13'>13</a>
+<a name='L14'></a><a href='#L14'>14</a>
+<a name='L15'></a><a href='#L15'>15</a>
+<a name='L16'></a><a href='#L16'>16</a>
+<a name='L17'></a><a href='#L17'>17</a>
+<a name='L18'></a><a href='#L18'>18</a>
+<a name='L19'></a><a href='#L19'>19</a>
+<a name='L20'></a><a href='#L20'>20</a>
+<a name='L21'></a><a href='#L21'>21</a>
+<a name='L22'></a><a href='#L22'>22</a>
+<a name='L23'></a><a href='#L23'>23</a>
+<a name='L24'></a><a href='#L24'>24</a>
+<a name='L25'></a><a href='#L25'>25</a>
+<a name='L26'></a><a href='#L26'>26</a>
+<a name='L27'></a><a href='#L27'>27</a>
+<a name='L28'></a><a href='#L28'>28</a>
+<a name='L29'></a><a href='#L29'>29</a>
+<a name='L30'></a><a href='#L30'>30</a>
+<a name='L31'></a><a href='#L31'>31</a>
+<a name='L32'></a><a href='#L32'>32</a>
+<a name='L33'></a><a href='#L33'>33</a>
+<a name='L34'></a><a href='#L34'>34</a>
+<a name='L35'></a><a href='#L35'>35</a>
+<a name='L36'></a><a href='#L36'>36</a>
+<a name='L37'></a><a href='#L37'>37</a>
+<a name='L38'></a><a href='#L38'>38</a>
+<a name='L39'></a><a href='#L39'>39</a>
+<a name='L40'></a><a href='#L40'>40</a>
+<a name='L41'></a><a href='#L41'>41</a>
+<a name='L42'></a><a href='#L42'>42</a>
+<a name='L43'></a><a href='#L43'>43</a>
+<a name='L44'></a><a href='#L44'>44</a>
+<a name='L45'></a><a href='#L45'>45</a>
+<a name='L46'></a><a href='#L46'>46</a>
+<a name='L47'></a><a href='#L47'>47</a>
+<a name='L48'></a><a href='#L48'>48</a>
+<a name='L49'></a><a href='#L49'>49</a>
+<a name='L50'></a><a href='#L50'>50</a>
+<a name='L51'></a><a href='#L51'>51</a>
+<a name='L52'></a><a href='#L52'>52</a>
+<a name='L53'></a><a href='#L53'>53</a>
+<a name='L54'></a><a href='#L54'>54</a>
+<a name='L55'></a><a href='#L55'>55</a>
+<a name='L56'></a><a href='#L56'>56</a>
+<a name='L57'></a><a href='#L57'>57</a>
+<a name='L58'></a><a href='#L58'>58</a>
+<a name='L59'></a><a href='#L59'>59</a>
+<a name='L60'></a><a href='#L60'>60</a>
+<a name='L61'></a><a href='#L61'>61</a>
+<a name='L62'></a><a href='#L62'>62</a>
+<a name='L63'></a><a href='#L63'>63</a>
+<a name='L64'></a><a href='#L64'>64</a>
+<a name='L65'></a><a href='#L65'>65</a>
+<a name='L66'></a><a href='#L66'>66</a>
+<a name='L67'></a><a href='#L67'>67</a>
+<a name='L68'></a><a href='#L68'>68</a>
+<a name='L69'></a><a href='#L69'>69</a>
+<a name='L70'></a><a href='#L70'>70</a>
+<a name='L71'></a><a href='#L71'>71</a>
+<a name='L72'></a><a href='#L72'>72</a>
+<a name='L73'></a><a href='#L73'>73</a>
+<a name='L74'></a><a href='#L74'>74</a>
+<a name='L75'></a><a href='#L75'>75</a>
+<a name='L76'></a><a href='#L76'>76</a>
+<a name='L77'></a><a href='#L77'>77</a>
+<a name='L78'></a><a href='#L78'>78</a>
+<a name='L79'></a><a href='#L79'>79</a>
+<a name='L80'></a><a href='#L80'>80</a>
+<a name='L81'></a><a href='#L81'>81</a>
+<a name='L82'></a><a href='#L82'>82</a>
+<a name='L83'></a><a href='#L83'>83</a>
+<a name='L84'></a><a href='#L84'>84</a>
+<a name='L85'></a><a href='#L85'>85</a>
+<a name='L86'></a><a href='#L86'>86</a>
+<a name='L87'></a><a href='#L87'>87</a>
+<a name='L88'></a><a href='#L88'>88</a>
+<a name='L89'></a><a href='#L89'>89</a>
+<a name='L90'></a><a href='#L90'>90</a>
+<a name='L91'></a><a href='#L91'>91</a>
+<a name='L92'></a><a href='#L92'>92</a>
+<a name='L93'></a><a href='#L93'>93</a>
+<a name='L94'></a><a href='#L94'>94</a>
+<a name='L95'></a><a href='#L95'>95</a>
+<a name='L96'></a><a href='#L96'>96</a>
+<a name='L97'></a><a href='#L97'>97</a>
+<a name='L98'></a><a href='#L98'>98</a>
+<a name='L99'></a><a href='#L99'>99</a>
+<a name='L100'></a><a href='#L100'>100</a>
+<a name='L101'></a><a href='#L101'>101</a>
+<a name='L102'></a><a href='#L102'>102</a>
+<a name='L103'></a><a href='#L103'>103</a>
+<a name='L104'></a><a href='#L104'>104</a>
+<a name='L105'></a><a href='#L105'>105</a>
+<a name='L106'></a><a href='#L106'>106</a>
+<a name='L107'></a><a href='#L107'>107</a>
+<a name='L108'></a><a href='#L108'>108</a>
+<a name='L109'></a><a href='#L109'>109</a>
+<a name='L110'></a><a href='#L110'>110</a>
+<a name='L111'></a><a href='#L111'>111</a>
+<a name='L112'></a><a href='#L112'>112</a>
+<a name='L113'></a><a href='#L113'>113</a>
+<a name='L114'></a><a href='#L114'>114</a>
+<a name='L115'></a><a href='#L115'>115</a>
+<a name='L116'></a><a href='#L116'>116</a>
+<a name='L117'></a><a href='#L117'>117</a>
+<a name='L118'></a><a href='#L118'>118</a>
+<a name='L119'></a><a href='#L119'>119</a>
+<a name='L120'></a><a href='#L120'>120</a>
+<a name='L121'></a><a href='#L121'>121</a>
+<a name='L122'></a><a href='#L122'>122</a>
+<a name='L123'></a><a href='#L123'>123</a>
+<a name='L124'></a><a href='#L124'>124</a>
+<a name='L125'></a><a href='#L125'>125</a>
+<a name='L126'></a><a href='#L126'>126</a>
+<a name='L127'></a><a href='#L127'>127</a>
+<a name='L128'></a><a href='#L128'>128</a>
+<a name='L129'></a><a href='#L129'>129</a>
+<a name='L130'></a><a href='#L130'>130</a>
+<a name='L131'></a><a href='#L131'>131</a>
+<a name='L132'></a><a href='#L132'>132</a>
+<a name='L133'></a><a href='#L133'>133</a>
+<a name='L134'></a><a href='#L134'>134</a>
+<a name='L135'></a><a href='#L135'>135</a>
+<a name='L136'></a><a href='#L136'>136</a>
+<a name='L137'></a><a href='#L137'>137</a>
+<a name='L138'></a><a href='#L138'>138</a>
+<a name='L139'></a><a href='#L139'>139</a>
+<a name='L140'></a><a href='#L140'>140</a>
+<a name='L141'></a><a href='#L141'>141</a>
+<a name='L142'></a><a href='#L142'>142</a>
+<a name='L143'></a><a href='#L143'>143</a>
+<a name='L144'></a><a href='#L144'>144</a>
+<a name='L145'></a><a href='#L145'>145</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { useEffect, useState } from "react";
+import type { FormEvent } from "react";
+import { Link, useNavigate, useParams } from "react-router";
+import { api } from "../api/client";
+import type { Author, Book, Category, IsbnLookup } from "../api/types";
+import { Alert, Field, useAction, useAsync } from "../components/ui";
+import { isValidIsbn } from "../utils/format";
+&nbsp;
+interface BookForm {
+  isbn: string;
+  title: string;
+  publisher: string;
+  publication_year: string;
+  summary: string;
+  category_id: string;
+  author_ids: string[];
+}
+&nbsp;
+const EMPTY: BookForm = <span class="cstat-no" title="statement not covered" >{ isbn: "", title: "", publisher: "", publication_year: "", summary: "", category_id: "", author_ids: [] };</span>
+&nbsp;
+export function <span class="fstat-no" title="function not covered" >BookFormPage() {</span>
+  const { id } = <span class="cstat-no" title="statement not covered" >useParams()</span>;
+  const editing = <span class="cstat-no" title="statement not covered" >Boolean(id);</span>
+  const navigate = <span class="cstat-no" title="statement not covered" >useNavigate()</span>;
+  const [form, setForm] = <span class="cstat-no" title="statement not covered" >useState&lt;BookForm&gt;(EMPTY);</span>
+  const [lookupInfo, setLookupInfo] = <span class="cstat-no" title="statement not covered" >useState("");</span>
+  const action = <span class="cstat-no" title="statement not covered" >useAction()</span>;
+  const categories = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >useAsync(() =&gt; <span class="cstat-no" title="statement not covered" >a</span>pi.get&lt;Category[]&gt;("/categories"), [</span>]);</span>
+  const authors = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >useAsync(() =&gt; <span class="cstat-no" title="statement not covered" >a</span>pi.get&lt;Author[]&gt;("/authors"), [</span>]);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >  useEffect(() =&gt; {</span></span>
+<span class="cstat-no" title="statement not covered" >    if (!id) <span class="cstat-no" title="statement not covered" >return;</span></span>
+<span class="cstat-no" title="statement not covered" >    api.get&lt;Book&gt;(`/books/${id}`).<span class="fstat-no" title="function not covered" >then((b</span>) =&gt;</span>
+<span class="cstat-no" title="statement not covered" >      setForm({</span>
+        isbn: b.isbn,
+        title: b.title,
+        publisher: b.publisher ?? "",
+        publication_year: b.publication_year?.toString() ?? "",
+        summary: b.summary ?? "",
+        category_id: String(b.category.id),
+        author_ids: b.authors.<span class="fstat-no" title="function not covered" >map((a</span>) =&gt; <span class="cstat-no" title="statement not covered" >String(a.id))</span>,
+      }),
+    );
+  }, [id]);
+&nbsp;
+  const isbnOk = <span class="cstat-no" title="statement not covered" >form.isbn === "" || isValidIsbn(form.isbn);</span>
+&nbsp;
+  async function <span class="fstat-no" title="function not covered" >lookup() {</span>
+<span class="cstat-no" title="statement not covered" >    setLookupInfo("Interrogation d'Open Library…");</span>
+<span class="cstat-no" title="statement not covered" >    try {</span>
+      const r = <span class="cstat-no" title="statement not covered" >await api.get&lt;IsbnLookup&gt;(`/books/lookup/${encodeURIComponent(form.isbn)}`);</span>
+<span class="cstat-no" title="statement not covered" >      if (r.found) {</span>
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >        setForm((f</span>) =&gt; (<span class="cstat-no" title="statement not covered" >{</span></span>
+          ...f,
+          title: r.title ?? f.title,
+          publisher: r.publisher ?? f.publisher,
+          publication_year: r.publication_year?.toString() ?? f.publication_year,
+        }));
+<span class="cstat-no" title="statement not covered" >        setLookupInfo(`Trouvé sur Open Library${r.authors.length ? ` — auteur(s) : ${r.authors.join(", ")}` : ""}.`);</span>
+      } else {
+<span class="cstat-no" title="statement not covered" >        setLookupInfo(r.message ?? "Aucune donnée trouvée.");</span>
+      }
+    } catch (e) {
+<span class="cstat-no" title="statement not covered" >      setLookupInfo(e instanceof Error ? e.message : "Recherche impossible.");</span>
+    }
+  }
+&nbsp;
+  async function <span class="fstat-no" title="function not covered" >submit(e</span>: FormEvent) {
+<span class="cstat-no" title="statement not covered" >    e.preventDefault();</span>
+    const payload = <span class="cstat-no" title="statement not covered" >{</span>
+      ...form,
+      publication_year: form.publication_year ? Number(form.publication_year) : null,
+      publisher: form.publisher || null,
+      summary: form.summary || null,
+      category_id: Number(form.category_id),
+      author_ids: form.author_ids.map(Number),
+    };
+    let saved: Book | undefined;
+    const ok = <span class="cstat-no" title="statement not covered" >await action.run(<span class="fstat-no" title="function not covered" >async () =&gt; {</span></span>
+<span class="cstat-no" title="statement not covered" >      saved = editing ? await api.put&lt;Book&gt;(`/books/${id}`, payload) : await api.post&lt;Book&gt;("/books", payload);</span>
+    }, "Ouvrage enregistré.");
+<span class="cstat-no" title="statement not covered" >    if (ok &amp;&amp; saved) <span class="cstat-no" title="statement not covered" >navigate(`/catalogue/${saved.id}`);</span></span>
+  }
+&nbsp;
+  const <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >set = (<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >k</span>ey: keyof BookForm) =&gt; (e</span>: { target: { value: string } }) =&gt; <span class="cstat-no" title="statement not covered" >setForm({ ...form, [key]: e.target.value });</span></span></span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >  return (</span>
+    &lt;section&gt;
+      &lt;p&gt;
+        &lt;Link to="/catalogue"&gt;← Retour au catalogue&lt;/Link&gt;
+      &lt;/p&gt;
+      &lt;h1&gt;{editing ? "Modifier l'ouvrage" : "Nouvel ouvrage"}&lt;/h1&gt;
+      &lt;form className="card form-grid" onSubmit={submit}&gt;
+        &lt;Field label="ISBN" hint={isbnOk ? "ISBN-10 ou ISBN-13, tirets acceptés." : "Clé de contrôle ISBN invalide."}&gt;
+          {(<span class="fstat-no" title="function not covered" >fid, h</span>int) =&gt; (
+<span class="cstat-no" title="statement not covered" >            &lt;div className="input-group"&gt;</span>
+              &lt;input id={fid} required value={form.isbn} aria-invalid={!isbnOk} aria-describedby={hint} onChange={set("isbn")} /&gt;
+              &lt;button type="button" className="secondary" onClick={lookup} disabled={!form.isbn || !isbnOk}&gt;
+                Rechercher (Open Library)
+              &lt;/button&gt;
+            &lt;/div&gt;
+          )}
+        &lt;/Field&gt;
+        {lookupInfo &amp;&amp; &lt;p className="muted" role="status"&gt;{lookupInfo}&lt;/p&gt;}
+        &lt;Field label="Titre"&gt;{(<span class="fstat-no" title="function not covered" >fid) =&gt; <span class="cstat-no" title="statement not covered" >&lt;</span>input id={fid} required maxLength={255} value={form.title} onChange={set("title")} /&gt;}&lt;/Field&gt;</span>
+        &lt;Field label="Éditeur"&gt;{(<span class="fstat-no" title="function not covered" >fid) =&gt; <span class="cstat-no" title="statement not covered" >&lt;</span>input id={fid} value={form.publisher} onChange={set("publisher")} /&gt;}&lt;/Field&gt;</span>
+        &lt;Field label="Année de publication"&gt;
+          {(<span class="fstat-no" title="function not covered" >fid) =&gt; <span class="cstat-no" title="statement not covered" >&lt;</span>input id={fid} type="number" min={1450} max={2100} value={form.publication_year} onChange={set("publication_year")} /&gt;}</span>
+        &lt;/Field&gt;
+        &lt;Field label="Catégorie"&gt;
+          {(<span class="fstat-no" title="function not covered" >fid) =&gt; (</span>
+<span class="cstat-no" title="statement not covered" >            &lt;select id={fid} required value={form.category_id} onChange={set("category_id")}&gt;</span>
+              &lt;option value=""&gt;— Choisir —&lt;/option&gt;
+              {categories.data?.<span class="fstat-no" title="function not covered" >map((c</span>) =&gt; (
+<span class="cstat-no" title="statement not covered" >                &lt;option key={c.id} value={c.id}&gt;</span>
+                  {c.name}
+                &lt;/option&gt;
+              ))}
+            &lt;/select&gt;
+          )}
+        &lt;/Field&gt;
+        &lt;Field label="Auteur(s)" hint="Ctrl/Cmd + clic pour une sélection multiple."&gt;
+          {(<span class="fstat-no" title="function not covered" >fid, h</span>int) =&gt; (
+<span class="cstat-no" title="statement not covered" >            &lt;select id={fid} multiple required size={6} aria-describedby={hint} value={form.author_ids}</span>
+<span class="fstat-no" title="function not covered" >              onChange={(e</span>) =&gt; <span class="cstat-no" title="statement not covered" >setForm({ ...form, author_ids: [...e.target.selectedOptions].<span class="fstat-no" title="function not covered" >map((o</span>) =&gt; <span class="cstat-no" title="statement not covered" >o.value)</span> })}&gt;</span>
+              {authors.data?.<span class="fstat-no" title="function not covered" >map((a</span>) =&gt; (
+<span class="cstat-no" title="statement not covered" >                &lt;option key={a.id} value={a.id}&gt;</span>
+                  {a.full_name}
+                &lt;/option&gt;
+              ))}
+            &lt;/select&gt;
+          )}
+        &lt;/Field&gt;
+        &lt;Field label="Résumé"&gt;{(<span class="fstat-no" title="function not covered" >fid) =&gt; <span class="cstat-no" title="statement not covered" >&lt;</span>textarea id={fid} rows={4} maxLength={5000} value={form.summary} onChange={set("summary")} /&gt;}&lt;/Field&gt;</span>
+        &lt;Alert kind="error"&gt;{action.error}&lt;/Alert&gt;
+        &lt;div className="actions"&gt;
+          &lt;button type="submit" disabled={action.busy || !isbnOk}&gt;
+            Enregistrer
+          &lt;/button&gt;
+        &lt;/div&gt;
+      &lt;/form&gt;
+    &lt;/section&gt;
+  );
+}
+&nbsp;</pre></td></tr></table></pre>
+
+                <div class='push'></div><!-- for sticky footer -->
+            </div><!-- /wrapper -->
+            <div class='footer quiet pad2 space-top1 center small'>
+                Code coverage generated by
+                <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
+                at 2026-11-24T20:24:35.727Z
+            </div>
+        <script src="../../prettify.js"></script>
+        <script>
+            window.onload = function () {
+                prettyPrint();
+            };
+        </script>
+        <script src="../../sorter.js"></script>
+        <script src="../../block-navigation.js"></script>
+    </body>
+</html>
+    

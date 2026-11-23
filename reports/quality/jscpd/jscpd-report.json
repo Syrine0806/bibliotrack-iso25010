@@ -1,0 +1,209 @@
+{
+  "duplicates": [
+    {
+      "firstFile": {
+        "end": 184,
+        "endLoc": {
+          "column": 32,
+          "line": 184,
+          "position": 8536
+        },
+        "name": "pages/AdminPages.tsx",
+        "start": 172,
+        "startLoc": {
+          "column": 79,
+          "line": 172,
+          "position": 8214
+        }
+      },
+      "format": "tsx",
+      "fragment": "              {ROLES.map((r) => <option key={r} value={r}>{label(r)}</option>)}\n            </select>\n          )}\n        </Field>\n      </div>\n      <Alert kind=\"error\">{action.error || list.error}</Alert>\n      <Alert kind=\"success\">{action.success}</Alert>\n      {list.data && (\n        <>\n          <table className=\"table\">\n            <thead>\n              <tr>\n                <th scope=\"col\">Nom</th>",
+      "isNew": false,
+      "kind": "exact",
+      "lines": 13,
+      "secondFile": {
+        "end": 222,
+        "endLoc": {
+          "column": 32,
+          "line": 222,
+          "position": 9203
+        },
+        "name": "pages/CirculationPages.tsx",
+        "start": 210,
+        "startLoc": {
+          "column": 55,
+          "line": 210,
+          "position": 8881
+        }
+      },
+      "tokens": 84
+    },
+    {
+      "firstFile": {
+        "end": 122,
+        "endLoc": {
+          "column": 21,
+          "line": 122,
+          "position": 4841
+        },
+        "name": "pages/BookFormPage.tsx",
+        "start": 113,
+        "startLoc": {
+          "column": 46,
+          "line": 113,
+          "position": 4593
+        }
+      },
+      "format": "tsx",
+      "fragment": "              <option value=\"\">— Choisir —</option>\n              {categories.data?.map((c) => (\n                <option key={c.id} value={c.id}>\n                  {c.name}\n                </option>\n              ))}\n            </select>\n          )}\n        </Field>\n        <Field label=\"Auteur(s)\" hint=\"Ctrl/Cmd + clic pour une sélection multiple.\">",
+      "isNew": false,
+      "kind": "exact",
+      "lines": 10,
+      "secondFile": {
+        "end": 70,
+        "endLoc": {
+          "column": 21,
+          "line": 70,
+          "position": 2249
+        },
+        "name": "pages/CatalogPage.tsx",
+        "start": 61,
+        "startLoc": {
+          "column": 37,
+          "line": 61,
+          "position": 2001
+        }
+      },
+      "tokens": 65
+    },
+    {
+      "firstFile": {
+        "end": 222,
+        "endLoc": {
+          "column": 16,
+          "line": 222,
+          "position": 9187
+        },
+        "name": "pages/CirculationPages.tsx",
+        "start": 210,
+        "startLoc": {
+          "column": 46,
+          "line": 210,
+          "position": 8872
+        }
+      },
+      "format": "tsx",
+      "fragment": "              <option value=\"EXPIREE\">Expirée</option>\n            </select>\n          )}\n        </Field>\n      </div>\n      <Alert kind=\"error\">{action.error || list.error}</Alert>\n      <Alert kind=\"success\">{action.success}</Alert>\n      {list.data && (\n        <>\n          <table className=\"table\">\n            <thead>\n              <tr>\n                <th scope=\"col\">Ouvrage</th>",
+      "isNew": false,
+      "kind": "exact",
+      "lines": 13,
+      "secondFile": {
+        "end": 333,
+        "endLoc": {
+          "column": 16,
+          "line": 333,
+          "position": 13444
+        },
+        "name": "pages/CirculationPages.tsx",
+        "start": 321,
+        "startLoc": {
+          "column": 47,
+          "line": 321,
+          "position": 13129
+        }
+      },
+      "tokens": 82
+    },
+    {
+      "firstFile": {
+        "end": 256,
+        "endLoc": {
+          "column": 1,
+          "line": 256,
+          "position": 10673
+        },
+        "name": "pages/CirculationPages.tsx",
+        "start": 248,
+        "startLoc": {
+          "column": 105,
+          "line": 248,
+          "position": 10487
+        }
+      },
+      "format": "tsx",
+      "fragment": "              {list.data.items.length === 0 && <tr><td colSpan={6} className=\"muted\">Aucune réservation.</td></tr>}\n            </tbody>\n          </table>\n          <Pagination page={page} size={SIZE} total={list.data.total} onChange={setPage} />\n        </>\n      )}\n    </section>\n  );\n}",
+      "isNew": false,
+      "kind": "exact",
+      "lines": 9,
+      "secondFile": {
+        "end": 353,
+        "endLoc": {
+          "column": 1,
+          "line": 353,
+          "position": 14239
+        },
+        "name": "pages/CirculationPages.tsx",
+        "start": 345,
+        "startLoc": {
+          "column": 103,
+          "line": 345,
+          "position": 14053
+        }
+      },
+      "tokens": 62
+    }
+  ],
+  "statistics": {
+    "detectionDate": "2026-11-24T20:24:35.976Z",
+    "formats": {
+      "css": {
+        "clones": 0,
+        "duplicatedLines": 0,
+        "duplicatedTokens": 0,
+        "lines": 133,
+        "newClones": 0,
+        "newDuplicatedLines": 0,
+        "percentage": 0.0,
+        "percentageTokens": 0.0,
+        "sources": 1,
+        "tokens": 2860
+      },
+      "tsx": {
+        "clones": 4,
+        "duplicatedLines": 45,
+        "duplicatedTokens": 293,
+        "lines": 1795,
+        "newClones": 0,
+        "newDuplicatedLines": 0,
+        "percentage": 2.5069637883008355,
+        "percentageTokens": 1.7077577665092964,
+        "sources": 13,
+        "tokens": 17157
+      },
+      "typescript": {
+        "clones": 0,
+        "duplicatedLines": 0,
+        "duplicatedTokens": 0,
+        "lines": 511,
+        "newClones": 0,
+        "newDuplicatedLines": 0,
+        "percentage": 0.0,
+        "percentageTokens": 0.0,
+        "sources": 5,
+        "tokens": 3698
+      }
+    },
+    "total": {
+      "clones": 4,
+      "duplicatedLines": 45,
+      "duplicatedTokens": 293,
+      "lines": 2439,
+      "newClones": 0,
+      "newDuplicatedLines": 0,
+      "percentage": 1.8450184501845017,
+      "percentageTokens": 1.23550495467004,
+      "sources": 19,
+      "tokens": 23715
+    }
+  }
+}
