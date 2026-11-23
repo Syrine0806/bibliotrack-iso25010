@@ -1,0 +1,27 @@
+# Synthèse des exécutions
+
+Générée le 24/11/2026 21:40.
+
+| Outil | Statut | Total | Réussis | Échecs | Ignorés |
+|---|---|---|---|---|---|
+| pytest | EXÉCUTÉ | 285 | 285 | 0 | 0 |
+| pytest (PostgreSQL) | EXÉCUTÉ | 285 | 285 | 0 | 0 |
+| Vitest | EXÉCUTÉ | 24 | 24 | 0 | 0 |
+| Postman/Newman | EXÉCUTÉ | 126 | 126 | 0 | 0 |
+| Playwright | EXÉCUTÉ | 90 | 89 | 0 | 1 |
+| Locust | EXÉCUTÉ | — | — | — | — |
+| Bandit (SAST) | EXÉCUTÉ | — | — | — | — |
+| ESLint | EXÉCUTÉ | — | — | — | — |
+| pip-audit (SCA) | EXÉCUTÉ | — | — | — | — |
+| npm audit (SCA) | EXÉCUTÉ | — | — | — | — |
+| OWASP ZAP (DAST) | EXÉCUTÉ | — | — | — | — |
+| coverage.py | EXÉCUTÉ | — | — | — | — |
+| Radon | EXÉCUTÉ | — | — | — | — |
+| Ruff | EXÉCUTÉ | — | — | — | — |
+| jscpd | EXÉCUTÉ | — | — | — | — |
+| Chaos ciblé (Docker) | EXÉCUTÉ | — | — | — | — |
+| Test de portabilité | EXÉCUTÉ | — | — | — | — |
+
+- Exigences : 56
+- Exigences sans test : aucune
+- Exigences en échec : aucune

@@ -1,0 +1,249 @@
+newman
+
+BiblioTrack API — tests de contrat
+
+❏ 1. Authentification
+↳ [EQ-FIA-03] Sonde de santé
+  GET http://localhost:8080/api/health [200 OK, 563B, 18ms]
+  ✓  statut HTTP 200
+  ✓  base OK
+  ✓  [EQ-SEC-09] en-têtes de sécurité présents
+  ✓  [EQ-PERF-01] temps de réponse < 500 ms
+
+↳ [EF-01][EQ-SEC-04] Connexion refusée (mauvais mot de passe)
+  POST http://localhost:8080/api/auth/login [401 Unauthorized, 602B, 224ms]
+  ✓  statut HTTP 401
+  ✓  message générique
+  ✓  [EQ-SEC-09] en-têtes de sécurité présents
+  ✓  [EQ-PERF-01] temps de réponse < 500 ms
+
+↳ [EF-01] Connexion bibliothécaire
+  POST http://localhost:8080/api/auth/login [200 OK, 812B, 213ms]
+  ✓  statut HTTP 200
+  ✓  contrat Token
+  ✓  JWT à 3 segments
+  ✓  [EQ-SEC-09] en-têtes de sécurité présents
+  ✓  [EQ-PERF-01] temps de réponse < 500 ms
+
+↳ [EF-01] Connexion administrateur
+  POST http://localhost:8080/api/auth/login [200 OK, 781B, 214ms]
+  ✓  statut HTTP 200
+  ✓  [EQ-SEC-09] en-têtes de sécurité présents
+  ✓  [EQ-PERF-01] temps de réponse < 500 ms
+
+↳ [EF-01][EF-02] Inscription adhérent (rôle forcé)
+  POST http://localhost:8080/api/auth/register [201 Created, 723B, 212ms]
+  ✓  statut HTTP 201
+  ✓  rôle ADHERENT imposé
+  ✓  aucun secret exposé
+  ✓  [EQ-SEC-09] en-têtes de sécurité présents
+  ✓  [EQ-PERF-01] temps de réponse < 500 ms
+
+↳ [EF-01] Connexion adhérent
+  POST http://localhost:8080/api/auth/login [200 OK, 792B, 211ms]
+  ✓  statut HTTP 200
+  ✓  [EQ-SEC-09] en-têtes de sécurité présents
+  ✓  [EQ-PERF-01] temps de réponse < 500 ms
+
+↳ [EF-01] Profil courant
+  GET http://localhost:8080/api/auth/me [200 OK, 717B, 19ms]
+  ✓  statut HTTP 200
+  ✓  contrat User
+  ✓  [EQ-SEC-09] en-têtes de sécurité présents
+  ✓  [EQ-PERF-01] temps de réponse < 500 ms
+
+↳ [EQ-SEC-02] Accès sans jeton
+  GET http://localhost:8080/api/auth/me [401 Unauthorized, 624B, 3ms]
+  ✓  statut HTTP 401
+  ✓  en-tête WWW-Authenticate
+  ✓  [EQ-SEC-09] en-têtes de sécurité présents
+  ✓  [EQ-PERF-01] temps de réponse < 500 ms
+
+❏ 2. Catalogue
+↳ [EF-12] Recherche paginée
+  GET http://localhost:8080/api/books?q=ombre&size=5&page=1 [200 OK, 2.63kB, 19ms]
+  ✓  statut HTTP 200
+  ✓  contrat Page<Book>
+  ✓  contrat Book
+  ✓  ISBN-13 canonique
+  ✓  [EQ-SEC-09] en-têtes de sécurité présents
+  ✓  [EQ-PERF-01] temps de réponse < 500 ms
+
+↳ [EF-12] Paramètre de pagination invalide
+  GET http://localhost:8080/api/books?size=1000 [422 Unprocessable Entity, 695B, 4ms]
+  ✓  statut HTTP 422
+  ✓  [EQ-SEC-09] en-têtes de sécurité présents
+  ✓  [EQ-PERF-01] temps de réponse < 500 ms
+
+↳ [EF-03] Liste des catégories
+  GET http://localhost:8080/api/categories [200 OK, 1.22kB, 4ms]
+  ✓  statut HTTP 200
+  ✓  tableau non vide
+  ✓  [EQ-SEC-09] en-têtes de sécurité présents
+  ✓  [EQ-PERF-01] temps de réponse < 500 ms
+
+↳ [EF-04] Création d'un auteur
+  POST http://localhost:8080/api/authors [201 Created, 629B, 5ms]
+  ✓  statut HTTP 201
+  ✓  [EQ-SEC-09] en-têtes de sécurité présents
+  ✓  [EQ-PERF-01] temps de réponse < 500 ms
+
+↳ [EF-05][RG-01] ISBN invalide refusé
+  POST http://localhost:8080/api/books [422 Unprocessable Entity, 735B, 4ms]
+  ✓  statut HTTP 422
+  ✓  [EQ-SEC-09] en-têtes de sécurité présents
+  ✓  [EQ-PERF-01] temps de réponse < 500 ms
+
+↳ [EF-05] Création d'un ouvrage
+  POST http://localhost:8080/api/books [201 Created, 889B, 8ms]
+  ✓  statut HTTP 201
+  ✓  relations 1-N et N-N renvoyées
+  ✓  [EQ-SEC-09] en-têtes de sécurité présents
+  ✓  [EQ-PERF-01] temps de réponse < 500 ms
+
+↳ [EF-05][RG-01] ISBN en double refusé
+  POST http://localhost:8080/api/books [409 Conflict, 617B, 5ms]
+  ✓  statut HTTP 409
+  ✓  code règle RG-01
+  ✓  [EQ-SEC-09] en-têtes de sécurité présents
+  ✓  [EQ-PERF-01] temps de réponse < 500 ms
+
+↳ [EF-02][EQ-SEC-03] Adhérent : création d'ouvrage interdite
+  POST http://localhost:8080/api/books [403 Forbidden, 590B, 4ms]
+  ✓  statut HTTP 403
+  ✓  [EQ-SEC-09] en-têtes de sécurité présents
+  ✓  [EQ-PERF-01] temps de réponse < 500 ms
+
+↳ [EF-06] Ajout d'un exemplaire
+  POST http://localhost:8080/api/books/5128/copies [201 Created, 665B, 8ms]
+  ✓  statut HTTP 201
+  ✓  statut initial DISPONIBLE
+  ✓  [EQ-SEC-09] en-têtes de sécurité présents
+  ✓  [EQ-PERF-01] temps de réponse < 500 ms
+
+❏ 3. Circulation
+↳ [EF-08][WF-01][RG-05] Emprunt
+  POST http://localhost:8080/api/loans [201 Created, 889B, 19ms]
+  ✓  statut HTTP 201
+  ✓  statut EN_COURS
+  ✓  échéance = J+21
+  ✓  [EQ-SEC-09] en-têtes de sécurité présents
+  ✓  [EQ-PERF-01] temps de réponse < 500 ms
+
+↳ [RG-04] Exemplaire déjà emprunté
+  POST http://localhost:8080/api/loans [409 Conflict, 620B, 9ms]
+  ✓  statut HTTP 409
+  ✓  code règle RG-04
+  ✓  [EQ-SEC-09] en-têtes de sécurité présents
+  ✓  [EQ-PERF-01] temps de réponse < 500 ms
+
+↳ [EQ-SEC-03] Adhérent : enregistrement d'emprunt interdit
+  POST http://localhost:8080/api/loans [403 Forbidden, 590B, 4ms]
+  ✓  statut HTTP 403
+  ✓  [EQ-SEC-09] en-têtes de sécurité présents
+  ✓  [EQ-PERF-01] temps de réponse < 500 ms
+
+↳ [EF-08][RG-05] Prolongation par l'adhérent
+  POST http://localhost:8080/api/loans/15677/renew [200 OK, 883B, 9ms]
+  ✓  statut HTTP 200
+  ✓  1 prolongation
+  ✓  [EQ-SEC-09] en-têtes de sécurité présents
+  ✓  [EQ-PERF-01] temps de réponse < 500 ms
+
+↳ [RG-05] Seconde prolongation refusée
+  POST http://localhost:8080/api/loans/15677/renew [409 Conflict, 610B, 5ms]
+  ✓  statut HTTP 409
+  ✓  code règle RG-05
+  ✓  [EQ-SEC-09] en-têtes de sécurité présents
+  ✓  [EQ-PERF-01] temps de réponse < 500 ms
+
+↳ [EQ-SEC-10] Adhérent : seuls ses emprunts sont visibles
+  GET http://localhost:8080/api/loans?user_id=1 [200 OK, 924B, 9ms]
+  ✓  statut HTTP 200
+  ✓  aucune fuite
+  ✓  [EQ-SEC-09] en-têtes de sécurité présents
+  ✓  [EQ-PERF-01] temps de réponse < 500 ms
+
+↳ [EF-08][WF-01][RG-06] Retour à l'heure
+  POST http://localhost:8080/api/loans/15677/return [200 OK, 979B, 6ms]
+  ✓  statut HTTP 200
+  ✓  contrat ReturnResult
+  ✓  pas de pénalité
+  ✓  statut RENDU
+  ✓  [EQ-SEC-09] en-têtes de sécurité présents
+  ✓  [EQ-PERF-01] temps de réponse < 500 ms
+
+↳ [WF-01][EQ-FIA-05] Double retour refusé
+  POST http://localhost:8080/api/loans/15677/return [409 Conflict, 625B, 4ms]
+  ✓  statut HTTP 409
+  ✓  code règle WF-TRANSITION
+  ✓  [EQ-SEC-09] en-têtes de sécurité présents
+  ✓  [EQ-PERF-01] temps de réponse < 500 ms
+
+↳ [EF-10][WF-03] Pénalité manuelle
+  POST http://localhost:8080/api/penalties [201 Created, 800B, 7ms]
+  ✓  statut HTTP 201
+  ✓  [EQ-SEC-09] en-têtes de sécurité présents
+  ✓  [EQ-PERF-01] temps de réponse < 500 ms
+
+↳ [EF-10][WF-03] Encaissement
+  POST http://localhost:8080/api/penalties/37/pay [200 OK, 817B, 6ms]
+  ✓  statut HTTP 200
+  ✓  PAYEE
+  ✓  [EQ-SEC-09] en-têtes de sécurité présents
+  ✓  [EQ-PERF-01] temps de réponse < 500 ms
+
+❏ 4. Pilotage
+↳ [EF-11] Tableau de bord
+  GET http://localhost:8080/api/dashboard [200 OK, 1.7kB, 39ms]
+  ✓  statut HTTP 200
+  ✓  contrat Dashboard
+  ✓  [EQ-SEC-09] en-têtes de sécurité présents
+  ✓  [EQ-PERF-01] temps de réponse < 500 ms
+
+↳ [EF-02][EQ-SEC-03] Adhérent : tableau de bord interdit
+  GET http://localhost:8080/api/dashboard [403 Forbidden, 590B, 3ms]
+  ✓  statut HTTP 403
+  ✓  [EQ-SEC-09] en-têtes de sécurité présents
+  ✓  [EQ-PERF-01] temps de réponse < 500 ms
+
+↳ [EF-13] Journal d'audit filtré
+  GET http://localhost:8080/api/audit?action=LOAN_RETURNED&size=5 [200 OK, 1.95kB, 8ms]
+  ✓  statut HTTP 200
+  ✓  au moins une entrée
+  ✓  qui/quoi/quand
+  ✓  [EQ-SEC-09] en-têtes de sécurité présents
+  ✓  [EQ-PERF-01] temps de réponse < 500 ms
+
+↳ [EF-02][EQ-SEC-03] Bibliothécaire : audit interdit
+  GET http://localhost:8080/api/audit [403 Forbidden, 590B, 8ms]
+  ✓  statut HTTP 403
+  ✓  [EQ-SEC-09] en-têtes de sécurité présents
+  ✓  [EQ-PERF-01] temps de réponse < 500 ms
+
+↳ [EQ-COMP-02] Contrat OpenAPI publié
+  GET http://localhost:8080/api/openapi.json [200 OK, 44.23kB, 62ms]
+  ✓  statut HTTP 200
+  ✓  OpenAPI 3.x
+  ✓  [EQ-SEC-09] en-têtes de sécurité présents
+  ✓  [EQ-PERF-01] temps de réponse < 500 ms
+
+┌─────────────────────────┬───────────────────┬──────────────────┐
+│                         │          executed │           failed │
+├─────────────────────────┼───────────────────┼──────────────────┤
+│              iterations │                 1 │                0 │
+├─────────────────────────┼───────────────────┼──────────────────┤
+│                requests │                32 │                0 │
+├─────────────────────────┼───────────────────┼──────────────────┤
+│            test-scripts │                32 │                0 │
+├─────────────────────────┼───────────────────┼──────────────────┤
+│      prerequest-scripts │                 1 │                0 │
+├─────────────────────────┼───────────────────┼──────────────────┤
+│              assertions │               126 │                0 │
+├─────────────────────────┴───────────────────┴──────────────────┤
+│ total run duration: 1722ms                                     │
+├────────────────────────────────────────────────────────────────┤
+│ total data received: 53.68kB (approx)                          │
+├────────────────────────────────────────────────────────────────┤
+│ average response time: 42ms [min: 3ms, max: 224ms, s.d.: 74ms] │
+└────────────────────────────────────────────────────────────────┘

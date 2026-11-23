@@ -1,0 +1,2 @@
+[tester]	WARNING	nosec encountered (B105), but no failed test on file app/services/users.py:133
+[tester]	WARNING	nosec encountered (B105), but no failed test on file app/services/users.py:133

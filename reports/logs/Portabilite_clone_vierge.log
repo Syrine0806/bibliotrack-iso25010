@@ -1,0 +1,45 @@
+
+== Environnement d'exécution
+Date        : 2026-11-24T20:40:04Z
+Système     : Darwin 27.0.0 arm64
+Docker      : 28.4.0
+Compose     : 5.0.0
+Commit      : 3589748
+
+== 1. Clone vierge du dépôt (seuls les fichiers versionnés)
+Fichiers versionnés : 234
+
+== 2. Construction des images et démarrage (projet isolé, ports 18080/18000)
+ Container bibliotrack-portability-backend-1 Started 
+ Container bibliotrack-portability-backend-1 Waiting 
+ Container bibliotrack-portability-backend-1 Healthy 
+ Container bibliotrack-portability-frontend-1 Starting 
+ Container bibliotrack-portability-frontend-1 Started 
+Application opérationnelle en 18 s (construction incluse)
+SERVICE    STATUS
+backend    Up 6 seconds (healthy)
+db         Up 11 seconds (healthy)
+frontend   Up Less than a second (health: starting)
+
+== 3. Tests de fumée
+  [OK]   Sonde de santé /api/health = 200
+  [OK]   SPA servie par nginx (index.html)
+  [OK]   Routage SPA (deep link /catalogue)
+  [OK]   Authentification JWT
+  [OK]   Données de démo chargées (5000 ouvrages)
+  [OK]   Tableau de bord sur PostgreSQL
+  [OK]   En-tête CSP posé par nginx
+  [OK]   Version nginx masquée
+  [OK]   Conteneur backend non-root
+  [OK]   Persistance : volume PostgreSQL nommé
+
+== 4. Redémarrage complet (down/up sans -v) : les données persistent
+  [OK]   Donnée créée avant redémarrage retrouvée
+  [OK]   Pas de double chargement des données de démo
+
+== Images produites
+bibliotrack-portability-backend:latest  330MB
+bibliotrack-portability-frontend:latest  76.3MB
+
+== Bilan
+Vérifications réussies : 12 / 12

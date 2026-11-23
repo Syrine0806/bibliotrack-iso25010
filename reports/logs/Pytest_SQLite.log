@@ -1,0 +1,68 @@
+============================= test session starts ==============================
+platform darwin -- Python 3.12.16, pytest-9.2.0, pluggy-1.7.0
+rootdir: /Users/s.guesmi/Desktop/ING5/QualiteLogiciel/backend
+configfile: pyproject.toml
+testpaths: tests
+plugins: platformdirs-4.14.8, cov-7.1.0, locust-2.47.0, anyio-4.16.0, respx-0.23.1
+collected 285 items
+
+tests/integration/test_admin_api.py ................                     [  5%]
+tests/integration/test_auth_api.py .....................                 [ 12%]
+tests/integration/test_catalog_api.py ............................       [ 22%]
+tests/integration/test_loans_api.py ................                     [ 28%]
+tests/integration/test_rbac.py ......................................... [ 42%]
+....................                                                     [ 49%]
+tests/integration/test_reservations_api.py ..........                    [ 53%]
+tests/integration/test_security_api.py ............                      [ 57%]
+tests/reliability/test_prestart.py ...                                   [ 58%]
+tests/reliability/test_reliability.py .........                          [ 61%]
+tests/unit/test_architecture.py ....                                     [ 63%]
+tests/unit/test_isbn.py ................                                 [ 68%]
+tests/unit/test_openlibrary.py ..........                                [ 72%]
+tests/unit/test_rules.py .....................................           [ 85%]
+tests/unit/test_security_unit.py ..............                          [ 90%]
+tests/unit/test_state_machine.py ............................            [100%]
+
+- generated xml file: /Users/s.guesmi/Desktop/ING5/QualiteLogiciel/reports/tests/junit-backend.xml -
+================================ tests coverage ================================
+______________ coverage: platform darwin, python 3.12.16-final-0 _______________
+
+Name                              Stmts   Miss Branch BrPart  Cover   Missing
+-----------------------------------------------------------------------------
+app/__init__.py                       0      0      0      0   100%
+app/api/__init__.py                   0      0      0      0   100%
+app/api/admin.py                     22      0      0      0   100%
+app/api/auth.py                      20      0      0      0   100%
+app/api/catalog.py                   69      0      2      0   100%
+app/api/circulation.py               65      0      2      0   100%
+app/api/deps.py                      38      0      6      0   100%
+app/api/users.py                     29      0      0      0   100%
+app/core/__init__.py                  0      0      0      0   100%
+app/core/clock.py                    10      0      2      0   100%
+app/core/config.py                   31      0      0      0   100%
+app/core/database.py                 22      1      2      1    92%   28
+app/core/security.py                 31      0      4      0   100%
+app/domain/__init__.py                0      0      0      0   100%
+app/domain/enums.py                  28      0      0      0   100%
+app/domain/errors.py                 16      0      0      0   100%
+app/domain/isbn.py                   30      0     12      0   100%
+app/domain/rules.py                  71      0     28      0   100%
+app/domain/state_machine.py          19      0      2      0   100%
+app/integrations/__init__.py          0      0      0      0   100%
+app/integrations/openlibrary.py      30      0      4      1    97%   44->46
+app/main.py                          79      5     10      2    92%   45-48, 57->59, 84-85
+app/models/__init__.py                2      0      0      0   100%
+app/models/entities.py              114      0      0      0   100%
+app/prestart.py                      24      3      4      1    86%   35-37
+app/schemas/__init__.py             195      0      4      0   100%
+app/services/__init__.py              0      0      0      0   100%
+app/services/audit.py                36      2     10      2    91%   69, 71
+app/services/catalog.py             170      2     38      2    98%   68->70, 265, 282
+app/services/circulation.py         226      6     58      8    95%   168->170, 172, 290, 293, 337->exit, 347, 389, 419
+app/services/dashboard.py            40      0      2      0   100%
+app/services/users.py               114      0     28      0   100%
+-----------------------------------------------------------------------------
+TOTAL                              1531     19    218     17    98%
+Coverage HTML written to dir /Users/s.guesmi/Desktop/ING5/QualiteLogiciel/reports/quality/backend-coverage-html
+Coverage XML written to file /Users/s.guesmi/Desktop/ING5/QualiteLogiciel/reports/quality/backend-coverage.xml
+============================= 285 passed in 5.37s ==============================

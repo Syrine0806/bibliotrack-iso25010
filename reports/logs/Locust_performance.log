@@ -1,0 +1,68 @@
+[2026-11-24 21:25:59,708] MacBook-Pro/INFO/locust.main: Starting Locust 2.47.0
+[2026-11-24 21:25:59,710] MacBook-Pro/INFO/locust.main: Run time limit set to 120 seconds
+[2026-11-24 21:25:59,710] MacBook-Pro/INFO/locust.runners: Ramping to 20 users at a rate of 5.00 per second
+[2026-11-24 21:26:02,731] MacBook-Pro/INFO/locust.runners: All users spawned: {"LibrarianUser": 4, "MemberUser": 16} (20 total users)
+[2026-11-24 21:27:59,503] MacBook-Pro/INFO/locust.main: --run-time limit reached, shutting down
+[2026-11-24 21:27:59,580] MacBook-Pro/INFO/locust.main: Shutting down (exit code 0)
+Type     Name                                                                          # reqs      # fails |    Avg     Min     Max    Med |   req/s  failures/s
+--------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+GET      GET /api/books/[id]                                                              357     0(0.00%) |     10       3      56      9 |    2.98        0.00
+GET      GET /api/books/[id]/copies                                                       357     0(0.00%) |      7       2      48      6 |    2.98        0.00
+GET      GET /api/books?category_id=[id]                                                  281     0(0.00%) |     15       7     111     14 |    2.35        0.00
+GET      GET /api/books?q=[terme]                                                         621     0(0.00%) |     19       9     124     17 |    5.19        0.00
+GET      GET /api/dashboard                                                                96     0(0.00%) |     46      27     127     43 |    0.80        0.00
+GET      GET /api/loans (adhérent)                                                        234     0(0.00%) |     13       6      42     13 |    1.96        0.00
+GET      GET /api/loans?overdue_only                                                       57     0(0.00%) |     20      11      71     18 |    0.48        0.00
+GET      GET /api/loans?q=[terme]                                                          58     0(0.00%) |     42      29      74     42 |    0.48        0.00
+GET      GET /api/reservations (adhérent)                                                 234     0(0.00%) |      7       3      30      7 |    1.96        0.00
+GET      GET /api/users?q=[nom]                                                            20     0(0.00%) |     20       6     162     14 |    0.17        0.00
+POST     POST /api/auth/login                                                              20     0(0.00%) |    292     228     363    260 |    0.17        0.00
+--------|----------------------------------------------------------------------------|-------|-------------|-------|-------|-------|-------|--------|-----------
+         Aggregated                                                                      2335     0(0.00%) |     17       2     363     13 |   19.51        0.00
+
+Response time percentiles (approximated)
+Type     Name                                                                                  50%    66%    75%    80%    90%    95%    98%    99%  99.9% 99.99%   100% # reqs
+--------|--------------------------------------------------------------------------------|--------|------|------|------|------|------|------|------|------|------|------|------
+GET      GET /api/books/[id]                                                                     9     11     12     13     18     20     26     29     56     56     56    357
+GET      GET /api/books/[id]/copies                                                              6      7      8      9     11     14     18     22     48     48     48    357
+GET      GET /api/books?category_id=[id]                                                        14     15     17     18     23     27     39     65    110    110    110    281
+GET      GET /api/books?q=[terme]                                                               17     19     21     23     28     31     44     51    120    120    120    621
+GET      GET /api/dashboard                                                                     43     47     53     54     62     71     96    130    130    130    130     96
+GET      GET /api/loans (adhérent)                                                              13     14     15     16     20     23     26     27     43     43     43    234
+GET      GET /api/loans?overdue_only                                                            18     21     26     27     30     33     33     72     72     72     72     57
+GET      GET /api/loans?q=[terme]                                                               42     43     45     46     54     61     62     74     74     74     74     58
+GET      GET /api/reservations (adhérent)                                                        7      7      8      8     10     13     17     18     30     30     30    234
+GET      GET /api/users?q=[nom]                                                                 14     16     18     19     23    160    160    160    160    160    160     20
+POST     POST /api/auth/login                                                                  260    350    350    360    360    360    360    360    360    360    360     20
+--------|--------------------------------------------------------------------------------|--------|------|------|------|------|------|------|------|------|------|------|------
+         Aggregated                                                                             13     16     18     20     30     42     59    110    360    360    360   2335
+
+{
+  "requests": 2328,
+  "failures": 0,
+  "error_rate": 0.0,
+  "rps": 19.5,
+  "median_ms": 13.0,
+  "p95_ms": 42.0,
+  "p99_ms": 110.0,
+  "max_ms": 363.23670798446983,
+  "thresholds": {
+    "p95_ms": 500,
+    "error_rate": 0.01
+  },
+  "per_endpoint_p95_ms": {
+    "GET /api/books/[id]": 20.0,
+    "GET /api/books/[id]/copies": 14.0,
+    "GET /api/books?category_id=[id]": 27.0,
+    "GET /api/books?q=[terme]": 31.0,
+    "GET /api/dashboard": 71.0,
+    "GET /api/loans (adhérent)": 23.0,
+    "GET /api/loans?overdue_only": 33.0,
+    "GET /api/loans?q=[terme]": 61.0,
+    "GET /api/reservations (adhérent)": 13.0,
+    "GET /api/users?q=[nom]": 160.0,
+    "POST /api/auth/login": 360.0
+  },
+  "passed": true
+}
+RÉSULTAT : CONFORME
