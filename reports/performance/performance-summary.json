@@ -1,0 +1,28 @@
+{
+  "requests": 2328,
+  "failures": 0,
+  "error_rate": 0.0,
+  "rps": 19.5,
+  "median_ms": 13.0,
+  "p95_ms": 42.0,
+  "p99_ms": 110.0,
+  "max_ms": 363.23670798446983,
+  "thresholds": {
+    "p95_ms": 500,
+    "error_rate": 0.01
+  },
+  "per_endpoint_p95_ms": {
+    "GET /api/books/[id]": 20.0,
+    "GET /api/books/[id]/copies": 14.0,
+    "GET /api/books?category_id=[id]": 27.0,
+    "GET /api/books?q=[terme]": 31.0,
+    "GET /api/dashboard": 71.0,
+    "GET /api/loans (adhérent)": 23.0,
+    "GET /api/loans?overdue_only": 33.0,
+    "GET /api/loans?q=[terme]": 61.0,
+    "GET /api/reservations (adhérent)": 13.0,
+    "GET /api/users?q=[nom]": 160.0,
+    "POST /api/auth/login": 360.0
+  },
+  "passed": true
+}

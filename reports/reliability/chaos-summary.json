@@ -1,0 +1,56 @@
+{
+  "date": "2026-11-24T20:40:04.469167+00:00",
+  "passed": true,
+  "checks": 8,
+  "failed": 0,
+  "results": [
+    {
+      "scenario": "C1",
+      "check": "API répond 503 (et non crash/timeout) pendant la panne",
+      "passed": true,
+      "detail": "statuts=[503, 503, 503, 503, 503]"
+    },
+    {
+      "scenario": "C1",
+      "check": "Message d'erreur propre, sans fuite technique",
+      "passed": true,
+      "detail": "503 {'detail': 'Service temporairement indisponible, réessayez dans un instant.'}"
+    },
+    {
+      "scenario": "C1",
+      "check": "Reprise automatique après retour de la base (pool_pre_ping)",
+      "passed": true,
+      "detail": "en 0.5s"
+    },
+    {
+      "scenario": "C2",
+      "check": "Aucune perte de données (emprunt témoin intact)",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "scenario": "C3",
+      "check": "Service maintenu pendant la perte d'un worker",
+      "passed": true,
+      "detail": "30/30 requêtes OK (worker 9 tué)"
+    },
+    {
+      "scenario": "C3",
+      "check": "Worker remplacé par le superviseur uvicorn",
+      "passed": true,
+      "detail": "4 workers avant, 4 après"
+    },
+    {
+      "scenario": "C4",
+      "check": "Backend redémarré, données intactes",
+      "passed": true,
+      "detail": "opérationnel en 2.1s"
+    },
+    {
+      "scenario": "C4",
+      "check": "Maintenance idempotente après reprise",
+      "passed": true,
+      "detail": "1er={'loans_marked_overdue': 0, 'reservations_expired': 0} 2e={'loans_marked_overdue': 0, 'reservations_expired': 0}"
+    }
+  ]
+}

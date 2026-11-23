@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites name="vitest tests" tests="24" failures="0" errors="0" time="0.101717458">
+    <testsuite name="src/api/client.test.ts" timestamp="2026-11-24T20:24:35.719Z" hostname="MacBook-Pro" tests="8" failures="0" errors="0" skipped="0" time="0.010458333">
+        <testcase classname="src/api/client.test.ts" name="client HTTP &gt; [EF-01] ajoute le jeton Bearer et sérialise le corps JSON" time="0.007175042">
+        </testcase>
+        <testcase classname="src/api/client.test.ts" name="client HTTP &gt; n&apos;envoie pas le jeton quand auth=false (connexion)" time="0.00030975">
+        </testcase>
+        <testcase classname="src/api/client.test.ts" name="client HTTP &gt; construit la query string" time="0.000199625">
+        </testcase>
+        <testcase classname="src/api/client.test.ts" name="client HTTP &gt; retourne undefined pour une réponse 204" time="0.000411625">
+        </testcase>
+        <testcase classname="src/api/client.test.ts" name="client HTTP &gt; transforme une erreur métier 409 en ApiError avec code de règle" time="0.000263792">
+        </testcase>
+        <testcase classname="src/api/client.test.ts" name="client HTTP &gt; [EQ-SEC-02] déclenche la déconnexion sur 401" time="0.000636417">
+        </testcase>
+        <testcase classname="src/api/client.test.ts" name="client HTTP &gt; [EQ-FIA-03] signale un serveur injoignable (panne réseau)" time="0.000449042">
+        </testcase>
+        <testcase classname="src/api/client.test.ts" name="client HTTP &gt; [EQ-FIA-03] gère une réponse d&apos;erreur non JSON" time="0.000186292">
+        </testcase>
+    </testsuite>
+    <testsuite name="src/components/ui.test.tsx" timestamp="2026-11-24T20:24:35.721Z" hostname="MacBook-Pro" tests="7" failures="0" errors="0" skipped="0" time="0.08866575">
+        <testcase classname="src/components/ui.test.tsx" name="[EQ-USA-02] composants d&apos;interface accessibles &gt; Alert d&apos;erreur utilise role=alert, les autres role=status" time="0.052885042">
+        </testcase>
+        <testcase classname="src/components/ui.test.tsx" name="[EQ-USA-02] composants d&apos;interface accessibles &gt; Alert vide n&apos;affiche rien" time="0.000638958">
+        </testcase>
+        <testcase classname="src/components/ui.test.tsx" name="[EQ-USA-02] composants d&apos;interface accessibles &gt; StatusBadge traduit le statut et applique la couleur" time="0.001827375">
+        </testcase>
+        <testcase classname="src/components/ui.test.tsx" name="[EQ-USA-02] composants d&apos;interface accessibles &gt; Field associe le label au champ et l&apos;aide via aria-describedby" time="0.0028275">
+        </testcase>
+        <testcase classname="src/components/ui.test.tsx" name="[EQ-USA-02] composants d&apos;interface accessibles &gt; Pagination désactive les bornes et notifie le changement" time="0.018228708">
+        </testcase>
+        <testcase classname="src/components/ui.test.tsx" name="[EQ-USA-02] composants d&apos;interface accessibles &gt; BarChart expose les données dans un tableau lisible par lecteur d&apos;écran" time="0.010657583">
+        </testcase>
+        <testcase classname="src/components/ui.test.tsx" name="[EQ-USA-02] composants d&apos;interface accessibles &gt; BarChart sans données affiche un message" time="0.000813959">
+        </testcase>
+    </testsuite>
+    <testsuite name="src/utils/format.test.ts" timestamp="2026-11-24T20:24:35.722Z" hostname="MacBook-Pro" tests="9" failures="0" errors="0" skipped="0" time="0.002593375">
+        <testcase classname="src/utils/format.test.ts" name="[EQ-USA-01] formatage à la française &gt; formate les dates ISO en JJ/MM/AAAA" time="0.000878625">
+        </testcase>
+        <testcase classname="src/utils/format.test.ts" name="[EQ-USA-01] formatage à la française &gt; formate les montants en euros à la française" time="0.000110166">
+        </testcase>
+        <testcase classname="src/utils/format.test.ts" name="[EQ-USA-01] formatage à la française &gt; formate un ISBN-13 avec des tirets" time="0.0000795">
+        </testcase>
+        <testcase classname="src/utils/format.test.ts" name="[EQ-USA-01] formatage à la française &gt; traduit les codes de statut et associe une couleur" time="0.000098">
+        </testcase>
+        <testcase classname="src/utils/format.test.ts" name="calculs &gt; [RG-05] calcule les jours restants avant échéance" time="0.000091416">
+        </testcase>
+        <testcase classname="src/utils/format.test.ts" name="calculs &gt; calcule le nombre de pages" time="0.000069916">
+        </testcase>
+        <testcase classname="src/utils/format.test.ts" name="calculs &gt; [RG-01] valide la clé ISBN comme le serveur" time="0.000196083">
+        </testcase>
+        <testcase classname="src/utils/format.test.ts" name="[EQ-USA-01] client API : messages d&apos;erreur &gt; construit une query string en ignorant les valeurs vides" time="0.000114125">
+        </testcase>
+        <testcase classname="src/utils/format.test.ts" name="[EQ-USA-01] client API : messages d&apos;erreur &gt; normalise les messages d&apos;erreur de l&apos;API" time="0.0001455">
+        </testcase>
+    </testsuite>
+</testsuites>
