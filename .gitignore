@@ -29,3 +29,5 @@ frontend/test-results-docker/
 
 # Documentation (non versionnée)
 docs/
+scripts/pdf/
+*.pdf
