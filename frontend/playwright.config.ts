@@ -8,13 +8,17 @@ import { defineConfig, devices } from "@playwright/test";
 const external = process.env.E2E_BASE_URL;
 const baseURL = external ?? "http://localhost:4173";
 const REPORTS = "../reports/e2e";
+// Mode visuel : HEADED=1 ouvre le navigateur, ralentit chaque action et exécute les tests un par un.
+const headed = !!process.env.HEADED;
+const slowMo = Number(process.env.SLOWMO ?? (headed ? 600 : 0));
+const defaultWorkers = process.env.CI ? 2 : 4;
 
 export default defineConfig({
   testDir: "./e2e",
-  timeout: 30_000,
+  timeout: headed ? 120_000 : 30_000,
   expect: { timeout: 7_000 },
-  fullyParallel: true,
-  workers: process.env.CI ? 2 : 4,
+  fullyParallel: !headed,
+  workers: headed ? 1 : defaultWorkers,
   retries: 0,
   outputDir: "test-results",
   reporter: [
@@ -28,6 +32,8 @@ export default defineConfig({
     locale: "fr-FR",
     trace: "retain-on-failure",
     screenshot: "only-on-failure",
+    headless: !headed,
+    launchOptions: { slowMo },
   },
   projects: [
     { name: "chromium", use: { ...devices["Desktop Chrome"] } },
