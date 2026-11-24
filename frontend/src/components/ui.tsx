@@ -4,12 +4,15 @@ import type { ReactNode } from "react";
 import { ApiError } from "../api/client";
 import type { CountItem } from "../api/types";
 import { label, pageCount, tone } from "../utils/format";
+import { Icon } from "./icons";
+import type { IconName } from "./icons";
 
 export function Alert({ kind, children }: { kind: "error" | "success" | "info"; children: ReactNode }) {
   if (!children) return null;
   return (
     <div className={`alert alert-${kind}`} role={kind === "error" ? "alert" : "status"}>
-      {children}
+      <Icon name={kind === "error" ? "alert" : "check"} size={18} />
+      <span>{children}</span>
     </div>
   );
 }
@@ -69,11 +72,18 @@ export function Pagination({
   );
 }
 
-export function StatCard({ title, value, tone: t = "neutral" }: { title: string; value: ReactNode; tone?: string }) {
+export function StatCard({ title, value, tone: t = "neutral", icon }: { title: string; value: ReactNode; tone?: string; icon?: IconName }) {
   return (
     <div className={`stat stat-${t}`}>
-      <span className="stat-title">{title}</span>
-      <span className="stat-value">{value}</span>
+      {icon && (
+        <span className="stat-icon">
+          <Icon name={icon} />
+        </span>
+      )}
+      <span className="stat-body">
+        <span className="stat-title">{title}</span>
+        <span className="stat-value">{value}</span>
+      </span>
     </div>
   );
 }

@@ -125,7 +125,10 @@ export function CatalogPage() {
                 {books.data.items.map((b) => (
                   <tr key={b.id}>
                     <td>
-                      <Link to={`/catalogue/${b.id}`}>{b.title}</Link>
+                      <span className="title-cell">
+                        <span className={`spine spine-${b.category.id % 6}`} aria-hidden="true" />
+                        <Link to={`/catalogue/${b.id}`}>{b.title}</Link>
+                      </span>
                     </td>
                     <td>{b.authors.map((a) => a.full_name).join(", ")}</td>
                     <td>{b.category.name}</td>

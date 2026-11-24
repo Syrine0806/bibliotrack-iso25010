@@ -4,7 +4,31 @@ import { Link, Navigate, useNavigate } from "react-router";
 import { api, ApiError } from "../api/client";
 import { useAuth } from "../auth/AuthContext";
 import { homeFor } from "../components/Layout";
+import { Icon } from "../components/icons";
 import { Alert, Field } from "../components/ui";
+
+function AuthHero() {
+  return (
+    <aside className="auth-hero" aria-label="Présentation de BiblioTrack">
+      <div className="brand">
+        <span className="brand-mark" aria-hidden="true">
+          <Icon name="book" size={18} />
+        </span>
+        <span className="brand-name">BiblioTrack</span>
+      </div>
+      <div className="auth-hero-body">
+        <p className="eyebrow">Médiathèque connectée</p>
+        <p className="auth-hero-title">Tout le catalogue, les prêts et les réservations au même endroit.</p>
+        <ul className="auth-hero-list">
+          <li><Icon name="search" size={18} /> Recherche instantanée parmi plus de 5 000 ouvrages</li>
+          <li><Icon name="bookmark" size={18} /> Réservations avec file d'attente équitable</li>
+          <li><Icon name="clock" size={18} /> Échéances, prolongations et rappels clairs</li>
+        </ul>
+      </div>
+      <p className="auth-hero-foot">Qualité logicielle ISO/IEC 25010</p>
+    </aside>
+  );
+}
 
 export function LoginPage() {
   const { user, login } = useAuth();
@@ -31,9 +55,11 @@ export function LoginPage() {
   }
 
   return (
-    <main id="contenu" className="auth-page">
-      <section className="card auth-card">
-        <h1>📚 BiblioTrack</h1>
+    <div className="auth-page">
+      <AuthHero />
+      <main id="contenu" className="auth-main">
+      <section className="auth-card">
+        <h1>Connexion</h1>
         <p className="muted">Connectez-vous pour accéder à la médiathèque.</p>
         <form onSubmit={submit} noValidate>
           <Field label="Adresse e-mail">
@@ -49,7 +75,7 @@ export function LoginPage() {
             )}
           </Field>
           <Alert kind="error">{error}</Alert>
-          <button type="submit" disabled={busy || !email || !password}>
+          <button type="submit" className="block" disabled={busy || !email || !password}>
             {busy ? "Connexion…" : "Se connecter"}
           </button>
         </form>
@@ -57,7 +83,8 @@ export function LoginPage() {
           Pas encore de compte ? <Link to="/inscription">Créer un compte adhérent</Link>
         </p>
       </section>
-    </main>
+      </main>
+    </div>
   );
 }
 
@@ -86,8 +113,10 @@ export function RegisterPage() {
     setForm({ ...form, [key]: e.target.value });
 
   return (
-    <main id="contenu" className="auth-page">
-      <section className="card auth-card">
+    <div className="auth-page">
+      <AuthHero />
+      <main id="contenu" className="auth-main">
+      <section className="auth-card">
         <h1>Créer un compte adhérent</h1>
         <form onSubmit={submit}>
           <Field label="Nom complet">
@@ -110,12 +139,13 @@ export function RegisterPage() {
           </Field>
           <Alert kind="error">{error}</Alert>
           <Alert kind="success">{done && "Compte créé ! Redirection vers la connexion…"}</Alert>
-          <button type="submit">Créer mon compte</button>
+          <button type="submit" className="block">Créer mon compte</button>
         </form>
         <p>
           <Link to="/login">← Retour à la connexion</Link>
         </p>
       </section>
-    </main>
+      </main>
+    </div>
   );
 }

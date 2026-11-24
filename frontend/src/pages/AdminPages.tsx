@@ -36,14 +36,14 @@ export function DashboardPage() {
       {!d ? <Loading /> : (
         <>
           <div className="stats" data-testid="kpis">
-            <StatCard title="Ouvrages" value={d.total_books} />
-            <StatCard title="Exemplaires disponibles" value={`${d.available_copies} / ${d.total_copies}`} tone="success" />
-            <StatCard title="Emprunts actifs" value={d.active_loans} tone="info" />
-            <StatCard title="Emprunts en retard" value={d.overdue_loans} tone="danger" />
-            <StatCard title="Emprunts sur la période" value={d.loans_in_period} />
-            <StatCard title="Adhérents actifs" value={d.active_members} />
-            <StatCard title="Réservations en attente" value={d.pending_reservations} tone="warning" />
-            <StatCard title="Pénalités impayées" value={formatMoney(d.unpaid_penalties_total)} tone="danger" />
+            <StatCard title="Ouvrages" value={d.total_books} icon="book" />
+            <StatCard title="Exemplaires disponibles" value={`${d.available_copies} / ${d.total_copies}`} tone="success" icon="check" />
+            <StatCard title="Emprunts actifs" value={d.active_loans} tone="info" icon="loan" />
+            <StatCard title="Emprunts en retard" value={d.overdue_loans} tone="danger" icon="alert" />
+            <StatCard title="Emprunts sur la période" value={d.loans_in_period} icon="clock" />
+            <StatCard title="Adhérents actifs" value={d.active_members} icon="users" />
+            <StatCard title="Réservations en attente" value={d.pending_reservations} tone="warning" icon="bookmark" />
+            <StatCard title="Pénalités impayées" value={formatMoney(d.unpaid_penalties_total)} tone="danger" icon="coin" />
           </div>
           <div className="two-cols">
             <BarChart title="Emprunts par mois" data={d.loans_by_month} />
