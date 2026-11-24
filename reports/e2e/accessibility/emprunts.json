@@ -1,6 +1,6 @@
 {
   "page": "emprunts",
   "url": "http://localhost:8080/emprunts",
-  "passes": 23,
+  "passes": 24,
   "violations": []
 }

@@ -1,6 +1,6 @@
 {
   "page": "catalogue",
   "url": "http://localhost:8080/catalogue",
-  "passes": 26,
+  "passes": 27,
   "violations": []
 }
