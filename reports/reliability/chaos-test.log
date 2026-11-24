@@ -1,13 +1,13 @@
-[21:39:54] Démarrage des tests de chaos ciblés sur la stack Docker
-[21:39:54] Emprunt témoin créé : id=15699
-[21:39:54] C1/C2 — arrêt de PostgreSQL pendant le service
-[21:39:57]   [OK] C1 — API répond 503 (et non crash/timeout) pendant la panne statuts=[503, 503, 503, 503, 503]
-[21:39:57]   [OK] C1 — Message d'erreur propre, sans fuite technique 503 {'detail': 'Service temporairement indisponible, réessayez dans un instant.'}
-[21:39:57]   [OK] C1 — Reprise automatique après retour de la base (pool_pre_ping) en 0.5s
-[21:39:57]   [OK] C2 — Aucune perte de données (emprunt témoin intact) 
-[21:39:57] C3 — SIGKILL d'un worker uvicorn
-[21:39:58]   [OK] C3 — Service maintenu pendant la perte d'un worker 30/30 requêtes OK (worker 9 tué)
-[21:40:01]   [OK] C3 — Worker remplacé par le superviseur uvicorn 4 workers avant, 4 après
-[21:40:01] C4 — redémarrage complet du backend
-[21:40:04]   [OK] C4 — Backend redémarré, données intactes opérationnel en 2.1s
-[21:40:04]   [OK] C4 — Maintenance idempotente après reprise 1er={'loans_marked_overdue': 0, 'reservations_expired': 0} 2e={'loans_marked_overdue': 0, 'reservations_expired': 0}
+[19:27:51] Démarrage des tests de chaos ciblés sur la stack Docker
+[19:27:51] Emprunt témoin créé : id=15792
+[19:27:51] C1/C2 — arrêt de PostgreSQL pendant le service
+[19:27:54]   [OK] C1 — API répond 503 (et non crash/timeout) pendant la panne statuts=[503, 503, 503, 503, 503]
+[19:27:54]   [OK] C1 — Message d'erreur propre, sans fuite technique 503 {'detail': 'Service temporairement indisponible, réessayez dans un instant.'}
+[19:27:54]   [OK] C1 — Reprise automatique après retour de la base (pool_pre_ping) en 0.5s
+[19:27:54]   [OK] C2 — Aucune perte de données (emprunt témoin intact) 
+[19:27:54] C3 — SIGKILL d'un worker uvicorn
+[19:27:55]   [OK] C3 — Service maintenu pendant la perte d'un worker 30/30 requêtes OK (worker 8 tué)
+[19:27:58]   [OK] C3 — Worker remplacé par le superviseur uvicorn 4 workers avant, 4 après
+[19:27:58] C4 — redémarrage complet du backend
+[19:28:01]   [OK] C4 — Backend redémarré, données intactes opérationnel en 2.1s
+[19:28:01]   [OK] C4 — Maintenance idempotente après reprise 1er={'loans_marked_overdue': 0, 'reservations_expired': 0} 2e={'loans_marked_overdue': 0, 'reservations_expired': 0}

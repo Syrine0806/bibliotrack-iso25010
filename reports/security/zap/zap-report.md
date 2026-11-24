@@ -60,12 +60,12 @@ ZAP by [Checkmarx](https://checkmarx.com/).
 
 The response appears to contain suspicious comments which may help an attacker.
 
-* URL: http://frontend:8080/assets/index-BeWF0F-N.js
-  * Node Name: `http://frontend:8080/assets/index-BeWF0F-N.js`
+* URL: http://frontend:8080/assets/index-SBJgji5x.js
+  * Node Name: `http://frontend:8080/assets/index-SBJgji5x.js`
   * Method: `GET`
   * Parameter: ``
   * Attack: ``
-  * Evidence: `tch(`/api${t}${Yn(n.query)}`,{method:e,header`
+  * Evidence: `tch(`/api${t}${Gn(n.query)}`,{method:e,header`
   * Other Info: `The following pattern was used: \bQUERY\b and was detected in likely comment: "//,``).split(`/`);p=`/`+f.replace(/^\//,``).split(`/`).slice(e.length).join(`/`)}let m=n&&n.state.matches.length?n.state.matches", see evidence field for the suspicious comment/snippet.`
 
 
@@ -96,12 +96,12 @@ Remove all comments that return information that may help an attacker and fix an
 
 The application appears to be a modern web application. If you need to explore it automatically then the Client Spider may well be more effective than the standard one.
 
-* URL: http://frontend:8080/sitemap.xml
-  * Node Name: `http://frontend:8080/sitemap.xml`
+* URL: http://frontend:8080/robots.txt
+  * Node Name: `http://frontend:8080/robots.txt`
   * Method: `GET`
   * Parameter: ``
   * Attack: ``
-  * Evidence: `<script type="module" crossorigin src="/assets/index-BeWF0F-N.js"></script>`
+  * Evidence: `<script type="module" crossorigin src="/assets/index-SBJgji5x.js"></script>`
   * Other Info: `No links have been found while there are scripts, which is an indication that this is a modern web application.`
 
 
@@ -128,15 +128,15 @@ This is an informational alert and so no changes are required.
 
 The response contents are storable by caching components such as proxy servers, and may be retrieved directly from the cache, rather than from the origin server by the caching servers, in response to similar requests from other users. If the response data is sensitive, personal or user-specific, this may result in sensitive information being leaked. In some cases, this may even result in a user gaining complete control of the session of another user, depending on the configuration of the caching components in use in their environment. This is primarily an issue where "shared" caching servers such as "proxy" caches are configured on the local network. This configuration is typically found in corporate or educational environments, for instance.
 
-* URL: http://frontend:8080/assets/index-BeWF0F-N.js
-  * Node Name: `http://frontend:8080/assets/index-BeWF0F-N.js`
+* URL: http://frontend:8080/assets/index-SBJgji5x.js
+  * Node Name: `http://frontend:8080/assets/index-SBJgji5x.js`
   * Method: `GET`
   * Parameter: ``
   * Attack: ``
   * Evidence: `max-age=31536000`
   * Other Info: ``
-* URL: http://frontend:8080/assets/index-DAAoV3CH.css
-  * Node Name: `http://frontend:8080/assets/index-DAAoV3CH.css`
+* URL: http://frontend:8080/assets/index-mI2dAKXn.css
+  * Node Name: `http://frontend:8080/assets/index-mI2dAKXn.css`
   * Method: `GET`
   * Parameter: ``
   * Attack: ``

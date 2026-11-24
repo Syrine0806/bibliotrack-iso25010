@@ -1,193 +1,193 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuites name="BiblioTrack API — tests de contrat" tests="32" time="1.373">
-  <testsuite name="1. Authentification / [EQ-FIA-03] Sonde de santé" id="73273129-1d5f-4d38-a7b5-f237d17a62b5" timestamp="2026-11-24T20:25:05.438Z" tests="4" failures="0" errors="0" time="0.018">
-    <testcase name="statut HTTP 200" time="0.018" classname="1AuthentificationEqFia03SondeDeSante"/>
-    <testcase name="base OK" time="0.018" classname="1AuthentificationEqFia03SondeDeSante"/>
-    <testcase name="[EQ-SEC-09] en-têtes de sécurité présents" time="0.018" classname="1AuthentificationEqFia03SondeDeSante"/>
-    <testcase name="[EQ-PERF-01] temps de réponse &lt; 500 ms" time="0.018" classname="1AuthentificationEqFia03SondeDeSante"/>
+<testsuites name="BiblioTrack API — tests de contrat" tests="32" time="1.726">
+  <testsuite name="1. Authentification / [EQ-FIA-03] Sonde de santé" id="4ac4880b-513f-4c0c-99ab-c441934bbd89" timestamp="2026-11-25T18:08:26.316Z" tests="4" failures="0" errors="0" time="0.024">
+    <testcase name="statut HTTP 200" time="0.024" classname="1AuthentificationEqFia03SondeDeSante"/>
+    <testcase name="base OK" time="0.024" classname="1AuthentificationEqFia03SondeDeSante"/>
+    <testcase name="[EQ-SEC-09] en-têtes de sécurité présents" time="0.024" classname="1AuthentificationEqFia03SondeDeSante"/>
+    <testcase name="[EQ-PERF-01] temps de réponse &lt; 500 ms" time="0.024" classname="1AuthentificationEqFia03SondeDeSante"/>
   </testsuite>
-  <testsuite name="1. Authentification / [EF-01][EQ-SEC-04] Connexion refusée (mauvais mot de passe)" id="95783f6d-c8c3-461e-b389-05e7e3c71544" timestamp="2026-11-24T20:25:05.438Z" tests="4" failures="0" errors="0" time="0.224">
-    <testcase name="statut HTTP 401" time="0.224" classname="1AuthentificationEf01EqSec04ConnexionRefuseeMauvaisMotDePasse"/>
-    <testcase name="message générique" time="0.224" classname="1AuthentificationEf01EqSec04ConnexionRefuseeMauvaisMotDePasse"/>
-    <testcase name="[EQ-SEC-09] en-têtes de sécurité présents" time="0.224" classname="1AuthentificationEf01EqSec04ConnexionRefuseeMauvaisMotDePasse"/>
-    <testcase name="[EQ-PERF-01] temps de réponse &lt; 500 ms" time="0.224" classname="1AuthentificationEf01EqSec04ConnexionRefuseeMauvaisMotDePasse"/>
+  <testsuite name="1. Authentification / [EF-01][EQ-SEC-04] Connexion refusée (mauvais mot de passe)" id="01c86cc8-c10b-4ebc-b689-582cb44cf89c" timestamp="2026-11-25T18:08:26.316Z" tests="4" failures="0" errors="0" time="0.250">
+    <testcase name="statut HTTP 401" time="0.250" classname="1AuthentificationEf01EqSec04ConnexionRefuseeMauvaisMotDePasse"/>
+    <testcase name="message générique" time="0.250" classname="1AuthentificationEf01EqSec04ConnexionRefuseeMauvaisMotDePasse"/>
+    <testcase name="[EQ-SEC-09] en-têtes de sécurité présents" time="0.250" classname="1AuthentificationEf01EqSec04ConnexionRefuseeMauvaisMotDePasse"/>
+    <testcase name="[EQ-PERF-01] temps de réponse &lt; 500 ms" time="0.250" classname="1AuthentificationEf01EqSec04ConnexionRefuseeMauvaisMotDePasse"/>
   </testsuite>
-  <testsuite name="1. Authentification / [EF-01] Connexion bibliothécaire" id="ba2a5e6d-803d-41e3-8c6f-184177c0bff7" timestamp="2026-11-24T20:25:05.438Z" tests="5" failures="0" errors="0" time="0.213">
-    <testcase name="statut HTTP 200" time="0.213" classname="1AuthentificationEf01ConnexionBibliothecaire"/>
-    <testcase name="contrat Token" time="0.213" classname="1AuthentificationEf01ConnexionBibliothecaire"/>
-    <testcase name="JWT à 3 segments" time="0.213" classname="1AuthentificationEf01ConnexionBibliothecaire"/>
-    <testcase name="[EQ-SEC-09] en-têtes de sécurité présents" time="0.213" classname="1AuthentificationEf01ConnexionBibliothecaire"/>
-    <testcase name="[EQ-PERF-01] temps de réponse &lt; 500 ms" time="0.213" classname="1AuthentificationEf01ConnexionBibliothecaire"/>
+  <testsuite name="1. Authentification / [EF-01] Connexion bibliothécaire" id="07b5c858-4102-43c4-b2f9-4bc557f9d9ee" timestamp="2026-11-25T18:08:26.316Z" tests="5" failures="0" errors="0" time="0.256">
+    <testcase name="statut HTTP 200" time="0.256" classname="1AuthentificationEf01ConnexionBibliothecaire"/>
+    <testcase name="contrat Token" time="0.256" classname="1AuthentificationEf01ConnexionBibliothecaire"/>
+    <testcase name="JWT à 3 segments" time="0.256" classname="1AuthentificationEf01ConnexionBibliothecaire"/>
+    <testcase name="[EQ-SEC-09] en-têtes de sécurité présents" time="0.256" classname="1AuthentificationEf01ConnexionBibliothecaire"/>
+    <testcase name="[EQ-PERF-01] temps de réponse &lt; 500 ms" time="0.256" classname="1AuthentificationEf01ConnexionBibliothecaire"/>
   </testsuite>
-  <testsuite name="1. Authentification / [EF-01] Connexion administrateur" id="60fa3708-4b81-4b50-98ea-4879e26de9ef" timestamp="2026-11-24T20:25:05.438Z" tests="3" failures="0" errors="0" time="0.214">
-    <testcase name="statut HTTP 200" time="0.214" classname="1AuthentificationEf01ConnexionAdministrateur"/>
-    <testcase name="[EQ-SEC-09] en-têtes de sécurité présents" time="0.214" classname="1AuthentificationEf01ConnexionAdministrateur"/>
-    <testcase name="[EQ-PERF-01] temps de réponse &lt; 500 ms" time="0.214" classname="1AuthentificationEf01ConnexionAdministrateur"/>
+  <testsuite name="1. Authentification / [EF-01] Connexion administrateur" id="f880616f-1e26-4caa-8973-cedf78ca0e65" timestamp="2026-11-25T18:08:26.316Z" tests="3" failures="0" errors="0" time="0.257">
+    <testcase name="statut HTTP 200" time="0.257" classname="1AuthentificationEf01ConnexionAdministrateur"/>
+    <testcase name="[EQ-SEC-09] en-têtes de sécurité présents" time="0.257" classname="1AuthentificationEf01ConnexionAdministrateur"/>
+    <testcase name="[EQ-PERF-01] temps de réponse &lt; 500 ms" time="0.257" classname="1AuthentificationEf01ConnexionAdministrateur"/>
   </testsuite>
-  <testsuite name="1. Authentification / [EF-01][EF-02] Inscription adhérent (rôle forcé)" id="5ff47d2b-f3ab-4810-a6a9-c3a09fe5f1d7" timestamp="2026-11-24T20:25:05.438Z" tests="5" failures="0" errors="0" time="0.212">
-    <testcase name="statut HTTP 201" time="0.212" classname="1AuthentificationEf01Ef02InscriptionAdherentRoleForce"/>
-    <testcase name="rôle ADHERENT imposé" time="0.212" classname="1AuthentificationEf01Ef02InscriptionAdherentRoleForce"/>
-    <testcase name="aucun secret exposé" time="0.212" classname="1AuthentificationEf01Ef02InscriptionAdherentRoleForce"/>
-    <testcase name="[EQ-SEC-09] en-têtes de sécurité présents" time="0.212" classname="1AuthentificationEf01Ef02InscriptionAdherentRoleForce"/>
-    <testcase name="[EQ-PERF-01] temps de réponse &lt; 500 ms" time="0.212" classname="1AuthentificationEf01Ef02InscriptionAdherentRoleForce"/>
+  <testsuite name="1. Authentification / [EF-01][EF-02] Inscription adhérent (rôle forcé)" id="b50d6b36-3f50-431f-be46-113d248046ba" timestamp="2026-11-25T18:08:26.316Z" tests="5" failures="0" errors="0" time="0.237">
+    <testcase name="statut HTTP 201" time="0.237" classname="1AuthentificationEf01Ef02InscriptionAdherentRoleForce"/>
+    <testcase name="rôle ADHERENT imposé" time="0.237" classname="1AuthentificationEf01Ef02InscriptionAdherentRoleForce"/>
+    <testcase name="aucun secret exposé" time="0.237" classname="1AuthentificationEf01Ef02InscriptionAdherentRoleForce"/>
+    <testcase name="[EQ-SEC-09] en-têtes de sécurité présents" time="0.237" classname="1AuthentificationEf01Ef02InscriptionAdherentRoleForce"/>
+    <testcase name="[EQ-PERF-01] temps de réponse &lt; 500 ms" time="0.237" classname="1AuthentificationEf01Ef02InscriptionAdherentRoleForce"/>
   </testsuite>
-  <testsuite name="1. Authentification / [EF-01] Connexion adhérent" id="9018d8c4-9c21-4aee-9b09-759efb7decc5" timestamp="2026-11-24T20:25:05.438Z" tests="3" failures="0" errors="0" time="0.211">
-    <testcase name="statut HTTP 200" time="0.211" classname="1AuthentificationEf01ConnexionAdherent"/>
-    <testcase name="[EQ-SEC-09] en-têtes de sécurité présents" time="0.211" classname="1AuthentificationEf01ConnexionAdherent"/>
-    <testcase name="[EQ-PERF-01] temps de réponse &lt; 500 ms" time="0.211" classname="1AuthentificationEf01ConnexionAdherent"/>
+  <testsuite name="1. Authentification / [EF-01] Connexion adhérent" id="1bd1a72a-2d9f-4e8d-aa83-13bcad7ea67d" timestamp="2026-11-25T18:08:26.316Z" tests="3" failures="0" errors="0" time="0.207">
+    <testcase name="statut HTTP 200" time="0.207" classname="1AuthentificationEf01ConnexionAdherent"/>
+    <testcase name="[EQ-SEC-09] en-têtes de sécurité présents" time="0.207" classname="1AuthentificationEf01ConnexionAdherent"/>
+    <testcase name="[EQ-PERF-01] temps de réponse &lt; 500 ms" time="0.207" classname="1AuthentificationEf01ConnexionAdherent"/>
   </testsuite>
-  <testsuite name="1. Authentification / [EF-01] Profil courant" id="1443dbbf-9827-42b5-9601-1fe6873048c7" timestamp="2026-11-24T20:25:05.438Z" tests="4" failures="0" errors="0" time="0.019">
-    <testcase name="statut HTTP 200" time="0.019" classname="1AuthentificationEf01ProfilCourant"/>
-    <testcase name="contrat User" time="0.019" classname="1AuthentificationEf01ProfilCourant"/>
-    <testcase name="[EQ-SEC-09] en-têtes de sécurité présents" time="0.019" classname="1AuthentificationEf01ProfilCourant"/>
-    <testcase name="[EQ-PERF-01] temps de réponse &lt; 500 ms" time="0.019" classname="1AuthentificationEf01ProfilCourant"/>
+  <testsuite name="1. Authentification / [EF-01] Profil courant" id="6071ccbf-c803-4e7d-a9b3-5ec3936e7705" timestamp="2026-11-25T18:08:26.316Z" tests="4" failures="0" errors="0" time="0.004">
+    <testcase name="statut HTTP 200" time="0.004" classname="1AuthentificationEf01ProfilCourant"/>
+    <testcase name="contrat User" time="0.004" classname="1AuthentificationEf01ProfilCourant"/>
+    <testcase name="[EQ-SEC-09] en-têtes de sécurité présents" time="0.004" classname="1AuthentificationEf01ProfilCourant"/>
+    <testcase name="[EQ-PERF-01] temps de réponse &lt; 500 ms" time="0.004" classname="1AuthentificationEf01ProfilCourant"/>
   </testsuite>
-  <testsuite name="1. Authentification / [EQ-SEC-02] Accès sans jeton" id="4cd0b928-1e36-4ac8-a5b8-bf06c3e96c18" timestamp="2026-11-24T20:25:05.438Z" tests="4" failures="0" errors="0" time="0.003">
+  <testsuite name="1. Authentification / [EQ-SEC-02] Accès sans jeton" id="36221c0f-f48a-422d-ac28-199dace62ea0" timestamp="2026-11-25T18:08:26.316Z" tests="4" failures="0" errors="0" time="0.003">
     <testcase name="statut HTTP 401" time="0.003" classname="1AuthentificationEqSec02AccesSansJeton"/>
     <testcase name="en-tête WWW-Authenticate" time="0.003" classname="1AuthentificationEqSec02AccesSansJeton"/>
     <testcase name="[EQ-SEC-09] en-têtes de sécurité présents" time="0.003" classname="1AuthentificationEqSec02AccesSansJeton"/>
     <testcase name="[EQ-PERF-01] temps de réponse &lt; 500 ms" time="0.003" classname="1AuthentificationEqSec02AccesSansJeton"/>
   </testsuite>
-  <testsuite name="2. Catalogue / [EF-12] Recherche paginée" id="386c6abc-059f-4abc-ab95-0417e04884ac" timestamp="2026-11-24T20:25:05.438Z" tests="6" failures="0" errors="0" time="0.019">
-    <testcase name="statut HTTP 200" time="0.019" classname="2CatalogueEf12RecherchePaginee"/>
-    <testcase name="contrat Page&lt;Book>" time="0.019" classname="2CatalogueEf12RecherchePaginee"/>
-    <testcase name="contrat Book" time="0.019" classname="2CatalogueEf12RecherchePaginee"/>
-    <testcase name="ISBN-13 canonique" time="0.019" classname="2CatalogueEf12RecherchePaginee"/>
-    <testcase name="[EQ-SEC-09] en-têtes de sécurité présents" time="0.019" classname="2CatalogueEf12RecherchePaginee"/>
-    <testcase name="[EQ-PERF-01] temps de réponse &lt; 500 ms" time="0.019" classname="2CatalogueEf12RecherchePaginee"/>
+  <testsuite name="2. Catalogue / [EF-12] Recherche paginée" id="1892032d-889e-49ea-b361-893038773a2f" timestamp="2026-11-25T18:08:26.316Z" tests="6" failures="0" errors="0" time="0.033">
+    <testcase name="statut HTTP 200" time="0.033" classname="2CatalogueEf12RecherchePaginee"/>
+    <testcase name="contrat Page&lt;Book>" time="0.033" classname="2CatalogueEf12RecherchePaginee"/>
+    <testcase name="contrat Book" time="0.033" classname="2CatalogueEf12RecherchePaginee"/>
+    <testcase name="ISBN-13 canonique" time="0.033" classname="2CatalogueEf12RecherchePaginee"/>
+    <testcase name="[EQ-SEC-09] en-têtes de sécurité présents" time="0.033" classname="2CatalogueEf12RecherchePaginee"/>
+    <testcase name="[EQ-PERF-01] temps de réponse &lt; 500 ms" time="0.033" classname="2CatalogueEf12RecherchePaginee"/>
   </testsuite>
-  <testsuite name="2. Catalogue / [EF-12] Paramètre de pagination invalide" id="11e0d795-d1b0-4c58-9bea-0a87c48d2681" timestamp="2026-11-24T20:25:05.438Z" tests="3" failures="0" errors="0" time="0.004">
+  <testsuite name="2. Catalogue / [EF-12] Paramètre de pagination invalide" id="8024d3d2-5753-4097-9b3a-0d4212a3a518" timestamp="2026-11-25T18:08:26.316Z" tests="3" failures="0" errors="0" time="0.004">
     <testcase name="statut HTTP 422" time="0.004" classname="2CatalogueEf12ParametreDePaginationInvalide"/>
     <testcase name="[EQ-SEC-09] en-têtes de sécurité présents" time="0.004" classname="2CatalogueEf12ParametreDePaginationInvalide"/>
     <testcase name="[EQ-PERF-01] temps de réponse &lt; 500 ms" time="0.004" classname="2CatalogueEf12ParametreDePaginationInvalide"/>
   </testsuite>
-  <testsuite name="2. Catalogue / [EF-03] Liste des catégories" id="72c04215-87d1-4f29-b8a2-6f3db13c7b1b" timestamp="2026-11-24T20:25:05.438Z" tests="4" failures="0" errors="0" time="0.004">
+  <testsuite name="2. Catalogue / [EF-03] Liste des catégories" id="e2ca1d5f-829d-4f3c-8adc-3296e5213ae6" timestamp="2026-11-25T18:08:26.316Z" tests="4" failures="0" errors="0" time="0.004">
     <testcase name="statut HTTP 200" time="0.004" classname="2CatalogueEf03ListeDesCategories"/>
     <testcase name="tableau non vide" time="0.004" classname="2CatalogueEf03ListeDesCategories"/>
     <testcase name="[EQ-SEC-09] en-têtes de sécurité présents" time="0.004" classname="2CatalogueEf03ListeDesCategories"/>
     <testcase name="[EQ-PERF-01] temps de réponse &lt; 500 ms" time="0.004" classname="2CatalogueEf03ListeDesCategories"/>
   </testsuite>
-  <testsuite name="2. Catalogue / [EF-04] Création d'un auteur" id="6d66f21a-70c7-4a5b-b689-57619e177e7e" timestamp="2026-11-24T20:25:05.438Z" tests="3" failures="0" errors="0" time="0.005">
-    <testcase name="statut HTTP 201" time="0.005" classname="2CatalogueEf04CreationDunAuteur"/>
-    <testcase name="[EQ-SEC-09] en-têtes de sécurité présents" time="0.005" classname="2CatalogueEf04CreationDunAuteur"/>
-    <testcase name="[EQ-PERF-01] temps de réponse &lt; 500 ms" time="0.005" classname="2CatalogueEf04CreationDunAuteur"/>
+  <testsuite name="2. Catalogue / [EF-04] Création d'un auteur" id="fa8f7509-1e8d-4f61-a40c-fd9a5bad6741" timestamp="2026-11-25T18:08:26.316Z" tests="3" failures="0" errors="0" time="0.006">
+    <testcase name="statut HTTP 201" time="0.006" classname="2CatalogueEf04CreationDunAuteur"/>
+    <testcase name="[EQ-SEC-09] en-têtes de sécurité présents" time="0.006" classname="2CatalogueEf04CreationDunAuteur"/>
+    <testcase name="[EQ-PERF-01] temps de réponse &lt; 500 ms" time="0.006" classname="2CatalogueEf04CreationDunAuteur"/>
   </testsuite>
-  <testsuite name="2. Catalogue / [EF-05][RG-01] ISBN invalide refusé" id="dc647fc0-9f87-45cc-a209-feaba644ef67" timestamp="2026-11-24T20:25:05.438Z" tests="3" failures="0" errors="0" time="0.004">
+  <testsuite name="2. Catalogue / [EF-05][RG-01] ISBN invalide refusé" id="aeb7d9f8-c979-4dc9-9c01-8c401e7d016d" timestamp="2026-11-25T18:08:26.316Z" tests="3" failures="0" errors="0" time="0.004">
     <testcase name="statut HTTP 422" time="0.004" classname="2CatalogueEf05Rg01IsbnInvalideRefuse"/>
     <testcase name="[EQ-SEC-09] en-têtes de sécurité présents" time="0.004" classname="2CatalogueEf05Rg01IsbnInvalideRefuse"/>
     <testcase name="[EQ-PERF-01] temps de réponse &lt; 500 ms" time="0.004" classname="2CatalogueEf05Rg01IsbnInvalideRefuse"/>
   </testsuite>
-  <testsuite name="2. Catalogue / [EF-05] Création d'un ouvrage" id="e98676d1-97eb-4da1-8a07-ef280b0d8f7d" timestamp="2026-11-24T20:25:05.438Z" tests="4" failures="0" errors="0" time="0.008">
-    <testcase name="statut HTTP 201" time="0.008" classname="2CatalogueEf05CreationDunOuvrage"/>
-    <testcase name="relations 1-N et N-N renvoyées" time="0.008" classname="2CatalogueEf05CreationDunOuvrage"/>
-    <testcase name="[EQ-SEC-09] en-têtes de sécurité présents" time="0.008" classname="2CatalogueEf05CreationDunOuvrage"/>
-    <testcase name="[EQ-PERF-01] temps de réponse &lt; 500 ms" time="0.008" classname="2CatalogueEf05CreationDunOuvrage"/>
+  <testsuite name="2. Catalogue / [EF-05] Création d'un ouvrage" id="6690d4fd-d123-40e7-9f2c-a1df9dc93542" timestamp="2026-11-25T18:08:26.316Z" tests="4" failures="0" errors="0" time="0.010">
+    <testcase name="statut HTTP 201" time="0.010" classname="2CatalogueEf05CreationDunOuvrage"/>
+    <testcase name="relations 1-N et N-N renvoyées" time="0.010" classname="2CatalogueEf05CreationDunOuvrage"/>
+    <testcase name="[EQ-SEC-09] en-têtes de sécurité présents" time="0.010" classname="2CatalogueEf05CreationDunOuvrage"/>
+    <testcase name="[EQ-PERF-01] temps de réponse &lt; 500 ms" time="0.010" classname="2CatalogueEf05CreationDunOuvrage"/>
   </testsuite>
-  <testsuite name="2. Catalogue / [EF-05][RG-01] ISBN en double refusé" id="82e8b6b9-f89d-406f-bdb6-03fb5a9a9f6b" timestamp="2026-11-24T20:25:05.438Z" tests="4" failures="0" errors="0" time="0.005">
+  <testsuite name="2. Catalogue / [EF-05][RG-01] ISBN en double refusé" id="ea621037-2ead-42ad-9453-144d262a430b" timestamp="2026-11-25T18:08:26.316Z" tests="4" failures="0" errors="0" time="0.005">
     <testcase name="statut HTTP 409" time="0.005" classname="2CatalogueEf05Rg01IsbnEnDoubleRefuse"/>
     <testcase name="code règle RG-01" time="0.005" classname="2CatalogueEf05Rg01IsbnEnDoubleRefuse"/>
     <testcase name="[EQ-SEC-09] en-têtes de sécurité présents" time="0.005" classname="2CatalogueEf05Rg01IsbnEnDoubleRefuse"/>
     <testcase name="[EQ-PERF-01] temps de réponse &lt; 500 ms" time="0.005" classname="2CatalogueEf05Rg01IsbnEnDoubleRefuse"/>
   </testsuite>
-  <testsuite name="2. Catalogue / [EF-02][EQ-SEC-03] Adhérent : création d'ouvrage interdite" id="35ad2da7-75ce-4b9a-af15-5491b96159fb" timestamp="2026-11-24T20:25:05.438Z" tests="3" failures="0" errors="0" time="0.004">
+  <testsuite name="2. Catalogue / [EF-02][EQ-SEC-03] Adhérent : création d'ouvrage interdite" id="c0a736eb-86ca-48ea-ac23-7818d6b3462f" timestamp="2026-11-25T18:08:26.316Z" tests="3" failures="0" errors="0" time="0.004">
     <testcase name="statut HTTP 403" time="0.004" classname="2CatalogueEf02EqSec03AdherentCreationDouvrageInterdite"/>
     <testcase name="[EQ-SEC-09] en-têtes de sécurité présents" time="0.004" classname="2CatalogueEf02EqSec03AdherentCreationDouvrageInterdite"/>
     <testcase name="[EQ-PERF-01] temps de réponse &lt; 500 ms" time="0.004" classname="2CatalogueEf02EqSec03AdherentCreationDouvrageInterdite"/>
   </testsuite>
-  <testsuite name="2. Catalogue / [EF-06] Ajout d'un exemplaire" id="c3126548-f1d4-4100-94fa-d5cea1a98123" timestamp="2026-11-24T20:25:05.438Z" tests="4" failures="0" errors="0" time="0.008">
-    <testcase name="statut HTTP 201" time="0.008" classname="2CatalogueEf06AjoutDunExemplaire"/>
-    <testcase name="statut initial DISPONIBLE" time="0.008" classname="2CatalogueEf06AjoutDunExemplaire"/>
-    <testcase name="[EQ-SEC-09] en-têtes de sécurité présents" time="0.008" classname="2CatalogueEf06AjoutDunExemplaire"/>
-    <testcase name="[EQ-PERF-01] temps de réponse &lt; 500 ms" time="0.008" classname="2CatalogueEf06AjoutDunExemplaire"/>
+  <testsuite name="2. Catalogue / [EF-06] Ajout d'un exemplaire" id="4233216e-07f2-4059-9835-d93cf0d3949d" timestamp="2026-11-25T18:08:26.316Z" tests="4" failures="0" errors="0" time="0.010">
+    <testcase name="statut HTTP 201" time="0.010" classname="2CatalogueEf06AjoutDunExemplaire"/>
+    <testcase name="statut initial DISPONIBLE" time="0.010" classname="2CatalogueEf06AjoutDunExemplaire"/>
+    <testcase name="[EQ-SEC-09] en-têtes de sécurité présents" time="0.010" classname="2CatalogueEf06AjoutDunExemplaire"/>
+    <testcase name="[EQ-PERF-01] temps de réponse &lt; 500 ms" time="0.010" classname="2CatalogueEf06AjoutDunExemplaire"/>
   </testsuite>
-  <testsuite name="3. Circulation / [EF-08][WF-01][RG-05] Emprunt" id="f79fc436-212c-4353-9501-d2e7a32d3887" timestamp="2026-11-24T20:25:05.438Z" tests="5" failures="0" errors="0" time="0.019">
-    <testcase name="statut HTTP 201" time="0.019" classname="3CirculationEf08Wf01Rg05Emprunt"/>
-    <testcase name="statut EN_COURS" time="0.019" classname="3CirculationEf08Wf01Rg05Emprunt"/>
-    <testcase name="échéance = J+21" time="0.019" classname="3CirculationEf08Wf01Rg05Emprunt"/>
-    <testcase name="[EQ-SEC-09] en-têtes de sécurité présents" time="0.019" classname="3CirculationEf08Wf01Rg05Emprunt"/>
-    <testcase name="[EQ-PERF-01] temps de réponse &lt; 500 ms" time="0.019" classname="3CirculationEf08Wf01Rg05Emprunt"/>
+  <testsuite name="3. Circulation / [EF-08][WF-01][RG-05] Emprunt" id="b62f7705-ea57-4766-be2e-8ceb4e636a8b" timestamp="2026-11-25T18:08:26.316Z" tests="5" failures="0" errors="0" time="0.020">
+    <testcase name="statut HTTP 201" time="0.020" classname="3CirculationEf08Wf01Rg05Emprunt"/>
+    <testcase name="statut EN_COURS" time="0.020" classname="3CirculationEf08Wf01Rg05Emprunt"/>
+    <testcase name="échéance = J+21" time="0.020" classname="3CirculationEf08Wf01Rg05Emprunt"/>
+    <testcase name="[EQ-SEC-09] en-têtes de sécurité présents" time="0.020" classname="3CirculationEf08Wf01Rg05Emprunt"/>
+    <testcase name="[EQ-PERF-01] temps de réponse &lt; 500 ms" time="0.020" classname="3CirculationEf08Wf01Rg05Emprunt"/>
   </testsuite>
-  <testsuite name="3. Circulation / [RG-04] Exemplaire déjà emprunté" id="c445735e-9c61-4794-8136-0ab46aa91949" timestamp="2026-11-24T20:25:05.438Z" tests="4" failures="0" errors="0" time="0.009">
-    <testcase name="statut HTTP 409" time="0.009" classname="3CirculationRg04ExemplaireDejaEmprunte"/>
-    <testcase name="code règle RG-04" time="0.009" classname="3CirculationRg04ExemplaireDejaEmprunte"/>
-    <testcase name="[EQ-SEC-09] en-têtes de sécurité présents" time="0.009" classname="3CirculationRg04ExemplaireDejaEmprunte"/>
-    <testcase name="[EQ-PERF-01] temps de réponse &lt; 500 ms" time="0.009" classname="3CirculationRg04ExemplaireDejaEmprunte"/>
+  <testsuite name="3. Circulation / [RG-04] Exemplaire déjà emprunté" id="3ec80216-787b-4d04-ac65-aedbc6e816e7" timestamp="2026-11-25T18:08:26.316Z" tests="4" failures="0" errors="0" time="0.011">
+    <testcase name="statut HTTP 409" time="0.011" classname="3CirculationRg04ExemplaireDejaEmprunte"/>
+    <testcase name="code règle RG-04" time="0.011" classname="3CirculationRg04ExemplaireDejaEmprunte"/>
+    <testcase name="[EQ-SEC-09] en-têtes de sécurité présents" time="0.011" classname="3CirculationRg04ExemplaireDejaEmprunte"/>
+    <testcase name="[EQ-PERF-01] temps de réponse &lt; 500 ms" time="0.011" classname="3CirculationRg04ExemplaireDejaEmprunte"/>
   </testsuite>
-  <testsuite name="3. Circulation / [EQ-SEC-03] Adhérent : enregistrement d'emprunt interdit" id="78302251-9c64-45cf-b3eb-005c0e29851b" timestamp="2026-11-24T20:25:05.438Z" tests="3" failures="0" errors="0" time="0.004">
+  <testsuite name="3. Circulation / [EQ-SEC-03] Adhérent : enregistrement d'emprunt interdit" id="8a5b50ba-0b5b-408f-ad5a-7c3067f87a70" timestamp="2026-11-25T18:08:26.316Z" tests="3" failures="0" errors="0" time="0.004">
     <testcase name="statut HTTP 403" time="0.004" classname="3CirculationEqSec03AdherentEnregistrementDempruntInterdit"/>
     <testcase name="[EQ-SEC-09] en-têtes de sécurité présents" time="0.004" classname="3CirculationEqSec03AdherentEnregistrementDempruntInterdit"/>
     <testcase name="[EQ-PERF-01] temps de réponse &lt; 500 ms" time="0.004" classname="3CirculationEqSec03AdherentEnregistrementDempruntInterdit"/>
   </testsuite>
-  <testsuite name="3. Circulation / [EF-08][RG-05] Prolongation par l'adhérent" id="95e09754-517d-42e0-aa2e-2da8e33801db" timestamp="2026-11-24T20:25:05.438Z" tests="4" failures="0" errors="0" time="0.009">
-    <testcase name="statut HTTP 200" time="0.009" classname="3CirculationEf08Rg05ProlongationParLadherent"/>
-    <testcase name="1 prolongation" time="0.009" classname="3CirculationEf08Rg05ProlongationParLadherent"/>
-    <testcase name="[EQ-SEC-09] en-têtes de sécurité présents" time="0.009" classname="3CirculationEf08Rg05ProlongationParLadherent"/>
-    <testcase name="[EQ-PERF-01] temps de réponse &lt; 500 ms" time="0.009" classname="3CirculationEf08Rg05ProlongationParLadherent"/>
+  <testsuite name="3. Circulation / [EF-08][RG-05] Prolongation par l'adhérent" id="9fdb10d7-94eb-4c02-9f9a-43368c5cd10d" timestamp="2026-11-25T18:08:26.316Z" tests="4" failures="0" errors="0" time="0.010">
+    <testcase name="statut HTTP 200" time="0.010" classname="3CirculationEf08Rg05ProlongationParLadherent"/>
+    <testcase name="1 prolongation" time="0.010" classname="3CirculationEf08Rg05ProlongationParLadherent"/>
+    <testcase name="[EQ-SEC-09] en-têtes de sécurité présents" time="0.010" classname="3CirculationEf08Rg05ProlongationParLadherent"/>
+    <testcase name="[EQ-PERF-01] temps de réponse &lt; 500 ms" time="0.010" classname="3CirculationEf08Rg05ProlongationParLadherent"/>
   </testsuite>
-  <testsuite name="3. Circulation / [RG-05] Seconde prolongation refusée" id="2d5451fc-a841-433f-99a5-40fa95cf0c4e" timestamp="2026-11-24T20:25:05.438Z" tests="4" failures="0" errors="0" time="0.005">
+  <testsuite name="3. Circulation / [RG-05] Seconde prolongation refusée" id="d856d785-1431-4942-93ce-d1120370d01c" timestamp="2026-11-25T18:08:26.316Z" tests="4" failures="0" errors="0" time="0.005">
     <testcase name="statut HTTP 409" time="0.005" classname="3CirculationRg05SecondeProlongationRefusee"/>
     <testcase name="code règle RG-05" time="0.005" classname="3CirculationRg05SecondeProlongationRefusee"/>
     <testcase name="[EQ-SEC-09] en-têtes de sécurité présents" time="0.005" classname="3CirculationRg05SecondeProlongationRefusee"/>
     <testcase name="[EQ-PERF-01] temps de réponse &lt; 500 ms" time="0.005" classname="3CirculationRg05SecondeProlongationRefusee"/>
   </testsuite>
-  <testsuite name="3. Circulation / [EQ-SEC-10] Adhérent : seuls ses emprunts sont visibles" id="ce63360e-6fcc-42a4-b302-65967cb2e947" timestamp="2026-11-24T20:25:05.438Z" tests="4" failures="0" errors="0" time="0.009">
-    <testcase name="statut HTTP 200" time="0.009" classname="3CirculationEqSec10AdherentSeulsSesEmpruntsSontVisibles"/>
-    <testcase name="aucune fuite" time="0.009" classname="3CirculationEqSec10AdherentSeulsSesEmpruntsSontVisibles"/>
-    <testcase name="[EQ-SEC-09] en-têtes de sécurité présents" time="0.009" classname="3CirculationEqSec10AdherentSeulsSesEmpruntsSontVisibles"/>
-    <testcase name="[EQ-PERF-01] temps de réponse &lt; 500 ms" time="0.009" classname="3CirculationEqSec10AdherentSeulsSesEmpruntsSontVisibles"/>
+  <testsuite name="3. Circulation / [EQ-SEC-10] Adhérent : seuls ses emprunts sont visibles" id="e17cc5d0-be76-4054-9158-0f22b6609472" timestamp="2026-11-25T18:08:26.316Z" tests="4" failures="0" errors="0" time="0.026">
+    <testcase name="statut HTTP 200" time="0.026" classname="3CirculationEqSec10AdherentSeulsSesEmpruntsSontVisibles"/>
+    <testcase name="aucune fuite" time="0.026" classname="3CirculationEqSec10AdherentSeulsSesEmpruntsSontVisibles"/>
+    <testcase name="[EQ-SEC-09] en-têtes de sécurité présents" time="0.026" classname="3CirculationEqSec10AdherentSeulsSesEmpruntsSontVisibles"/>
+    <testcase name="[EQ-PERF-01] temps de réponse &lt; 500 ms" time="0.026" classname="3CirculationEqSec10AdherentSeulsSesEmpruntsSontVisibles"/>
   </testsuite>
-  <testsuite name="3. Circulation / [EF-08][WF-01][RG-06] Retour à l'heure" id="62f6f39e-1952-4b3b-aff4-fa3eb36ad27e" timestamp="2026-11-24T20:25:05.438Z" tests="6" failures="0" errors="0" time="0.006">
-    <testcase name="statut HTTP 200" time="0.006" classname="3CirculationEf08Wf01Rg06RetourALheure"/>
-    <testcase name="contrat ReturnResult" time="0.006" classname="3CirculationEf08Wf01Rg06RetourALheure"/>
-    <testcase name="pas de pénalité" time="0.006" classname="3CirculationEf08Wf01Rg06RetourALheure"/>
-    <testcase name="statut RENDU" time="0.006" classname="3CirculationEf08Wf01Rg06RetourALheure"/>
-    <testcase name="[EQ-SEC-09] en-têtes de sécurité présents" time="0.006" classname="3CirculationEf08Wf01Rg06RetourALheure"/>
-    <testcase name="[EQ-PERF-01] temps de réponse &lt; 500 ms" time="0.006" classname="3CirculationEf08Wf01Rg06RetourALheure"/>
+  <testsuite name="3. Circulation / [EF-08][WF-01][RG-06] Retour à l'heure" id="3ba91840-33ca-4457-ac4c-ad751fc34dd2" timestamp="2026-11-25T18:08:26.316Z" tests="6" failures="0" errors="0" time="0.010">
+    <testcase name="statut HTTP 200" time="0.010" classname="3CirculationEf08Wf01Rg06RetourALheure"/>
+    <testcase name="contrat ReturnResult" time="0.010" classname="3CirculationEf08Wf01Rg06RetourALheure"/>
+    <testcase name="pas de pénalité" time="0.010" classname="3CirculationEf08Wf01Rg06RetourALheure"/>
+    <testcase name="statut RENDU" time="0.010" classname="3CirculationEf08Wf01Rg06RetourALheure"/>
+    <testcase name="[EQ-SEC-09] en-têtes de sécurité présents" time="0.010" classname="3CirculationEf08Wf01Rg06RetourALheure"/>
+    <testcase name="[EQ-PERF-01] temps de réponse &lt; 500 ms" time="0.010" classname="3CirculationEf08Wf01Rg06RetourALheure"/>
   </testsuite>
-  <testsuite name="3. Circulation / [WF-01][EQ-FIA-05] Double retour refusé" id="464be727-3203-4195-8f12-88ac4fab60f4" timestamp="2026-11-24T20:25:05.438Z" tests="4" failures="0" errors="0" time="0.004">
-    <testcase name="statut HTTP 409" time="0.004" classname="3CirculationWf01EqFia05DoubleRetourRefuse"/>
-    <testcase name="code règle WF-TRANSITION" time="0.004" classname="3CirculationWf01EqFia05DoubleRetourRefuse"/>
-    <testcase name="[EQ-SEC-09] en-têtes de sécurité présents" time="0.004" classname="3CirculationWf01EqFia05DoubleRetourRefuse"/>
-    <testcase name="[EQ-PERF-01] temps de réponse &lt; 500 ms" time="0.004" classname="3CirculationWf01EqFia05DoubleRetourRefuse"/>
+  <testsuite name="3. Circulation / [WF-01][EQ-FIA-05] Double retour refusé" id="19eb2dcc-eaef-4274-bb6f-cccc29fd4b59" timestamp="2026-11-25T18:08:26.316Z" tests="4" failures="0" errors="0" time="0.007">
+    <testcase name="statut HTTP 409" time="0.007" classname="3CirculationWf01EqFia05DoubleRetourRefuse"/>
+    <testcase name="code règle WF-TRANSITION" time="0.007" classname="3CirculationWf01EqFia05DoubleRetourRefuse"/>
+    <testcase name="[EQ-SEC-09] en-têtes de sécurité présents" time="0.007" classname="3CirculationWf01EqFia05DoubleRetourRefuse"/>
+    <testcase name="[EQ-PERF-01] temps de réponse &lt; 500 ms" time="0.007" classname="3CirculationWf01EqFia05DoubleRetourRefuse"/>
   </testsuite>
-  <testsuite name="3. Circulation / [EF-10][WF-03] Pénalité manuelle" id="58ed16f1-7de3-440a-bf93-32d8635e0fd2" timestamp="2026-11-24T20:25:05.438Z" tests="3" failures="0" errors="0" time="0.007">
-    <testcase name="statut HTTP 201" time="0.007" classname="3CirculationEf10Wf03PenaliteManuelle"/>
-    <testcase name="[EQ-SEC-09] en-têtes de sécurité présents" time="0.007" classname="3CirculationEf10Wf03PenaliteManuelle"/>
-    <testcase name="[EQ-PERF-01] temps de réponse &lt; 500 ms" time="0.007" classname="3CirculationEf10Wf03PenaliteManuelle"/>
+  <testsuite name="3. Circulation / [EF-10][WF-03] Pénalité manuelle" id="0b0d79fd-c904-4b3f-85a6-26146e16a8bd" timestamp="2026-11-25T18:08:26.316Z" tests="3" failures="0" errors="0" time="0.010">
+    <testcase name="statut HTTP 201" time="0.010" classname="3CirculationEf10Wf03PenaliteManuelle"/>
+    <testcase name="[EQ-SEC-09] en-têtes de sécurité présents" time="0.010" classname="3CirculationEf10Wf03PenaliteManuelle"/>
+    <testcase name="[EQ-PERF-01] temps de réponse &lt; 500 ms" time="0.010" classname="3CirculationEf10Wf03PenaliteManuelle"/>
   </testsuite>
-  <testsuite name="3. Circulation / [EF-10][WF-03] Encaissement" id="b4613470-7bca-4d52-9995-3d67c8f236e5" timestamp="2026-11-24T20:25:05.438Z" tests="4" failures="0" errors="0" time="0.006">
-    <testcase name="statut HTTP 200" time="0.006" classname="3CirculationEf10Wf03Encaissement"/>
-    <testcase name="PAYEE" time="0.006" classname="3CirculationEf10Wf03Encaissement"/>
-    <testcase name="[EQ-SEC-09] en-têtes de sécurité présents" time="0.006" classname="3CirculationEf10Wf03Encaissement"/>
-    <testcase name="[EQ-PERF-01] temps de réponse &lt; 500 ms" time="0.006" classname="3CirculationEf10Wf03Encaissement"/>
+  <testsuite name="3. Circulation / [EF-10][WF-03] Encaissement" id="4f3abfbf-afb8-427d-a7a9-316b57d06940" timestamp="2026-11-25T18:08:26.316Z" tests="4" failures="0" errors="0" time="0.032">
+    <testcase name="statut HTTP 200" time="0.032" classname="3CirculationEf10Wf03Encaissement"/>
+    <testcase name="PAYEE" time="0.032" classname="3CirculationEf10Wf03Encaissement"/>
+    <testcase name="[EQ-SEC-09] en-têtes de sécurité présents" time="0.032" classname="3CirculationEf10Wf03Encaissement"/>
+    <testcase name="[EQ-PERF-01] temps de réponse &lt; 500 ms" time="0.032" classname="3CirculationEf10Wf03Encaissement"/>
   </testsuite>
-  <testsuite name="4. Pilotage / [EF-11] Tableau de bord" id="cd8be669-7618-4d78-babb-41c52a0c92e4" timestamp="2026-11-24T20:25:05.438Z" tests="4" failures="0" errors="0" time="0.039">
-    <testcase name="statut HTTP 200" time="0.039" classname="4PilotageEf11TableauDeBord"/>
-    <testcase name="contrat Dashboard" time="0.039" classname="4PilotageEf11TableauDeBord"/>
-    <testcase name="[EQ-SEC-09] en-têtes de sécurité présents" time="0.039" classname="4PilotageEf11TableauDeBord"/>
-    <testcase name="[EQ-PERF-01] temps de réponse &lt; 500 ms" time="0.039" classname="4PilotageEf11TableauDeBord"/>
+  <testsuite name="4. Pilotage / [EF-11] Tableau de bord" id="ce304b54-6ec7-4cfb-b7b2-ef835512472f" timestamp="2026-11-25T18:08:26.316Z" tests="4" failures="0" errors="0" time="0.052">
+    <testcase name="statut HTTP 200" time="0.052" classname="4PilotageEf11TableauDeBord"/>
+    <testcase name="contrat Dashboard" time="0.052" classname="4PilotageEf11TableauDeBord"/>
+    <testcase name="[EQ-SEC-09] en-têtes de sécurité présents" time="0.052" classname="4PilotageEf11TableauDeBord"/>
+    <testcase name="[EQ-PERF-01] temps de réponse &lt; 500 ms" time="0.052" classname="4PilotageEf11TableauDeBord"/>
   </testsuite>
-  <testsuite name="4. Pilotage / [EF-02][EQ-SEC-03] Adhérent : tableau de bord interdit" id="0fa0388a-50fc-41b7-bd5c-e67250912c22" timestamp="2026-11-24T20:25:05.438Z" tests="3" failures="0" errors="0" time="0.003">
-    <testcase name="statut HTTP 403" time="0.003" classname="4PilotageEf02EqSec03AdherentTableauDeBordInterdit"/>
-    <testcase name="[EQ-SEC-09] en-têtes de sécurité présents" time="0.003" classname="4PilotageEf02EqSec03AdherentTableauDeBordInterdit"/>
-    <testcase name="[EQ-PERF-01] temps de réponse &lt; 500 ms" time="0.003" classname="4PilotageEf02EqSec03AdherentTableauDeBordInterdit"/>
+  <testsuite name="4. Pilotage / [EF-02][EQ-SEC-03] Adhérent : tableau de bord interdit" id="7ed4f6e9-9a84-4839-9a21-903fbc9e944e" timestamp="2026-11-25T18:08:26.316Z" tests="3" failures="0" errors="0" time="0.004">
+    <testcase name="statut HTTP 403" time="0.004" classname="4PilotageEf02EqSec03AdherentTableauDeBordInterdit"/>
+    <testcase name="[EQ-SEC-09] en-têtes de sécurité présents" time="0.004" classname="4PilotageEf02EqSec03AdherentTableauDeBordInterdit"/>
+    <testcase name="[EQ-PERF-01] temps de réponse &lt; 500 ms" time="0.004" classname="4PilotageEf02EqSec03AdherentTableauDeBordInterdit"/>
   </testsuite>
-  <testsuite name="4. Pilotage / [EF-13] Journal d'audit filtré" id="0c5d8441-20d1-44be-b08a-e69d7aac0f28" timestamp="2026-11-24T20:25:05.438Z" tests="5" failures="0" errors="0" time="0.008">
-    <testcase name="statut HTTP 200" time="0.008" classname="4PilotageEf13JournalDauditFiltre"/>
-    <testcase name="au moins une entrée" time="0.008" classname="4PilotageEf13JournalDauditFiltre"/>
-    <testcase name="qui/quoi/quand" time="0.008" classname="4PilotageEf13JournalDauditFiltre"/>
-    <testcase name="[EQ-SEC-09] en-têtes de sécurité présents" time="0.008" classname="4PilotageEf13JournalDauditFiltre"/>
-    <testcase name="[EQ-PERF-01] temps de réponse &lt; 500 ms" time="0.008" classname="4PilotageEf13JournalDauditFiltre"/>
+  <testsuite name="4. Pilotage / [EF-13] Journal d'audit filtré" id="d27746d4-ca41-413b-9a25-c191aac170dc" timestamp="2026-11-25T18:08:26.316Z" tests="5" failures="0" errors="0" time="0.147">
+    <testcase name="statut HTTP 200" time="0.147" classname="4PilotageEf13JournalDauditFiltre"/>
+    <testcase name="au moins une entrée" time="0.147" classname="4PilotageEf13JournalDauditFiltre"/>
+    <testcase name="qui/quoi/quand" time="0.147" classname="4PilotageEf13JournalDauditFiltre"/>
+    <testcase name="[EQ-SEC-09] en-têtes de sécurité présents" time="0.147" classname="4PilotageEf13JournalDauditFiltre"/>
+    <testcase name="[EQ-PERF-01] temps de réponse &lt; 500 ms" time="0.147" classname="4PilotageEf13JournalDauditFiltre"/>
   </testsuite>
-  <testsuite name="4. Pilotage / [EF-02][EQ-SEC-03] Bibliothécaire : audit interdit" id="e33eaffb-cd54-417e-a82c-66770c34b8a0" timestamp="2026-11-24T20:25:05.438Z" tests="3" failures="0" errors="0" time="0.008">
-    <testcase name="statut HTTP 403" time="0.008" classname="4PilotageEf02EqSec03BibliothecaireAuditInterdit"/>
-    <testcase name="[EQ-SEC-09] en-têtes de sécurité présents" time="0.008" classname="4PilotageEf02EqSec03BibliothecaireAuditInterdit"/>
-    <testcase name="[EQ-PERF-01] temps de réponse &lt; 500 ms" time="0.008" classname="4PilotageEf02EqSec03BibliothecaireAuditInterdit"/>
+  <testsuite name="4. Pilotage / [EF-02][EQ-SEC-03] Bibliothécaire : audit interdit" id="75df2b0e-58b9-4bd1-b000-47696d16dbbb" timestamp="2026-11-25T18:08:26.316Z" tests="3" failures="0" errors="0" time="0.005">
+    <testcase name="statut HTTP 403" time="0.005" classname="4PilotageEf02EqSec03BibliothecaireAuditInterdit"/>
+    <testcase name="[EQ-SEC-09] en-têtes de sécurité présents" time="0.005" classname="4PilotageEf02EqSec03BibliothecaireAuditInterdit"/>
+    <testcase name="[EQ-PERF-01] temps de réponse &lt; 500 ms" time="0.005" classname="4PilotageEf02EqSec03BibliothecaireAuditInterdit"/>
   </testsuite>
-  <testsuite name="4. Pilotage / [EQ-COMP-02] Contrat OpenAPI publié" id="8b2378e4-6a47-41f3-a5f3-c3b7a867cf3c" timestamp="2026-11-24T20:25:05.438Z" tests="4" failures="0" errors="0" time="0.062">
-    <testcase name="statut HTTP 200" time="0.062" classname="4PilotageEqComp02ContratOpenApiPublie"/>
-    <testcase name="OpenAPI 3.x" time="0.062" classname="4PilotageEqComp02ContratOpenApiPublie"/>
-    <testcase name="[EQ-SEC-09] en-têtes de sécurité présents" time="0.062" classname="4PilotageEqComp02ContratOpenApiPublie"/>
-    <testcase name="[EQ-PERF-01] temps de réponse &lt; 500 ms" time="0.062" classname="4PilotageEqComp02ContratOpenApiPublie"/>
+  <testsuite name="4. Pilotage / [EQ-COMP-02] Contrat OpenAPI publié" id="45d8f15f-a28e-46ff-9745-580dce3db437" timestamp="2026-11-25T18:08:26.316Z" tests="4" failures="0" errors="0" time="0.065">
+    <testcase name="statut HTTP 200" time="0.065" classname="4PilotageEqComp02ContratOpenApiPublie"/>
+    <testcase name="OpenAPI 3.x" time="0.065" classname="4PilotageEqComp02ContratOpenApiPublie"/>
+    <testcase name="[EQ-SEC-09] en-têtes de sécurité présents" time="0.065" classname="4PilotageEqComp02ContratOpenApiPublie"/>
+    <testcase name="[EQ-PERF-01] temps de réponse &lt; 500 ms" time="0.065" classname="4PilotageEqComp02ContratOpenApiPublie"/>
   </testsuite>
 </testsuites>

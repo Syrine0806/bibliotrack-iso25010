@@ -66,13 +66,13 @@ PASS: Application Error Disclosure [90022]
 PASS: WSDL File Detection [90030]
 PASS: Loosely Scoped Cookie [90033]
 WARN-NEW: Information Disclosure - Suspicious Comments [10027] x 1 
-	http://frontend:8080/assets/index-BeWF0F-N.js (200 OK)
+	http://frontend:8080/assets/index-SBJgji5x.js (200 OK)
 WARN-NEW: Storable and Cacheable Content [10049] x 6 
-	http://frontend:8080/assets/index-BeWF0F-N.js (200 OK)
-	http://frontend:8080/assets/index-DAAoV3CH.css (200 OK)
+	http://frontend:8080/assets/index-SBJgji5x.js (200 OK)
+	http://frontend:8080/assets/index-mI2dAKXn.css (200 OK)
 	http://frontend:8080 (200 OK)
 	http://frontend:8080/favicon.svg (200 OK)
 	http://frontend:8080/robots.txt (200 OK)
 WARN-NEW: Modern Web Application [10109] x 1 
-	http://frontend:8080/sitemap.xml (200 OK)
+	http://frontend:8080/robots.txt (200 OK)
 FAIL-NEW: 0	FAIL-INPROG: 0	WARN-NEW: 3	WARN-INPROG: 0	INFO: 0	IGNORE: 0	PASS: 65

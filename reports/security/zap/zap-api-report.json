@@ -1,8 +1,8 @@
 {
 	"@programName": "ZAP",
 	"@version": "2.17.0",
-	"@generated": "Tue, 24 Nov 2026 20:39:53",
-	"created": "2026-11-24T20:39:53.532984712Z",
+	"@generated": "Wed, 25 Nov 2026 18:27:50",
+	"created": "2026-11-25T18:27:50.491830878Z",
 	"insights":[
 		{
 			"level": "Medium",
@@ -119,7 +119,7 @@
 					"desc": "<p>A Content-Type of text/html was returned by the server.</p><p>This is not one of the types expected to be returned by an API.</p><p>Raised by the 'Alert on Unexpected Content Types' script</p>",
 					"instances":[ 
 						{
-							"id": "254",
+							"id": "197",
 							"uri": "http://frontend:8080",
 							"nodeName": "http:\/\/frontend:8080",
 							"method": "GET",
@@ -139,9 +139,9 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "42",
-							"uri": "http://frontend:8080/3626032225582200788",
-							"nodeName": "http:\/\/frontend:8080\/3626032225582200788",
+							"id": "57",
+							"uri": "http://frontend:8080/2506255830414120633",
+							"nodeName": "http:\/\/frontend:8080\/2506255830414120633",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -149,9 +149,9 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "43",
-							"uri": "http://frontend:8080/5376186212693649835",
-							"nodeName": "http:\/\/frontend:8080\/5376186212693649835",
+							"id": "56",
+							"uri": "http://frontend:8080/7690670191848515344",
+							"nodeName": "http:\/\/frontend:8080\/7690670191848515344",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -159,7 +159,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "257",
+							"id": "205",
 							"uri": "http://frontend:8080/api",
 							"nodeName": "http:\/\/frontend:8080\/api",
 							"method": "GET",
@@ -189,7 +189,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "5105",
+							"id": "5110",
 							"uri": "http://frontend:8080/metadata/instance",
 							"nodeName": "http:\/\/frontend:8080\/metadata\/instance ()({email,password})",
 							"method": "POST",
@@ -199,7 +199,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "5109",
+							"id": "5116",
 							"uri": "http://frontend:8080/metadata/v1",
 							"nodeName": "http:\/\/frontend:8080\/metadata\/v1 ()({email,password})",
 							"method": "POST",
@@ -209,7 +209,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "5084",
+							"id": "5083",
 							"uri": "http://frontend:8080/opc/v1/instance/",
 							"nodeName": "http:\/\/frontend:8080\/opc\/v1\/instance\/ ()({email,password})",
 							"method": "POST",
@@ -219,7 +219,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "5090",
+							"id": "5091",
 							"uri": "http://frontend:8080/opc/v2/instance/",
 							"nodeName": "http:\/\/frontend:8080\/opc\/v2\/instance\/ ()({email,password})",
 							"method": "POST",
@@ -229,7 +229,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "5112",
+							"id": "5121",
 							"uri": "http://frontend:8080/openstack/latest/meta_data.json",
 							"nodeName": "http:\/\/frontend:8080\/openstack\/latest\/meta_data.json ()({email,password})",
 							"method": "POST",
@@ -246,7 +246,7 @@
 					"reference": "",
 					"cweid": "-1",
 					"wascid": "-1",
-					"sourceid": "289"
+					"sourceid": "222"
 				},
 				{
 					"pluginid": "100000",
@@ -269,7 +269,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "22",
+							"id": "23",
 							"uri": "http://frontend:8080/api/books/10",
 							"nodeName": "http:\/\/frontend:8080\/api\/books\/10",
 							"method": "DELETE",
@@ -289,7 +289,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "25",
+							"id": "29",
 							"uri": "http://frontend:8080/api/copies/10",
 							"nodeName": "http:\/\/frontend:8080\/api\/copies\/10",
 							"method": "DELETE",
@@ -309,7 +309,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "6797",
+							"id": "6798",
 							"uri": "http://frontend:8080/api/",
 							"nodeName": "http:\/\/frontend:8080\/api\/",
 							"method": "GET",
@@ -319,9 +319,9 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "44",
-							"uri": "http://frontend:8080/api/8730516693025740081",
-							"nodeName": "http:\/\/frontend:8080\/api\/8730516693025740081",
+							"id": "58",
+							"uri": "http://frontend:8080/api/2451024469656626880",
+							"nodeName": "http:\/\/frontend:8080\/api\/2451024469656626880",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -329,7 +329,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "41",
+							"id": "55",
 							"uri": "http://frontend:8080/api/audit?action=&entity_type=&user_email=&date_from=&date_to=&page=1&size=50",
 							"nodeName": "http:\/\/frontend:8080\/api\/audit (action,date_from,date_to,entity_type,page,size,user_email)",
 							"method": "GET",
@@ -339,7 +339,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "262",
+							"id": "311",
 							"uri": "http://frontend:8080/api/auth",
 							"nodeName": "http:\/\/frontend:8080\/api\/auth",
 							"method": "GET",
@@ -359,9 +359,9 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "45",
-							"uri": "http://frontend:8080/api/auth/4383157925684095886",
-							"nodeName": "http:\/\/frontend:8080\/api\/auth\/4383157925684095886",
+							"id": "59",
+							"uri": "http://frontend:8080/api/auth/3619881558559222522",
+							"nodeName": "http:\/\/frontend:8080\/api\/auth\/3619881558559222522",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -389,7 +389,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "268",
+							"id": "316",
 							"uri": "http://frontend:8080/api/authors",
 							"nodeName": "http:\/\/frontend:8080\/api\/authors",
 							"method": "GET",
@@ -409,9 +409,9 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "46",
-							"uri": "http://frontend:8080/api/authors/1886877444127919525",
-							"nodeName": "http:\/\/frontend:8080\/api\/authors\/1886877444127919525",
+							"id": "60",
+							"uri": "http://frontend:8080/api/authors/8009900221441672437",
+							"nodeName": "http:\/\/frontend:8080\/api\/authors\/8009900221441672437",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -419,7 +419,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "270",
+							"id": "318",
 							"uri": "http://frontend:8080/api/books",
 							"nodeName": "http:\/\/frontend:8080\/api\/books",
 							"method": "GET",
@@ -449,9 +449,9 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "48",
-							"uri": "http://frontend:8080/api/books/10/1418358346876356219",
-							"nodeName": "http:\/\/frontend:8080\/api\/books\/10\/1418358346876356219",
+							"id": "62",
+							"uri": "http://frontend:8080/api/books/10/4075903086303220924",
+							"nodeName": "http:\/\/frontend:8080\/api\/books\/10\/4075903086303220924",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -459,7 +459,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "23",
+							"id": "24",
 							"uri": "http://frontend:8080/api/books/10/copies",
 							"nodeName": "http:\/\/frontend:8080\/api\/books\/10\/copies",
 							"method": "GET",
@@ -469,9 +469,9 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "47",
-							"uri": "http://frontend:8080/api/books/2906895039767804079",
-							"nodeName": "http:\/\/frontend:8080\/api\/books\/2906895039767804079",
+							"id": "61",
+							"uri": "http://frontend:8080/api/books/2091910566850603751",
+							"nodeName": "http:\/\/frontend:8080\/api\/books\/2091910566850603751",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -479,7 +479,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "274",
+							"id": "324",
 							"uri": "http://frontend:8080/api/books/lookup",
 							"nodeName": "http:\/\/frontend:8080\/api\/books\/lookup",
 							"method": "GET",
@@ -489,9 +489,9 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "49",
-							"uri": "http://frontend:8080/api/books/lookup/6401009490673469614",
-							"nodeName": "http:\/\/frontend:8080\/api\/books\/lookup\/6401009490673469614",
+							"id": "63",
+							"uri": "http://frontend:8080/api/books/lookup/6618491258315530927",
+							"nodeName": "http:\/\/frontend:8080\/api\/books\/lookup\/6618491258315530927",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -519,9 +519,9 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "50",
-							"uri": "http://frontend:8080/api/categories/7170563963864540944",
-							"nodeName": "http:\/\/frontend:8080\/api\/categories\/7170563963864540944",
+							"id": "64",
+							"uri": "http://frontend:8080/api/categories/2311284527281299637",
+							"nodeName": "http:\/\/frontend:8080\/api\/categories\/2311284527281299637",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -529,7 +529,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "281",
+							"id": "328",
 							"uri": "http://frontend:8080/api/copies",
 							"nodeName": "http:\/\/frontend:8080\/api\/copies",
 							"method": "GET",
@@ -549,9 +549,9 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "51",
-							"uri": "http://frontend:8080/api/copies/5233969698825682674",
-							"nodeName": "http:\/\/frontend:8080\/api\/copies\/5233969698825682674",
+							"id": "65",
+							"uri": "http://frontend:8080/api/copies/7830254129884291819",
+							"nodeName": "http:\/\/frontend:8080\/api\/copies\/7830254129884291819",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -559,7 +559,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "40",
+							"id": "54",
 							"uri": "http://frontend:8080/api/dashboard?date_from=&date_to=&category_id=",
 							"nodeName": "http:\/\/frontend:8080\/api\/dashboard (category_id,date_from,date_to)",
 							"method": "GET",
@@ -569,7 +569,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "290",
+							"id": "340",
 							"uri": "http://frontend:8080/api/loans",
 							"nodeName": "http:\/\/frontend:8080\/api\/loans",
 							"method": "GET",
@@ -579,7 +579,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "27",
+							"id": "31",
 							"uri": "http://frontend:8080/api/loans?user_id=&status=&overdue_only=false&q=&page=1&size=20",
 							"nodeName": "http:\/\/frontend:8080\/api\/loans (overdue_only,page,q,size,status,user_id)",
 							"method": "GET",
@@ -589,7 +589,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "306",
+							"id": "346",
 							"uri": "http://frontend:8080/api/loans/10",
 							"nodeName": "http:\/\/frontend:8080\/api\/loans\/10",
 							"method": "GET",
@@ -599,7 +599,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "6807",
+							"id": "6808",
 							"uri": "http://frontend:8080/api/loans/10/",
 							"nodeName": "http:\/\/frontend:8080\/api\/loans\/10\/",
 							"method": "GET",
@@ -609,9 +609,9 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "53",
-							"uri": "http://frontend:8080/api/loans/10/8612198467394386434",
-							"nodeName": "http:\/\/frontend:8080\/api\/loans\/10\/8612198467394386434",
+							"id": "67",
+							"uri": "http://frontend:8080/api/loans/10/669729646133724050",
+							"nodeName": "http:\/\/frontend:8080\/api\/loans\/10\/669729646133724050",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -619,9 +619,9 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "52",
-							"uri": "http://frontend:8080/api/loans/18873394470627027",
-							"nodeName": "http:\/\/frontend:8080\/api\/loans\/18873394470627027",
+							"id": "66",
+							"uri": "http://frontend:8080/api/loans/5678322336475276409",
+							"nodeName": "http:\/\/frontend:8080\/api\/loans\/5678322336475276409",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -629,7 +629,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "355",
+							"id": "352",
 							"uri": "http://frontend:8080/api/maintenance",
 							"nodeName": "http:\/\/frontend:8080\/api\/maintenance",
 							"method": "GET",
@@ -649,9 +649,9 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "54",
-							"uri": "http://frontend:8080/api/maintenance/2082530997835089330",
-							"nodeName": "http:\/\/frontend:8080\/api\/maintenance\/2082530997835089330",
+							"id": "68",
+							"uri": "http://frontend:8080/api/maintenance/662640447791562029",
+							"nodeName": "http:\/\/frontend:8080\/api\/maintenance\/662640447791562029",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -659,7 +659,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "363",
+							"id": "360",
 							"uri": "http://frontend:8080/api/penalties",
 							"nodeName": "http:\/\/frontend:8080\/api\/penalties",
 							"method": "GET",
@@ -669,7 +669,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "35",
+							"id": "47",
 							"uri": "http://frontend:8080/api/penalties?user_id=&status=&page=1&size=20",
 							"nodeName": "http:\/\/frontend:8080\/api\/penalties (page,size,status,user_id)",
 							"method": "GET",
@@ -679,7 +679,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "374",
+							"id": "364",
 							"uri": "http://frontend:8080/api/penalties/10",
 							"nodeName": "http:\/\/frontend:8080\/api\/penalties\/10",
 							"method": "GET",
@@ -699,9 +699,9 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "56",
-							"uri": "http://frontend:8080/api/penalties/10/1178511269697435433",
-							"nodeName": "http:\/\/frontend:8080\/api\/penalties\/10\/1178511269697435433",
+							"id": "70",
+							"uri": "http://frontend:8080/api/penalties/10/2431554740653686883",
+							"nodeName": "http:\/\/frontend:8080\/api\/penalties\/10\/2431554740653686883",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -709,9 +709,9 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "55",
-							"uri": "http://frontend:8080/api/penalties/3161272306654057379",
-							"nodeName": "http:\/\/frontend:8080\/api\/penalties\/3161272306654057379",
+							"id": "69",
+							"uri": "http://frontend:8080/api/penalties/4666601752272403014",
+							"nodeName": "http:\/\/frontend:8080\/api\/penalties\/4666601752272403014",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -719,7 +719,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "421",
+							"id": "368",
 							"uri": "http://frontend:8080/api/reservations",
 							"nodeName": "http:\/\/frontend:8080\/api\/reservations",
 							"method": "GET",
@@ -729,7 +729,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "32",
+							"id": "40",
 							"uri": "http://frontend:8080/api/reservations?user_id=&book_id=&status=&page=1&size=20",
 							"nodeName": "http:\/\/frontend:8080\/api\/reservations (book_id,page,size,status,user_id)",
 							"method": "GET",
@@ -739,7 +739,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "528",
+							"id": "378",
 							"uri": "http://frontend:8080/api/reservations/10",
 							"nodeName": "http:\/\/frontend:8080\/api\/reservations\/10",
 							"method": "GET",
@@ -759,9 +759,9 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "58",
-							"uri": "http://frontend:8080/api/reservations/10/1615891749276025154",
-							"nodeName": "http:\/\/frontend:8080\/api\/reservations\/10\/1615891749276025154",
+							"id": "72",
+							"uri": "http://frontend:8080/api/reservations/10/5344352576474420473",
+							"nodeName": "http:\/\/frontend:8080\/api\/reservations\/10\/5344352576474420473",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -769,9 +769,9 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "57",
-							"uri": "http://frontend:8080/api/reservations/5409008676526639349",
-							"nodeName": "http:\/\/frontend:8080\/api\/reservations\/5409008676526639349",
+							"id": "71",
+							"uri": "http://frontend:8080/api/reservations/4564978277540217334",
+							"nodeName": "http:\/\/frontend:8080\/api\/reservations\/4564978277540217334",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -779,7 +779,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "537",
+							"id": "456",
 							"uri": "http://frontend:8080/api/users",
 							"nodeName": "http:\/\/frontend:8080\/api\/users",
 							"method": "GET",
@@ -809,9 +809,9 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "60",
-							"uri": "http://frontend:8080/api/users/10/4552800159002409649",
-							"nodeName": "http:\/\/frontend:8080\/api\/users\/10\/4552800159002409649",
+							"id": "74",
+							"uri": "http://frontend:8080/api/users/10/8010432691481118415",
+							"nodeName": "http:\/\/frontend:8080\/api\/users\/10\/8010432691481118415",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -819,9 +819,9 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "59",
-							"uri": "http://frontend:8080/api/users/7004905352439146560",
-							"nodeName": "http:\/\/frontend:8080\/api\/users\/7004905352439146560",
+							"id": "73",
+							"uri": "http://frontend:8080/api/users/264685466014405892",
+							"nodeName": "http:\/\/frontend:8080\/api\/users\/264685466014405892",
 							"method": "GET",
 							"param": "",
 							"attack": "",
@@ -829,7 +829,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "26",
+							"id": "30",
 							"uri": "http://frontend:8080/api/copies/10",
 							"nodeName": "http:\/\/frontend:8080\/api\/copies\/10 ()({status})",
 							"method": "PATCH",
@@ -859,7 +859,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "63",
+							"id": "79",
 							"uri": "http://frontend:8080/api/auth/login",
 							"nodeName": "http:\/\/frontend:8080\/api\/auth\/login ()({email,password})",
 							"method": "POST",
@@ -869,7 +869,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "276",
+							"id": "309",
 							"uri": "http://frontend:8080/api/auth/register",
 							"nodeName": "http:\/\/frontend:8080\/api\/auth\/register ()({email,full_name,password})",
 							"method": "POST",
@@ -909,7 +909,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "24",
+							"id": "28",
 							"uri": "http://frontend:8080/api/books/10/copies",
 							"nodeName": "http:\/\/frontend:8080\/api\/books\/10\/copies ()({barcode,shelf_location})",
 							"method": "POST",
@@ -929,7 +929,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "28",
+							"id": "32",
 							"uri": "http://frontend:8080/api/loans",
 							"nodeName": "http:\/\/frontend:8080\/api\/loans ()({user_id,barcode})",
 							"method": "POST",
@@ -939,7 +939,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "31",
+							"id": "39",
 							"uri": "http://frontend:8080/api/loans/10/lost",
 							"nodeName": "http:\/\/frontend:8080\/api\/loans\/10\/lost",
 							"method": "POST",
@@ -949,7 +949,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "30",
+							"id": "38",
 							"uri": "http://frontend:8080/api/loans/10/renew",
 							"nodeName": "http:\/\/frontend:8080\/api\/loans\/10\/renew",
 							"method": "POST",
@@ -959,7 +959,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "29",
+							"id": "34",
 							"uri": "http://frontend:8080/api/loans/10/return",
 							"nodeName": "http:\/\/frontend:8080\/api\/loans\/10\/return",
 							"method": "POST",
@@ -969,7 +969,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "39",
+							"id": "51",
 							"uri": "http://frontend:8080/api/maintenance/run",
 							"nodeName": "http:\/\/frontend:8080\/api\/maintenance\/run",
 							"method": "POST",
@@ -979,7 +979,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "36",
+							"id": "48",
 							"uri": "http://frontend:8080/api/penalties",
 							"nodeName": "http:\/\/frontend:8080\/api\/penalties ()({user_id,amount,reason})",
 							"method": "POST",
@@ -989,7 +989,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "38",
+							"id": "50",
 							"uri": "http://frontend:8080/api/penalties/10/cancel",
 							"nodeName": "http:\/\/frontend:8080\/api\/penalties\/10\/cancel",
 							"method": "POST",
@@ -999,7 +999,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "37",
+							"id": "49",
 							"uri": "http://frontend:8080/api/penalties/10/pay",
 							"nodeName": "http:\/\/frontend:8080\/api\/penalties\/10\/pay",
 							"method": "POST",
@@ -1009,7 +1009,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "33",
+							"id": "41",
 							"uri": "http://frontend:8080/api/reservations",
 							"nodeName": "http:\/\/frontend:8080\/api\/reservations ()({book_id,user_id})",
 							"method": "POST",
@@ -1019,7 +1019,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "34",
+							"id": "44",
 							"uri": "http://frontend:8080/api/reservations/10/cancel",
 							"nodeName": "http:\/\/frontend:8080\/api\/reservations\/10\/cancel",
 							"method": "POST",
@@ -1069,7 +1069,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "5104",
+							"id": "5109",
 							"uri": "http://frontend:8080/metadata/instance",
 							"nodeName": "http:\/\/frontend:8080\/metadata\/instance ()({email,password})",
 							"method": "POST",
@@ -1079,7 +1079,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "5108",
+							"id": "5115",
 							"uri": "http://frontend:8080/metadata/v1",
 							"nodeName": "http:\/\/frontend:8080\/metadata\/v1 ()({email,password})",
 							"method": "POST",
@@ -1089,7 +1089,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "5083",
+							"id": "5082",
 							"uri": "http://frontend:8080/opc/v1/instance/",
 							"nodeName": "http:\/\/frontend:8080\/opc\/v1\/instance\/ ()({email,password})",
 							"method": "POST",
@@ -1099,7 +1099,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "5089",
+							"id": "5090",
 							"uri": "http://frontend:8080/opc/v2/instance/",
 							"nodeName": "http:\/\/frontend:8080\/opc\/v2\/instance\/ ()({email,password})",
 							"method": "POST",
@@ -1109,7 +1109,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "5111",
+							"id": "5120",
 							"uri": "http://frontend:8080/openstack/latest/meta_data.json",
 							"nodeName": "http:\/\/frontend:8080\/openstack\/latest\/meta_data.json ()({email,password})",
 							"method": "POST",
@@ -1129,7 +1129,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "21",
+							"id": "22",
 							"uri": "http://frontend:8080/api/books/10",
 							"nodeName": "http:\/\/frontend:8080\/api\/books\/10 ()({\"isbn\":\"John Doe\",\"title\":\"John Doe\",\"publisher\":\"John Doe\",\"publication_year\":10,\"summary\":Zaproxy dolore alias impedit expedita quisquam.,\"category_id\":10,\"author_ids\":[10]})",
 							"method": "PUT",
@@ -1169,7 +1169,7 @@
 					"desc": "<p>The given request has been identified as an authentication request. The 'Other Info' field contains a set of key=value lines which identify any relevant fields. If the request is in a context which has an Authentication Method set to \"Auto-Detect\" then this rule will change the authentication to match the request identified.</p>",
 					"instances":[ 
 						{
-							"id": "296",
+							"id": "33",
 							"uri": "http://frontend:8080/api/users",
 							"nodeName": "http:\/\/frontend:8080\/api\/users ()({email,full_name,password,role})",
 							"method": "POST",
@@ -1179,7 +1179,7 @@
 							"otherinfo": "userParam=email\nuserValue=zaproxy@example.com\npasswordParam=password"
 						},
 						{
-							"id": "227",
+							"id": "21",
 							"uri": "http://frontend:8080/api/auth/login",
 							"nodeName": "http:\/\/frontend:8080\/api\/auth\/login ()({email,password})",
 							"method": "POST",
@@ -1209,7 +1209,7 @@
 					"desc": "<p>The request appeared to contain sensitive information leaked in the URL. This can violate PCI and most organizational compliance policies. You can configure the list of strings for this check to add or remove values specific to your environment.</p>",
 					"instances":[ 
 						{
-							"id": "608",
+							"id": "727",
 							"uri": "http://frontend:8080/api/audit?action=&entity_type=&user_email=&date_from=&date_to=&page=1&size=50",
 							"nodeName": "http:\/\/frontend:8080\/api\/audit (action,date_from,date_to,entity_type,page,size,user_email)",
 							"method": "GET",
@@ -1219,7 +1219,7 @@
 							"otherinfo": "The URL contains potentially sensitive information. The following string was found via the pattern: user\nuser_email"
 						},
 						{
-							"id": "546",
+							"id": "723",
 							"uri": "http://frontend:8080/api/loans?user_id=&status=&overdue_only=false&q=&page=1&size=20",
 							"nodeName": "http:\/\/frontend:8080\/api\/loans (overdue_only,page,q,size,status,user_id)",
 							"method": "GET",
@@ -1229,7 +1229,7 @@
 							"otherinfo": "The URL contains potentially sensitive information. The following string was found via the pattern: user\nuser_id"
 						},
 						{
-							"id": "582",
+							"id": "726",
 							"uri": "http://frontend:8080/api/penalties?user_id=&status=&page=1&size=20",
 							"nodeName": "http:\/\/frontend:8080\/api\/penalties (page,size,status,user_id)",
 							"method": "GET",
@@ -1239,7 +1239,7 @@
 							"otherinfo": "The URL contains potentially sensitive information. The following string was found via the pattern: user\nuser_id"
 						},
 						{
-							"id": "572",
+							"id": "724",
 							"uri": "http://frontend:8080/api/reservations?user_id=&book_id=&status=&page=1&size=20",
 							"nodeName": "http:\/\/frontend:8080\/api\/reservations (book_id,page,size,status,user_id)",
 							"method": "GET",
@@ -1269,7 +1269,7 @@
 					"desc": "<p>The response contents are not storable by caching components such as proxy servers. If the response does not contain sensitive, personal or user-specific information, it may benefit from being stored and cached, to improve performance.</p>",
 					"instances":[ 
 						{
-							"id": "250",
+							"id": "27",
 							"uri": "http://frontend:8080/api/auth/me",
 							"nodeName": "http:\/\/frontend:8080\/api\/auth\/me",
 							"method": "GET",
@@ -1279,7 +1279,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "286",
+							"id": "36",
 							"uri": "http://frontend:8080/api/users?q=&role=&page=1&size=20",
 							"nodeName": "http:\/\/frontend:8080\/api\/users (page,q,role,size)",
 							"method": "GET",
@@ -1289,17 +1289,7 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "291",
-							"uri": "http://frontend:8080/api/users/10",
-							"nodeName": "http:\/\/frontend:8080\/api\/users\/10",
-							"method": "GET",
-							"param": "",
-							"attack": "",
-							"evidence": "no-store",
-							"otherinfo": ""
-						},
-						{
-							"id": "253",
+							"id": "26",
 							"uri": "http://frontend:8080/api/auth/login",
 							"nodeName": "http:\/\/frontend:8080\/api\/auth\/login ()({email,password})",
 							"method": "POST",
@@ -1309,9 +1299,19 @@
 							"otherinfo": ""
 						},
 						{
-							"id": "252",
+							"id": "25",
 							"uri": "http://frontend:8080/api/auth/register",
 							"nodeName": "http:\/\/frontend:8080\/api\/auth\/register ()({email,full_name,password})",
+							"method": "POST",
+							"param": "",
+							"attack": "",
+							"evidence": "no-store",
+							"otherinfo": ""
+						},
+						{
+							"id": "35",
+							"uri": "http://frontend:8080/api/users",
+							"nodeName": "http:\/\/frontend:8080\/api\/users ()({email,full_name,password,role})",
 							"method": "POST",
 							"param": "",
 							"attack": "",

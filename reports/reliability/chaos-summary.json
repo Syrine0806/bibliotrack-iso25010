@@ -1,5 +1,5 @@
 {
-  "date": "2026-11-24T20:40:04.469167+00:00",
+  "date": "2026-11-25T18:28:01.596418+00:00",
   "passed": true,
   "checks": 8,
   "failed": 0,
@@ -32,7 +32,7 @@
       "scenario": "C3",
       "check": "Service maintenu pendant la perte d'un worker",
       "passed": true,
-      "detail": "30/30 requêtes OK (worker 9 tué)"
+      "detail": "30/30 requêtes OK (worker 8 tué)"
     },
     {
       "scenario": "C3",

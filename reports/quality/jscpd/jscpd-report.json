@@ -6,14 +6,14 @@
         "endLoc": {
           "column": 32,
           "line": 184,
-          "position": 8536
+          "position": 8640
         },
         "name": "pages/AdminPages.tsx",
         "start": 172,
         "startLoc": {
           "column": 79,
           "line": 172,
-          "position": 8214
+          "position": 8318
         }
       },
       "format": "tsx",
@@ -154,31 +154,31 @@
     }
   ],
   "statistics": {
-    "detectionDate": "2026-11-24T20:24:35.976Z",
+    "detectionDate": "2026-11-25T18:42:09.614Z",
     "formats": {
       "css": {
         "clones": 0,
         "duplicatedLines": 0,
         "duplicatedTokens": 0,
-        "lines": 133,
+        "lines": 230,
         "newClones": 0,
         "newDuplicatedLines": 0,
         "percentage": 0.0,
         "percentageTokens": 0.0,
         "sources": 1,
-        "tokens": 2860
+        "tokens": 5503
       },
       "tsx": {
         "clones": 4,
         "duplicatedLines": 45,
         "duplicatedTokens": 293,
-        "lines": 1795,
+        "lines": 1892,
         "newClones": 0,
         "newDuplicatedLines": 0,
-        "percentage": 2.5069637883008355,
-        "percentageTokens": 1.7077577665092964,
-        "sources": 13,
-        "tokens": 17157
+        "percentage": 2.3784355179704018,
+        "percentageTokens": 1.6264224257563142,
+        "sources": 14,
+        "tokens": 18015
       },
       "typescript": {
         "clones": 0,
@@ -197,13 +197,13 @@
       "clones": 4,
       "duplicatedLines": 45,
       "duplicatedTokens": 293,
-      "lines": 2439,
+      "lines": 2633,
       "newClones": 0,
       "newDuplicatedLines": 0,
-      "percentage": 1.8450184501845017,
-      "percentageTokens": 1.23550495467004,
-      "sources": 19,
-      "tokens": 23715
+      "percentage": 1.709077098366882,
+      "percentageTokens": 1.0765726043503823,
+      "sources": 20,
+      "tokens": 27216
     }
   }
 }

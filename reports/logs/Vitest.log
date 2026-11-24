@@ -3,20 +3,20 @@
       Coverage enabled with v8
 
  ✓ src/utils/format.test.ts (9 tests) 3ms
- ✓ src/api/client.test.ts (8 tests) 10ms
- ✓ src/components/ui.test.tsx (7 tests) 89ms
+ ✓ src/api/client.test.ts (8 tests) 39ms
+ ✓ src/components/ui.test.tsx (7 tests) 101ms
 
  Test Files  3 passed (3)
       Tests  24 passed (24)
-   Start at  21:24:34
-   Duration  969ms (transform 72ms, setup 0ms, import 212ms, tests 102ms, environment 1.59s)
+   Start at  19:08:06
+   Duration  1.20s (transform 88ms, setup 0ms, import 308ms, tests 142ms, environment 1.95s)
 
 JUNIT report written to /Users/s.guesmi/Desktop/ING5/QualiteLogiciel/reports/tests/junit-frontend-unit.xml
  % Coverage report from v8
 
 =============================== Coverage summary ===============================
-Statements   : 15.94% ( 96/602 )
-Branches     : 17.21% ( 73/424 )
-Functions    : 12.05% ( 34/282 )
-Lines        : 16.45% ( 79/480 )
+Statements   : 16.25% ( 99/609 )
+Branches     : 17.63% ( 76/431 )
+Functions    : 12.23% ( 35/286 )
+Lines        : 16.83% ( 82/487 )
 ================================================================================

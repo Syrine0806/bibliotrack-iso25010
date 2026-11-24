@@ -1,4 +1,4 @@
-2026-11-24 20:39:32,014 Number of Imported URLs: 44
+2026-11-25 18:27:29,576 Number of Imported URLs: 44
 Total of 92 URLs
 PASS: Directory Browsing [0]
 PASS: Vulnerable JS Library (Powered by Retire.js) [10003]
@@ -121,8 +121,8 @@ PASS: Server Side Template Injection [90035]
 PASS: Server Side Template Injection (Blind) [90036]
 PASS: Remote OS Command Injection (Time Based) [90037]
 WARN-NEW: Unexpected Content-Type was returned [100001] x 11 
-	http://frontend:8080/3626032225582200788 (200 OK)
-	http://frontend:8080/5376186212693649835 (200 OK)
+	http://frontend:8080/7690670191848515344 (200 OK)
+	http://frontend:8080/2506255830414120633 (200 OK)
 	http://frontend:8080/api (301 Moved Permanently)
 	http://frontend:8080/latest/meta-data/ (405 Not Allowed)
 	http://frontend:8080/computeMetadata/v1/ (405 Not Allowed)

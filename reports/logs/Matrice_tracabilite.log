@@ -1,6 +1,6 @@
 # Synthèse des exécutions
 
-Générée le 24/11/2026 21:40.
+Générée le 25/11/2026 19:28.
 
 | Outil | Statut | Total | Réussis | Échecs | Ignorés |
 |---|---|---|---|---|---|
@@ -14,7 +14,8 @@ Générée le 24/11/2026 21:40.
 | ESLint | EXÉCUTÉ | — | — | — | — |
 | pip-audit (SCA) | EXÉCUTÉ | — | — | — | — |
 | npm audit (SCA) | EXÉCUTÉ | — | — | — | — |
-| OWASP ZAP (DAST) | EXÉCUTÉ | — | — | — | — |
+| OWASP ZAP (zap-report.json) | EXÉCUTÉ | — | — | — | — |
+| OWASP ZAP (zap-api-report.json) | EXÉCUTÉ | — | — | — | — |
 | coverage.py | EXÉCUTÉ | — | — | — | — |
 | Radon | EXÉCUTÉ | — | — | — | — |
 | Ruff | EXÉCUTÉ | — | — | — | — |
